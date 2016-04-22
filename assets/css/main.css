@@ -45,25 +45,27 @@
 .caption h1 {
   color: #fff;
   font-size: 60px;
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-weight: lighter;
+  margin-bottom: 0px;
 }
 
 .caption .btn-start {
   color: #fff;
   font-size: 14px;
+  /*
   font-weight: 600;
+  */
   padding:14px 40px;
   border: 1px solid #6e6d6c;
   border-radius: 4px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .caption .btn-start:hover {
   color: #fff
 }
 
-#home-slider .fa-angle-down {
+.fa-angle-down {
   position: absolute;
   left: 50%;
   bottom: 50px;
@@ -2319,7 +2321,7 @@
 		background-attachment: scroll, scroll, fixed;
 		background-color: #645862;
 		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("../../images/proposal.jpg");
-		background-position: bottom left, bottom right, center center;
+		background-position: bottom left, bottom right, top center;
 		background-repeat: no-repeat, no-repeat, no-repeat;
 		background-size: 25em, 25em, cover;
 		color: #fff;
