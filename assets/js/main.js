@@ -15,6 +15,7 @@
 	});
 
 	$(function() {
+    //var preloader = $('.preloader');
 
 		var	$window = $(window),
 			$body = $('body'),
@@ -23,9 +24,14 @@
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
+      $('.caption').addClass('invisible');
+      $('#header').addClass('invisible');
 
 			$window.on('load', function() {
 				$body.removeClass('is-loading');
+        $('.caption').removeClass('invisible');
+        $('#header').removeClass('invisible');
+        //preloader.remove();
 			});
 
 		// CSS polyfills (IE<9).

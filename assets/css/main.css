@@ -20,7 +20,37 @@
   background: rgba(0,0,0,.7);
 }
 
+.invisible {
+  opacity: 0;
+}
+
+/*
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  background: #fff;
+}
+
+.preloader > i {
+  position: absolute;
+  font-size: 36px;
+  line-height: 36px;
+  top: 50%;
+  left: 50%;
+  height: 36px;
+  width: 36px;
+  margin-top: -15px;
+  margin-left: -15px;
+  display: inline-block;
+}
+*/
+
 .caption {
+  /*
   -moz-animation: reveal-banner 1s 0.25s ease-in-out;
   -webkit-animation: reveal-banner 1s 0.25s ease-in-out;
   -ms-animation: reveal-banner 1s 0.25s ease-in-out;
@@ -29,6 +59,7 @@
   -webkit-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  */
   position: absolute;
   top: 50%;
   margin-top: -104px;
