@@ -1,0 +1,28 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /assets
+  static_dir: assets
+
+- url: /css
+  static_dir: css
+
+- url: /fonts
+  static_dir: fonts
+
+- url: /js
+  static_dir: js
+
+- url: /images
+  static_dir: images
+
+- url: /.*
+  script: andrewjenny.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
