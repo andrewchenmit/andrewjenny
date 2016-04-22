@@ -971,4 +971,6 @@ ul.address {
 
 /*Presets*/
 
-
+#home-slider #heart {
+  color: rgb(255, 27, 153);
+}
