@@ -6,6 +6,80 @@
   min-height: calc(100vh);
 }
 
+#subtitle {
+  text-align: inherit;
+}
+
+#banner:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.7);
+}
+
+.caption {
+  -moz-animation: reveal-banner 1s 0.25s ease-in-out;
+  -webkit-animation: reveal-banner 1s 0.25s ease-in-out;
+  -ms-animation: reveal-banner 1s 0.25s ease-in-out;
+  animation: reveal-banner 1s 0.25s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: 50%;
+  margin-top: -104px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 15;
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+}
+
+.caption h1 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.caption .btn-start {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding:14px 40px;
+  border: 1px solid #6e6d6c;
+  border-radius: 4px;
+  margin-top: 40px;
+}
+
+.caption .btn-start:hover {
+  color: #fff
+}
+
+#home-slider .fa-angle-down {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  color: #fff;
+  display: inline-block;
+  width: 24px;
+  margin-left: -12px;
+  font-size: 24px;
+  line-height: 24px;
+  z-index: 999;
+  -webkit-animation: bounce 3000ms infinite;
+  animation: bounce 3000ms infinite;
+}
+
+
+
 
 /*
 	Twenty by HTML5 UP
@@ -2245,12 +2319,14 @@
 		background-attachment: scroll, scroll, fixed;
 		background-color: #645862;
 		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("../../images/proposal.jpg");
-		background-position: bottom left, bottom right, top left;
+		background-position: bottom left, bottom right, center center;
 		background-repeat: no-repeat, no-repeat, no-repeat;
 		background-size: 25em, 25em, cover;
 		color: #fff;
 		cursor: default;
-		padding: 6em 0;
+		/*
+     padding: 6em 0;
+     */
 		text-align: center;
 	}
 
@@ -3004,139 +3080,6 @@
 			body.contact #main {
 				padding-bottom: 0;
 			}
-/*************************
-********Home CSS**********
-**************************/
-#home-slider {
-  overflow: hidden;
-  position: relative;
-}
-
-#home-slider .caption {
-  position: absolute;
-  top: 50%;
-  margin-top: -104px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: 15;
-  font-size: 18px;
-  font-weight: 300;
-  color: #fff;
-}
-
-#home-slider .caption h1 {
-  color: #fff;
-  font-size: 60px;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.caption .btn-start {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  padding:14px 40px;
-  border: 1px solid #6e6d6c;
-  border-radius: 4px;
-  margin-top: 40px;
-}
-
-.caption .btn-start:hover {
-  color: #fff
-}
-
-.carousel-fade .carousel-inner .item {
-  opacity: 0;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 2037px;
-}
-
-.carousel-fade .carousel-inner .item:after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,.7);
-}
-
-.carousel-fade .carousel-inner .active {
-  opacity: 1;
-}
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-  left: 0;
-  opacity: 0;
-  z-index: 1;
-}
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-}
-.carousel-fade .carousel-control {
-  z-index: 2;
-}
-
-.left-control, .right-control {
-  position: absolute;
-  top: 50%;
-  height: 51px;
-  width: 51px;
-  line-height: 48px;
-  border-radius: 50%;
-  border:1px solid #fff;  
-  z-index: 20;
-  font-size: 24px;
-  color: #fff;
-  text-align: center;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.left-control {
-  left: -51px
-} 
-
-.right-control {
-  right: -51px;
-}
-
-.left-control:hover, 
-.right-control:hover {
-  color: #fff;
-}
-
-#home-slider:hover .left-control {
-  left:30px
-} 
-
-#home-slider:hover .right-control {
-  right:30px
-}
-
-#home-slider .fa-angle-down {
-  position: absolute;
-  left: 50%;
-  bottom: 50px;
-  color: #fff;
-  display: inline-block;
-  width: 24px;
-  margin-left: -12px;
-  font-size: 24px;
-  line-height: 24px;
-  z-index: 999;
-  -webkit-animation: bounce 3000ms infinite;
-  animation: bounce 3000ms infinite;
-}
 
      
 		/* CTA */
