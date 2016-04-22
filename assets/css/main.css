@@ -10,6 +10,10 @@
   font-weight: 600;
 }
 
+#sidebar {
+  margin: 0;
+}
+
 #subtitle {
   text-align: inherit;
 }
@@ -65,7 +69,7 @@
   animation-fill-mode: forwards;
   */
   position: absolute;
-  top: 50%;
+  top: calc(50vh);
   margin-top: -104px;
   left: 0;
   right: 0;
