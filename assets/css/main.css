@@ -6,6 +6,10 @@
   min-height: calc(100vh + 1px);
 }
 
+#sidebar a.active {
+  font-weight: 600;
+}
+
 #subtitle {
   text-align: inherit;
 }
