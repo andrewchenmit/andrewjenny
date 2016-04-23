@@ -14,6 +14,167 @@
   margin: 0;
 }
 
+/*
+#sidebar nav {
+  -moz-animation: rotateInLeftBig;
+  -webkit-animation: rotateInLeftBig;
+  -ms-animation: rotateInLeftBig;
+  animation-name: rotateInLeftBig;
+}
+  */
+
+.jennyandrew {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+#start-btn {
+	-moz-animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+#sidebar nav > ul > li:nth-child(1) {
+	2moz-animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+#sidebar nav > ul > li:nth-child(2) {
+	-moz-animation-delay: 1.2s;
+	-webkit-animation-delay: 1.2s;
+	-ms-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+
+#sidebar nav > ul > li:nth-child(3) {
+	-moz-animation-delay: 1.4s;
+	-webkit-animation-delay: 1.4s;
+	-ms-animation-delay: 1.4s;
+	animation-delay: 1.4s;
+}
+
+#sidebar nav > ul > li:nth-child(4) {
+	-moz-animation-delay: 1.6s;
+	-webkit-animation-delay: 1.6s;
+	-ms-animation-delay: 1.6s;
+	animation-delay: 1.6s;
+}
+
+#sidebar nav > ul > li:nth-child(5) {
+	-moz-animation-delay: 1.8s;
+	-webkit-animation-delay: 1.8s;
+	-ms-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+}
+
+#sidebar nav > ul > li:nth-child(6) {
+	-moz-animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	animation-delay: 2s;
+}
+
+#sidebar nav > ul > li:nth-child(7) {
+	-moz-animation-delay: 1.65s;
+	-webkit-animation-delay: 1.65s;
+	-ms-animation-delay: 1.65s;
+	animation-delay: 1.65s;
+}
+
+#sidebar nav > ul > li:nth-child(8) {
+	-moz-animation-delay: 1.85s;
+	-webkit-animation-delay: 1.85s;
+	-ms-animation-delay: 1.85s;
+	animation-delay: 1.85s;
+}
+
+#sidebar nav > ul > li:nth-child(9) {
+	-moz-animation-delay: 2.05s;
+	-webkit-animation-delay: 2.05s;
+	-ms-animation-delay: 2.05s;
+	animation-delay: 2.05s;
+}
+
+#sidebar nav > ul > li:nth-child(10) {
+	-moz-animation-delay: 2.25s;
+	-webkit-animation-delay: 2.25s;
+	-ms-animation-delay: 2.25s;
+	animation-delay: 2.25s;
+}
+
+#sidebar nav > ul > li:nth-child(11) {
+	-moz-animation-delay: 2.45s;
+	-webkit-animation-delay: 2.45s;
+	-ms-animation-delay: 2.45s;
+	animation-delay: 2.45s;
+}
+
+#sidebar nav > ul > li:nth-child(12) {
+	-moz-animation-delay: 2.65s;
+	-webkit-animation-delay: 2.65s;
+	-ms-animation-delay: 2.65s;
+	animation-delay: 2.65s;
+}
+
+#sidebar nav > ul > li:nth-child(13) {
+	-moz-animation-delay: 2.85s;
+	-webkit-animation-delay: 2.85s;
+	-ms-animation-delay: 2.85s;
+	animation-delay: 2.85s;
+}
+
+#sidebar nav > ul > li:nth-child(14) {
+	-moz-animation-delay: 3.05s;
+	-webkit-animation-delay: 3.05s;
+	-ms-animation-delay: 3.05s;
+	animation-delay: 3.05s;
+}
+
+#sidebar nav > ul > li:nth-child(15) {
+	-moz-animation-delay: 3.25s;
+	-webkit-animation-delay: 3.25s;
+	-ms-animation-delay: 3.25s;
+	animation-delay: 3.25s;
+}
+
+#sidebar nav > ul > li:nth-child(16) {
+	-moz-animation-delay: 3.45s;
+	-webkit-animation-delay: 3.45s;
+	-ms-animation-delay: 3.45s;
+	animation-delay: 3.45s;
+}
+
+#sidebar nav > ul > li:nth-child(17) {
+	-moz-animation-delay: 3.65s;
+	-webkit-animation-delay: 3.65s;
+	-ms-animation-delay: 3.65s;
+	animation-delay: 3.65s;
+}
+
+#sidebar nav > ul > li:nth-child(18) {
+	-moz-animation-delay: 3.85s;
+	-webkit-animation-delay: 3.85s;
+	-ms-animation-delay: 3.85s;
+	animation-delay: 3.85s;
+}
+
+#sidebar nav > ul > li:nth-child(19) {
+	-moz-animation-delay: 4.05s;
+	-webkit-animation-delay: 4.05s;
+	-ms-animation-delay: 4.05s;
+	animation-delay: 4.05s;
+}
+
+#sidebar nav > ul > li:nth-child(20) {
+	-moz-animation-delay: 4.25s;
+	-webkit-animation-delay: 4.25s;
+	-ms-animation-delay: 4.25s;
+	animation-delay: 4.25s;
+}
+
 #subtitle {
   text-align: inherit;
 }
@@ -1539,10 +1700,12 @@
 	}
 
 	a {
+    /*
 		-moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    */
 		color: #3fb1a3;
 		text-decoration: none;
 		border-bottom: dotted 1px;
@@ -2242,10 +2405,12 @@
 		}
 
 		#header.alt {
+      /*
 			-moz-animation: none;
 			-webkit-animation: none;
 			-ms-animation: none;
 			animation: none;
+      */
 			background: transparent;
 			box-shadow: none;
 			color: #fff;
