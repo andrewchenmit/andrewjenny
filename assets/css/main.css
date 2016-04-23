@@ -100,7 +100,7 @@ color: #7c8081;
 }
 
 @media screen and (max-width: 768px) {
-  .intro-heading .pull-right,.intro-heading .pull-left{
+  .jennyandrew .pull-right, .jennyandrew .pull-left{
     margin:0 auto;float:none!important;text-align:center;display:block;
   }
   .jennyandrew {
