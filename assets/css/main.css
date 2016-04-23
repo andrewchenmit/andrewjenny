@@ -78,6 +78,10 @@ color: #7c8081;
 	-ms-animation-delay: 1s;
 	animation-delay: 1s;
 }
+#start-btn:hover, #start-btn:active, #start-btn:visited, #start-btn:focus {
+  color: inherit;
+  text-decoration: inherit;
+}
 
 #sidebar nav > ul > li:nth-child(1) {
 	2moz-animation-delay: 1s;
