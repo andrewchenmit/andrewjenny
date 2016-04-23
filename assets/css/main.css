@@ -11,6 +11,10 @@
   background-color: #2e3141;
 }
 
+.info {
+  margin-left: 10px;
+}
+
 #sidebar a.active {
   font-weight: 600;
 }
@@ -2867,12 +2871,10 @@
 		}
 
 		#header.alt {
-      /*
 			-moz-animation: none;
 			-webkit-animation: none;
 			-ms-animation: none;
 			animation: none;
-      */
 			background: transparent;
 			box-shadow: none;
 			color: #fff;
