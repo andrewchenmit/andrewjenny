@@ -74,7 +74,9 @@ color: #7c8081;
 }
 
 #wedding:before {
+/*
   height:0;
+*/
 }
 
 #sidebar {
@@ -2838,7 +2840,9 @@ color: #7c8081;
 /* Wrapper */
 
 	.wrapper {
+    /*
 		margin-bottom: 5em;
+    */
 		padding: 5em;
 	}
 
