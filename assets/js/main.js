@@ -50,22 +50,6 @@
 				);
 			});
 
-		// Scrolly links.
-			$('.scrolly').scrolly({
-				speed: 1000,
-				offset: function() {
-
-/*
-						if ($sidebar.length > 0 && !$header.hasClass('alt'))
-              console.log("HEAD:");
-							return $header.height();
-
-          console.log("-1");
-*/
-					return -1;
-
-				}
-			});
 
 		// Sidebar.
 			if ($sidebar.length > 0) {
@@ -180,6 +164,22 @@
 					$('#navButton, #navPanel, #page-wrapper')
 						.css('transition', 'none');
 
+		// Scrolly links.
+			$('.scrolly').scrolly({
+				speed: 1000,
+				offset: function() {
+
+/*
+						if ($sidebar.length > 0 && !$header.hasClass('alt'))
+              console.log("HEAD:");
+							return $header.height();
+
+          console.log("-1");
+*/
+					return -1;
+
+				}
+			});
 		// Header.
 		// If the header is using "alt" styling and #banner is present, use scrollwatch
 		// to revert it back to normal styling once the user scrolls past the banner.
