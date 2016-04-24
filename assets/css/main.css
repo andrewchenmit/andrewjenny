@@ -71,13 +71,16 @@ color: #7c8081;
 #wedding {
   margin: 0;
   padding-top: 1em;
+  background-image: url("../../images/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: color-dodge;
 }
 
 #wedding:before {
-/*
   height:0;
-*/
 }
+
 
 #sidebar {
   margin: 0;
@@ -407,7 +410,10 @@ color: #7c8081;
 
 .features article {
 	padding: 1.75em 1.75em 0.1em 1.75em ;
+/*
 	background-color: #353849;
+*/
+  background-color: rgba(119, 119, 119, 0.4);
 	border-radius: 5px;
 	margin: 0em 3em 1.5em 0;
 	width: calc(50% - 1.5em);
