@@ -859,6 +859,251 @@ Oxygen Blue:
 				}
 }
 
+/**** Overflow ****/
+/* Box */
+
+	.obox {
+		position: relative;
+		margin-top: 9em;
+		margin-bottom: 0;
+	}
+
+		.obox:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -9em;
+			left: 50%;
+			height: 9em;
+			border-left: solid 1px #fff;
+		}
+
+		.obox:before {
+			content: '';
+			display: block;
+			width: 90px;
+			height: 66px;
+			position: absolute;
+			left: 50%;
+			top: -4.5em;
+			margin-left: -45px;
+			margin-top: -33px;
+			background: url("images/arrow.svg") no-repeat;
+		}
+
+		.obox :last-child {
+			margin-bottom: 0;
+		}
+
+		.obox.style1 {
+			background: #fff;
+			padding: 3em;
+		}
+
+			.obox.style1 .oimage {
+				display: block;
+				position: absolute;
+				top: 0;
+				width: 50%;
+				height: 100%;
+				background: #152E33;
+				overflow: hidden;
+			}
+
+				.obox.style1 .oimage img {
+					position: absolute;
+					top: 0;
+					height: 100%;
+					width: auto;
+				}
+
+			.obox.style1 .inner > :last-child {
+				margin: 0;
+			}
+
+			.obox.style1.right .oimage {
+				left: 0;
+			}
+
+				.obox.style1.right .oimage img {
+					right: 0;
+				}
+
+			.obox.style1.right .inner {
+				margin-left: 50%;
+				padding-left: 3em;
+			}
+
+			.obox.style1.left .oimage {
+				right: 0;
+			}
+
+				.obox.style1.left .oimage img {
+					left: 0;
+				}
+
+			.obox.style1.left .inner {
+				margin-right: 50%;
+				padding-right: 3em;
+			}
+
+		.obox.ostyle2 {
+			text-align: center;
+		}
+
+			.obox.ostyle2 header {
+				display: inline-block;
+				background: #fff;
+				padding: 2em 3em 2em 3em;
+				margin: 0;
+			}
+
+				.obox.ostyle2 header p {
+					padding: 0;
+				}
+
+			.obox.ostyle2 .inner {
+				position: relative;
+				padding: 40px 0 0px 0;
+			}
+
+				.obox.ostyle2 .inner:after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 50%;
+					height: 100%;
+					border-left: solid 1px #fff;
+				}
+
+				.obox.ostyle2 .inner .row {
+					position: relative;
+				}
+
+					.obox.ostyle2 .inner .row:before {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 50%;
+						left: 20px;
+						width: calc(100% - 40px);
+						border-bottom: solid 1px #fff;
+					}
+
+				.obox.ostyle2 .inner .oimage {
+					position: relative;
+					z-index: 1;
+					padding: 20px;
+				}
+
+		.obox.ostyle3 {
+			background: #fff;
+			padding: 3em;
+		}
+
+			.obox.ostyle3 header {
+				text-align: center;
+			}
+
+
+/* Image */
+
+	.oimage {
+		display: inline-block;
+		border: 0;
+	}
+
+		.oimage img {
+			display: block;
+			width: 100%;
+		}
+
+		.oimage.featured {
+			display: block;
+			width: 100%;
+			margin: 0 0 2em 0;
+		}
+
+		.oimage.fit {
+			display: block;
+			width: 100%;
+		}
+
+		.oimage.left {
+			float: left;
+			margin: 0 2em 2em 0;
+		}
+
+		.oimage.centered {
+			display: block;
+			margin: 0 0 2em 0;
+		}
+
+			.oimage.centered img {
+				margin: 0 auto;
+				width: auto;
+			}
+
+
+		/* Box */
+	@media screen and (max-width: 736px) {
+			.obox {
+				margin-top: 4.5em;
+			}
+
+				.obox:after {
+					top: -4.5em;
+					height: 4.5em;
+				}
+
+				.obox:before {
+					width: 45px;
+					height: 33px;
+					top: -2.25em;
+					margin-left: -22.5px;
+					margin-top: -16.5px;
+					background-size: 45px 33px;
+				}
+
+				.obox.style1 {
+					padding: 0;
+					text-align: center;
+				}
+
+					.obox.style1 .oimage {
+						position: relative !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: auto !important;
+					}
+
+						.obox.style1 .oimage img {
+							position: relative;
+							height: auto;
+							width: 100%;
+						}
+
+					.obox.style1 .inner {
+						margin: 0 !important;
+						padding: 2em 1.25em 2em 1.25em !important;
+					}
+
+				.obox.ostyle2 .inner .row:before {
+					display: none;
+				}
+
+				.obox.ostyle2 .inner .oimage {
+					padding: 0;
+					max-width: 250px;
+					margin: 0 auto 20px auto;
+				}
+
+				.obox.ostyle3 {
+					padding: 2em 1.25em 2em 1.25em;
+        }
+		  }
+
 /**** Solid State ****/
 /* Features */
 
