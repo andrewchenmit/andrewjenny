@@ -445,6 +445,16 @@ Oxygen Blue:
   height:0;
 }
 
+/* Photos */
+#photos {
+  margin: 0;
+  padding-top: 1em;
+  background-image: url("../../images/wedding_bg_2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right;
+}
+
 /* Box */
 .box {
 	background: #ffffff;
@@ -948,7 +958,9 @@ Oxygen Blue:
 			}
 
 		.obox.ostyle2 {
+/*
 			text-align: center;
+*/
 		}
 
 			.obox.ostyle2 header {
@@ -964,7 +976,10 @@ Oxygen Blue:
 
 			.obox.ostyle2 .inner {
 				position: relative;
+/*
 				padding: 40px 0 0px 0;
+*/
+				padding: 0;
 			}
 
 				.obox.ostyle2 .inner:after {
@@ -974,7 +989,9 @@ Oxygen Blue:
 					top: 0;
 					left: 50%;
 					height: 100%;
+/*
 					border-left: solid 1px #fff;
+*/
 				}
 
 				.obox.ostyle2 .inner .row {
