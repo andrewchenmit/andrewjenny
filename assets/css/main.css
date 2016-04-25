@@ -5,42 +5,16 @@
 
 /* Colors */
 /*
-Pink:
+
+Wedding Pink:
 #F05F75
-*/
 
-/*
-
-Start Button (.btn-start:hover in preset1.css)
+Oxygen Blue:
 #028fcc
 
-Background (.wrapper)
-background-color: #f3f6fa;
-background-color: #fff;
+*/
 
-
-Bluish-gray
-#B6C7CA
-
-Background color (.features article)
-background-color: #DEE0E3;
-
-Spacer (.spacer)
-background-color: #f3f6fa
-
-Text (body, )
-color: #7c8081;
-
- */
-
-.fa-heart-o {
-  color: #F05F75;
-}
-
-.fullscreen {
-  height: calc(100vh + 1px);
-}
-
+/* General */
 .spacer {
   height: 30px;
 }
@@ -53,318 +27,18 @@ color: #7c8081;
   padding-bottom: 1.5em;
 }
 
-/* Our */
-#our-story {
-  margin-top: 0px;
-  background-color: #fff;
-  color: #7c8081;
-}
-
-#our-story:before, #our-story:after {
-  content: none;
-}
-
-#our-story.wrapper {
-  padding-top: 2em;
-}
-
-
-
-.info {
-  margin-left: 10px;
-}
-
+/* Top Nav Bar */
 #sidebar a.active {
   font-weight: 600;
 }
-
-#wedding {
-  margin: 0;
-  padding-top: 1em;
-  background-image: url("../../images/wedding_bg_2.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: right;
-/*
-  background-blend-mode: color-dodge;
-*/
-}
-
-#wedding:before {
-  height:0;
-}
-
 
 #sidebar {
   margin: 0;
   color: #7c8081;
 }
 
-/*
-#sidebar nav {
-  -moz-animation: rotateInLeftBig;
-  -webkit-animation: rotateInLeftBig;
-  -ms-animation: rotateInLeftBig;
-  animation-name: rotateInLeftBig;
-}
-  */
-
-.jennyandrew {
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-
-  vertical-align: middle;
-}
-
-.jennyandrew .pull-right {
-  margin-right: -55px;
-}
-.jennyandrew .pull-left {
-  margin-left: -55px;
-}
-
-@media screen and (max-width: 1200px) {
-  .jennyandrew .pull-right {
-    margin-right: -35px;
-  }
-  .jennyandrew .pull-left {
-    margin-left: -35px;
-  }
-}
-@media screen and (max-width: 992px) {
-  .jennyandrew .pull-right {
-    margin-right: -15px;
-  }
-  .jennyandrew .pull-left {
-    margin-left: -15px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .jennyandrew .pull-right, .jennyandrew .pull-left{
-    margin:0 auto;float:none!important;text-align:center;display:block;
-  }
-  .jennyandrew {
-    line-height: 1.25em;
-  }
-}
-
-/* Box */
-
-	.box {
-		background: #ffffff;
-		border: solid 1px rgba(224, 224, 224, 0.75);
-		margin-bottom: 6em;
-		padding: 3.5em;
-	}
-
-		.box.alt {
-			background: none;
-			border: none;
-			padding: 0;
-		}
-/* Containers */
-
-	.hcontainer {
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.hcontainer.\31 25\25 {
-		width: 100%;
-		max-width: 63.75em;
-		min-width: 51em;
-	}
-
-	.hcontainer.\37 5\25 {
-		width: 38.25em;
-	}
-
-	.hcontainer.\35 0\25 {
-		width: 25.5em;
-	}
-
-	.hcontainer.\32 5\25 {
-		width: 12.75em;
-	}
-
-	.hcontainer {
-		width: 51em;
-	}
-
-	@media screen and (max-width: 1680px) {
-
-		.hcontainer.\31 25\25 {
-			width: 100%;
-			max-width: 63.75em;
-			min-width: 51em;
-		}
-
-		.hcontainer.\37 5\25 {
-			width: 38.25em;
-		}
-
-		.hcontainer.\35 0\25 {
-			width: 25.5em;
-		}
-
-		.hcontainer.\32 5\25 {
-			width: 12.75em;
-		}
-
-		.hcontainer {
-			width: 51em;
-		}
-
-	}
-
-	@media screen and (max-width: 1280px) {
-
-		.hcontainer.\31 25\25 {
-			width: 100%;
-			max-width: 60em;
-			min-width: 48em;
-		}
-
-		.hcontainer.\37 5\25 {
-			width: 36em;
-		}
-
-		.hcontainer.\35 0\25 {
-			width: 24em;
-		}
-
-		.hcontainer.\32 5\25 {
-			width: 12em;
-		}
-
-		.hcontainer {
-			width: 48em;
-		}
-
-	}
-
-	@media screen and (max-width: 980px) {
-
-		.hcontainer.\31 25\25 {
-			width: 100%;
-			max-width: 118.75%;
-			min-width: 95%;
-		}
-
-		.hcontainer.\37 5\25 {
-			width: 71.25%;
-		}
-
-		.hcontainer.\35 0\25 {
-			width: 47.5%;
-		}
-
-		.hcontainer.\32 5\25 {
-			width: 23.75%;
-		}
-
-		.hcontainer {
-			width: 95%;
-		}
-
-	}
-
-	@media screen and (max-width: 840px) {
-
-		.hcontainer.\31 25\25 {
-			width: 100%;
-			max-width: 118.75%;
-			min-width: 95%;
-		}
-
-		.hcontainer.\37 5\25 {
-			width: 71.25%;
-		}
-
-		.hcontainer.\35 0\25 {
-			width: 47.5%;
-		}
-
-		.hcontainer.\32 5\25 {
-			width: 23.75%;
-		}
-
-		.hcontainer {
-			width: 95% !important;
-		}
-
-	}
-
-	@media screen and (max-width: 736px) {
-
-		.hcontainer.\31 25\25 {
-			width: 100%;
-			max-width: 112.5%;
-			min-width: 90%;
-		}
-
-		.hcontainer.\37 5\25 {
-			width: 67.5%;
-		}
-
-		.hcontainer.\35 0\25 {
-			width: 45%;
-		}
-
-		.hcontainer.\32 5\25 {
-			width: 22.5%;
-		}
-
-		.hcontainer {
-			width: 90% !important;
-		}
-
-	}
-
-	@media screen and (max-width: 480px) {
-
-		.hcontainer.\31 25\25 {
-			width: 100%;
-			max-width: 125%;
-			min-width: 100%;
-		}
-
-		.hcontainer.\37 5\25 {
-			width: 75%;
-		}
-
-		.hcontainer.\35 0\25 {
-			width: 50%;
-		}
-
-		.hcontainer.\32 5\25 {
-			width: 25%;
-		}
-
-		.hcontainer {
-			width: 100% !important;
-		}
-
-	}
-
-
-
-#start-btn {
-	-moz-animation-delay: 1s;
-	-webkit-animation-delay: 1s;
-	-ms-animation-delay: 1s;
-	animation-delay: 1s;
-
-  min-width: 21em;
-}
-#start-btn:hover, #start-btn:active, #start-btn:visited, #start-btn:focus {
-  color: inherit;
-  text-decoration: inherit;
-}
-
 #sidebar nav > ul > li:nth-child(1) {
-	2moz-animation-delay: 1s;
+	-moz-animation-delay: 1s;
 	-webkit-animation-delay: 1s;
 	-ms-animation-delay: 1s;
 	animation-delay: 1s;
@@ -503,6 +177,25 @@ color: #7c8081;
 	animation-delay: 4.25s;
 }
 
+
+/*
+#sidebar nav {
+  -moz-animation: rotateInLeftBig;
+  -webkit-animation: rotateInLeftBig;
+  -ms-animation: rotateInLeftBig;
+  animation-name: rotateInLeftBig;
+}
+  */
+
+/* Banner */
+.fa-heart-o {
+  color: #F05F75;
+}
+
+.fullscreen {
+  height: calc(100vh + 1px);
+}
+
 #subtitle {
   text-align: inherit;
 }
@@ -516,35 +209,6 @@ color: #7c8081;
   left: 0;
   right: 0;
   background: rgba(0,0,0,.7);
-}
-*/
-
-.invisible {
-  opacity: 0;
-}
-
-/*
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 999999;
-  background: #fff;
-}
-
-.preloader > i {
-  position: absolute;
-  font-size: 36px;
-  line-height: 36px;
-  top: 50%;
-  left: 50%;
-  height: 36px;
-  width: 36px;
-  margin-top: -15px;
-  margin-left: -15px;
-  display: inline-block;
 }
 */
 
@@ -609,6 +273,278 @@ color: #7c8081;
   -webkit-animation: bounce 3000ms infinite;
   animation: bounce 3000ms infinite;
 }
+
+.jennyandrew {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+
+  vertical-align: middle;
+}
+
+.jennyandrew .pull-right {
+  margin-right: -55px;
+}
+.jennyandrew .pull-left {
+  margin-left: -55px;
+}
+
+@media screen and (max-width: 1200px) {
+  .jennyandrew .pull-right {
+    margin-right: -35px;
+  }
+  .jennyandrew .pull-left {
+    margin-left: -35px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .jennyandrew .pull-right {
+    margin-right: -15px;
+  }
+  .jennyandrew .pull-left {
+    margin-left: -15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .jennyandrew .pull-right, .jennyandrew .pull-left{
+    margin:0 auto;float:none!important;text-align:center;display:block;
+  }
+  .jennyandrew {
+    line-height: 1.25em;
+  }
+}
+
+/* Our Story */
+#our-story {
+  margin-top: 0px;
+  background-color: #fff;
+  color: #7c8081;
+}
+
+#our-story:before, #our-story:after {
+  content: none;
+}
+
+#our-story.wrapper {
+  padding-top: 2em;
+}
+
+/* Wedding */
+#wedding {
+  margin: 0;
+  padding-top: 1em;
+  background-image: url("../../images/wedding_bg_2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right;
+/*
+  background-blend-mode: color-dodge;
+*/
+}
+
+#wedding:before {
+  height:0;
+}
+
+
+/* Box */
+.box {
+	background: #ffffff;
+	border: solid 1px rgba(224, 224, 224, 0.75);
+	margin-bottom: 6em;
+	padding: 3.5em;
+}
+
+.box.alt {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+/* Containers */
+.hcontainer {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hcontainer.\31 25\25 {
+	width: 100%;
+	max-width: 63.75em;
+	min-width: 51em;
+}
+
+.hcontainer.\37 5\25 {
+	width: 38.25em;
+}
+
+.hcontainer.\35 0\25 {
+	width: 25.5em;
+}
+
+.hcontainer.\32 5\25 {
+	width: 12.75em;
+}
+
+.hcontainer {
+	width: 51em;
+}
+
+@media screen and (max-width: 1680px) {
+
+	.hcontainer.\31 25\25 {
+		width: 100%;
+		max-width: 63.75em;
+		min-width: 51em;
+	}
+
+	.hcontainer.\37 5\25 {
+		width: 38.25em;
+	}
+
+	.hcontainer.\35 0\25 {
+		width: 25.5em;
+	}
+
+	.hcontainer.\32 5\25 {
+		width: 12.75em;
+	}
+
+	.hcontainer {
+		width: 51em;
+	}
+
+}
+
+@media screen and (max-width: 1280px) {
+
+	.hcontainer.\31 25\25 {
+		width: 100%;
+		max-width: 60em;
+		min-width: 48em;
+	}
+
+	.hcontainer.\37 5\25 {
+		width: 36em;
+	}
+
+	.hcontainer.\35 0\25 {
+		width: 24em;
+	}
+
+	.hcontainer.\32 5\25 {
+		width: 12em;
+	}
+
+	.hcontainer {
+		width: 48em;
+	}
+
+}
+
+@media screen and (max-width: 980px) {
+
+	.hcontainer.\31 25\25 {
+		width: 100%;
+		max-width: 118.75%;
+		min-width: 95%;
+	}
+
+	.hcontainer.\37 5\25 {
+		width: 71.25%;
+	}
+
+	.hcontainer.\35 0\25 {
+		width: 47.5%;
+	}
+
+	.hcontainer.\32 5\25 {
+		width: 23.75%;
+	}
+
+	.hcontainer {
+		width: 95%;
+	}
+
+}
+
+@media screen and (max-width: 840px) {
+
+	.hcontainer.\31 25\25 {
+		width: 100%;
+		max-width: 118.75%;
+		min-width: 95%;
+	}
+
+	.hcontainer.\37 5\25 {
+		width: 71.25%;
+	}
+
+	.hcontainer.\35 0\25 {
+		width: 47.5%;
+	}
+
+	.hcontainer.\32 5\25 {
+		width: 23.75%;
+	}
+
+	.hcontainer {
+		width: 95% !important;
+	}
+
+}
+
+@media screen and (max-width: 736px) {
+
+	.hcontainer.\31 25\25 {
+		width: 100%;
+		max-width: 112.5%;
+		min-width: 90%;
+	}
+
+	.hcontainer.\37 5\25 {
+		width: 67.5%;
+	}
+
+	.hcontainer.\35 0\25 {
+		width: 45%;
+	}
+
+	.hcontainer.\32 5\25 {
+		width: 22.5%;
+	}
+
+	.hcontainer {
+		width: 90% !important;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	.hcontainer.\31 25\25 {
+		width: 100%;
+		max-width: 125%;
+		min-width: 100%;
+	}
+
+	.hcontainer.\37 5\25 {
+		width: 75%;
+	}
+
+	.hcontainer.\35 0\25 {
+		width: 50%;
+	}
+
+	.hcontainer.\32 5\25 {
+		width: 25%;
+	}
+
+	.hcontainer {
+		width: 100% !important;
+	}
+
+}
+
 /**** Directive ****/
 /* Image */
 
@@ -812,6 +748,19 @@ color: #7c8081;
 			padding-top: 0;
 		}
 
+
+	@media screen and (max-width: 1280px) {
+		/* Feature */
+
+			.feature {
+				height: 18em;
+			}
+
+				.feature .dcontent {
+					padding: 2.5em;
+				}
+}
+
 /**** Solid State ****/
 /* Features */
 
@@ -867,15 +816,6 @@ color: #7c8081;
 			background-position: center, 0% 30%;
 			margin-bottom: -6.5em;
 		}
-		/* Feature */
-
-			.feature {
-				height: 18em;
-			}
-
-				.feature .dcontent {
-					padding: 2.5em;
-				}
 
 	}
 @media screen and (max-width: 980px) {
