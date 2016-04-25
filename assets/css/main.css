@@ -74,6 +74,7 @@ color: #7c8081;
   background-image: url("../../images/wedding_bg_2.jpg");
   background-size: cover;
   background-attachment: fixed;
+  background-position: right;
 /*
   background-blend-mode: color-dodge;
 */
@@ -2345,7 +2346,7 @@ color: #7c8081;
   
 
 		a:hover {
-      color: #fff !important;
+      color: #fff;
 			border-bottom-color: transparent;
 		}
 

@@ -32,11 +32,30 @@
       function resizeBackground() {
           var wheight = jQuery(window).height();
           $banner.height(wheight);
-          $('.caption').css({top: wheight * 0.40});
+          $('.caption').css({top: wheight * 0.45});
           $('.fa-angle-down').css({top: wheight - 50});
           console.log('resized to ' + wheight);
           console.log('topped to ' + wheight * 0.45);
 
+      }
+
+      function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+        {
+          return 'iOS';
+
+        }
+        else if( userAgent.match( /Android/i ) )
+        {
+
+          return 'Android';
+        }
+        else
+        {
+          return 'unknown';
+        }
       }
 
 			$window.on('load', function() {
@@ -44,6 +63,22 @@
         $('.caption').removeClass('invisible');
         $('#header').removeClass('invisible');
         resizeBackground();
+// If desktop: background-attachment: fixed.
+// If Android: background-attachment: fixed. (Will auto become scroll).
+// If iOS: background-attachment: scroll.
+        var os = getMobileOperatingSystem();
+        if (os == 'iOS') {
+          $('#banner').css('background-attachment', 'scroll'); 
+          $('#wedding').css('background-attachment', 'scroll'); 
+
+/*
+          $(window).scroll(function() {
+            var scrolledY = $(window).scrollTop() - 20;
+            $('#banner').css('background-position', 'bottom left, bottom right, left ' + ((scrolledY)) + 'px');
+            $('#wedding').css('background-position', 'left ' + ((scrolledY)) + 'px');
+          });
+*/
+        }
         //preloader.remove();
 			});
 
