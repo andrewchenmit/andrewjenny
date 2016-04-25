@@ -3,6 +3,12 @@
 
 /* Andrew Chen */
 
+/* Colors */
+/*
+Pink:
+#F05F75
+*/
+
 /*
 
 Start Button (.btn-start:hover in preset1.css)
@@ -26,6 +32,10 @@ Text (body, )
 color: #7c8081;
 
  */
+
+.fa-heart-o {
+  color: #F05F75;
+}
 
 .fullscreen {
   height: calc(100vh + 1px);
@@ -486,11 +496,17 @@ color: #7c8081;
 /* Headers */
 		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
 			padding-bottom: 0.5em;
-			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+/* 
+      border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+*/
+			border-bottom: solid 2px rgba(240, 95, 117, 0.625);
 		}
 		h1.major.white, h2.major.white, h3.major.white, h4.major.white, h5.major.white, h6.major.white {
 			padding-bottom: 0.5em;
+/*
 			border-bottom: solid 2px rgba(0, 0, 0, 0.125);
+*/
+			border-bottom: solid 2px rgba(240, 95, 117, 0.625);
 		}
 
 /* Wrapper */
