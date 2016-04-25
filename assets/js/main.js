@@ -28,10 +28,22 @@
       $('.caption').addClass('invisible');
       $('#header').addClass('invisible');
 
+      jQuery(window).resize('resizeBackground');
+      function resizeBackground() {
+          var wheight = jQuery(window).height();
+          $banner.height(wheight);
+          $('.caption').css({top: wheight * 0.40});
+          $('.fa-angle-down').css({top: wheight - 50});
+          console.log('resized to ' + wheight);
+          console.log('topped to ' + wheight * 0.45);
+
+      }
+
 			$window.on('load', function() {
 				$body.removeClass('is-loading');
         $('.caption').removeClass('invisible');
         $('#header').removeClass('invisible');
+        resizeBackground();
         //preloader.remove();
 			});
 

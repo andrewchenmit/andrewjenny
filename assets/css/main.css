@@ -28,7 +28,7 @@ color: #7c8081;
  */
 
 .fullscreen {
-  min-height: calc(100vh + 1px);
+  height: calc(100vh + 1px);
 }
 
 .spacer {
@@ -295,6 +295,7 @@ color: #7c8081;
   text-align: inherit;
 }
 
+/*
 #banner:after {
   content: " ";
   position: absolute;
@@ -304,6 +305,7 @@ color: #7c8081;
   right: 0;
   background: rgba(0,0,0,.7);
 }
+*/
 
 .invisible {
   opacity: 0;
@@ -346,7 +348,7 @@ color: #7c8081;
   animation-fill-mode: forwards;
   */
   position: absolute;
-  top: calc(50vh);
+  top: calc(45vh);
   margin-top: -104px;
   left: 0;
   right: 0;
@@ -3157,11 +3159,17 @@ color: #7c8081;
 
 	#banner {
 		background-attachment: scroll, scroll, fixed;
+/*
 		background-color: #645862;
+*/
+		background-color: #fff;
 		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("../../images/proposal.jpg");
 		background-position: bottom left, bottom right, top center;
 		background-repeat: no-repeat, no-repeat, no-repeat;
 		background-size: 25em, 25em, cover;
+		-webkit-background-size: 25em, 25em, cover;
+		-moz-background-size: 25em, 25em, cover;
+		-o-background-size: 25em, 25em, cover;
 		color: #fff;
 		cursor: default;
 		/*
@@ -3887,7 +3895,9 @@ color: #7c8081;
 
 			#banner {
 				background-size: 10em, 10em, cover;
+/*
 				padding: 6em 0;
+*/
 			}
 
 				#banner .inner {
