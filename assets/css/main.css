@@ -206,6 +206,10 @@ Oxygen Blue:
   text-align: inherit;
 }
 
+#start-btn {
+  min-width: 21em;
+}
+
 #banner a:hover, #banner a:visited, #banner a:active, #banner a:focus {
   text-decoration: none;
   color: #fff;
