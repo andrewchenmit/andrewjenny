@@ -23,6 +23,12 @@ Oxygen Blue:
   background-color: #fff;
 }
 
+@media screen and (max-width: 440px) {
+  #our-story-img {
+    width: 100%;
+  }
+}
+
 .mini-container {
   padding-bottom: 1.5em;
 }
