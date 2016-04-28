@@ -16,9 +16,11 @@ Oxygen Blue:
 
 /* General */
 
+/*
 .poptrox-popup {
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
+*/
 
 .img-caption {
     background-color: rgba(240, 95, 117, 0.5);
@@ -241,7 +243,7 @@ Oxygen Blue:
 	background-color: #645862;
 
 	background-color: #fff;
-	background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("../../images/proposal.jpg");
+	background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("../../images/splash.jpg");
 	background-position: bottom left, bottom right, top center;
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-size: 25em, 25em, cover;
@@ -1224,6 +1226,9 @@ Oxygen Blue:
 		margin: 1em 2em 1em 0;
 		width: calc(50% - 1em);
 	}
+  .img-caption {
+    text-align: center;
+  }
 
 }
 
@@ -1270,6 +1275,7 @@ Oxygen Blue:
 
 				.feature .dimage {
 					float: none;
+          max-height: 30em;
           /*
 					height: 15em;
           */
