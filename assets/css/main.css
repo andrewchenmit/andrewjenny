@@ -15,6 +15,17 @@ Oxygen Blue:
 */
 
 /* General */
+.img-caption {
+    background-color: rgba(240, 95, 117, 0.5);
+    color: #fff;
+    display: block;
+    bottom: 0;
+    position: absolute;
+    font-size: initial;
+    padding: 0.1em 1em;
+    width: 100%;
+}
+
 .spacer {
   height: 30px;
 }
@@ -666,6 +677,7 @@ Oxygen Blue:
 		position: relative;
 	}
 
+  /*
 		.dimage:after {
 			-moz-transition: opacity 0.25s ease-in-out;
 			-webkit-transition: opacity 0.25s ease-in-out;
@@ -681,6 +693,7 @@ Oxygen Blue:
 			top: 0;
 			width: 100%;
 		}
+      */
 
 		.dimage img {
 			display: block;
@@ -813,7 +826,10 @@ Oxygen Blue:
 
 		.feature .dcontent {
 			display: inline-block;
+      /*
 			padding: 3.5em;
+      */
+      padding: 1.5em 3.5em 3.5em 1.5em;
 			vertical-align: middle;
 			width: 48%;
 		}
@@ -873,7 +889,10 @@ Oxygen Blue:
 			}
 
 				.feature .dcontent {
+          /*
 					padding: 2.5em;
+          */
+          padding: 1em 2em 2em 1em;
 				}
 }
 

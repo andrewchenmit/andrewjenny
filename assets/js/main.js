@@ -34,8 +34,10 @@
           $banner.height(wheight);
           $('.caption').css({top: wheight * 0.45});
           $('.fa-angle-down').css({top: wheight - 50});
+          /*
           console.log('resized to ' + wheight);
           console.log('topped to ' + wheight * 0.45);
+          */
 
       }
 
@@ -229,6 +231,8 @@
 			});
 
 		// Poptrox.
+			$('.story-gallery').poptrox({
+      });
 			$('.gallery').poptrox({
 				useBodyOverflow: false,
 				usePopupEasyClose: false,
