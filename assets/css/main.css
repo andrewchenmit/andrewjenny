@@ -489,7 +489,10 @@ Oxygen Blue:
 .box {
 	background: #ffffff;
 	border: solid 1px rgba(224, 224, 224, 0.75);
+  /*
 	margin-bottom: 6em;
+  */
+  margin-bottom: 3em;
 	padding: 3.5em;
 }
 
