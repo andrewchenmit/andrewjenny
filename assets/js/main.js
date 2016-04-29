@@ -233,23 +233,23 @@
 		// Poptrox.
 			$('.story-gallery').poptrox({
 				useBodyOverflow: false,
-				usePopupEasyClose: false,
 				overlayOpacity: (skel.vars.IEVersion < 9 ? 0 : 0.75),
         /*
+				usePopupEasyClose: false,
 				overlayColor: '#0a1919',
 				usePopupDefaultStyling: false,
 				usePopupCaption: true,
+				usePopupNav: true
         */
         baseZIndex: 99999,
 				popupLoaderText: '',
 				windowMargin: 10,
-				usePopupNav: true
       });
 			$('.gallery').poptrox({
 				useBodyOverflow: false,
-				usePopupEasyClose: false,
 				overlayOpacity: (skel.vars.IEVersion < 9 ? 0 : 0.75),
         /*
+				usePopupEasyClose: false,
 				overlayColor: '#0a1919',
 				usePopupDefaultStyling: false,
 				usePopupCaption: true,
