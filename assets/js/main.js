@@ -1,9 +1,3 @@
-/*
-	Twenty by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	skel.breakpoints({
@@ -28,6 +22,7 @@
       $('.caption').addClass('invisible');
       $('#header').addClass('invisible');
 
+    // Background placement for mobile.
       jQuery(window).resize('resizeBackground');
       function resizeBackground() {
           var wheight = jQuery(window).height();
@@ -64,7 +59,6 @@
 				$body.removeClass('is-loading');
         $('.caption').removeClass('invisible');
         $('#header').removeClass('invisible');
-        resizeBackground();
 // If desktop: background-attachment: fixed.
 // If Android: background-attachment: fixed. (Will auto become scroll).
 // If iOS: background-attachment: scroll.
@@ -72,14 +66,10 @@
         if (os == 'iOS') {
           $('#banner').css('background-attachment', 'scroll'); 
           $('#wedding').css('background-attachment', 'scroll'); 
-
-/*
-          $(window).scroll(function() {
-            var scrolledY = $(window).scrollTop() - 20;
-            $('#banner').css('background-position', 'bottom left, bottom right, left ' + ((scrolledY)) + 'px');
-            $('#wedding').css('background-position', 'left ' + ((scrolledY)) + 'px');
-          });
-*/
+          resizeBackground();
+        }
+        if (os == 'Android') {
+          resizeBackground();
         }
         //preloader.remove();
 			});
