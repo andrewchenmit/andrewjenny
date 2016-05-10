@@ -22,6 +22,47 @@ Oxygen Blue:
 }
 */
 
+span.img-bg {
+  width: 100%;
+  position: absolute;
+  top:0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  -moz-justify-content: center;
+  -moz-align-items: center;
+  -ms-justify-content: center;
+  -ms-align-items: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  opacity: 0;
+  font-size: 3em;
+  background-color: rgba(0,0,0,0.2);
+  color: rgba(255,255,255,0.4);
+  height: 100%;
+  transition: opacity 0.5s ease, font-size 0.5s ease, transform 0.5s ease;
+  z-index: 1;
+}
+span.img-bg:hover {
+  opacity: 100;
+  font-size: 3em;
+  transition: opacity 0.5s ease, font-size 0.5s ease;
+}
+
+.story-image > img {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+span.img-bg:hover + .story-image > img {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
 .img-caption {
     background-color: rgba(240, 95, 117, 0.5);
     color: #fff;
