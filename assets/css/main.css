@@ -21,6 +21,14 @@ Oxygen Blue:
   margin-top: 1.5em;
 }
 */
+.dcontent a {
+  border-bottom: dotted 1px;
+}
+
+.dcontent a, .dcontent a:hover, .dcontent a:active {
+  color: #F05F75;
+  text-decoration: none;
+}
 
 span.img-bg {
   width: 100%;
