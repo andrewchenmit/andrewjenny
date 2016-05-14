@@ -516,6 +516,7 @@ span.img-bg:hover + .story-image > img {
   color: #7c8081;
   background-color: #fff;
   margin: 0;
+  padding-top: 0px;
 }
 
 #travel:before {
@@ -4179,7 +4180,7 @@ span.img-bg:hover + .story-image > img {
 */
 			}
 
-		/* CTA */
+		/* REGISTRY */
 
 			#registry {
 				padding: 4em;

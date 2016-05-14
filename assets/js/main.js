@@ -235,6 +235,23 @@
 
 				}
 			});
+			$('.travelscrolly').scrolly({
+				speed: 1000,
+				offset: function() {
+
+          console.log(this);
+/*
+						if ($sidebar.length > 0 && !$header.hasClass('alt'))
+              console.log("HEAD:");
+							return $header.height();
+
+          console.log("-1");
+*/
+          console.log("wedding");
+					return 40;
+
+				}
+			});
 
 		// Poptrox.
 			$('.story-gallery').poptrox({
