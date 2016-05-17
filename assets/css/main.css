@@ -540,8 +540,58 @@ span.img-bg:hover + .story-image > img {
   background-attachment: fixed;
   background-position: right;
   padding-top: 6em;
-  padding-bottom: 6em;
+  padding-bottom: 9em;
 }
+
+/* Registry */
+#registry {
+  color: #7c8081;
+  background-color: #fff;
+  margin: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#registry:before, #registry:after {
+  z-index: 99;
+}
+
+#registry.wrapper:before {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,100 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
+}
+
+#registry.wrapper:after {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,100 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
+}
+
+#registry a img {
+  width: 100%;
+}
+
+#registry a:active, #registry a:hover, #registry a:active, #registry a:visited {
+  text-decoration: none;
+}
+
+/*
+#registry {
+	background-attachment: scroll, scroll, scroll, fixed;
+	background-color: #645862;
+	background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../../images/banner.jpg");
+	background-position: top left, top right, top left, bottom center;
+	background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+	background-size: 25em, 25em, auto, cover;
+	color: #fff;
+	padding: 5em;
+	text-align: center;
+}
+
+#registry header {
+	margin-bottom: 2em;
+}
+*/
+
+/* RSVP */
+
 
 /* Box */
 .box {
@@ -1001,7 +1051,9 @@ span.img-bg:hover + .story-image > img {
 			top: -4.5em;
 			margin-left: -45px;
 			margin-top: -33px;
+      /*
 			background: url("images/arrow.svg") no-repeat;
+      */
 		}
 
 		.obox :last-child {
@@ -4067,23 +4119,6 @@ span.img-bg:hover + .story-image > img {
 		padding-top: 5em;
 	}
 
-/* Registry */
-
-	#registry {
-		background-attachment: scroll, scroll, scroll, fixed;
-		background-color: #645862;
-		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../../images/banner.jpg");
-		background-position: top left, top right, top left, bottom center;
-		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-		background-size: 25em, 25em, auto, cover;
-		color: #fff;
-		padding: 5em;
-		text-align: center;
-	}
-
-		#registry header {
-			margin-bottom: 2em;
-		}
 
 /* Footer */
 
