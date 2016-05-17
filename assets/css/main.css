@@ -599,7 +599,7 @@ span.img-bg:hover + .story-image > img {
   background-attachment: fixed;
   background-position: right;
   padding-top: 6em;
-  padding-bottom: 9em;
+  padding-bottom: 3em;
 }
 
 #rsvp .features article {
