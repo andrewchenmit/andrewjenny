@@ -20,7 +20,7 @@
 
       var scrollyclass = "scrolly";
 
-      if (href == "#wedding" || href == "#photos") {
+      if (href == "#wedding" || href == "#photos" || href == "#rsvp") {
         scrollyclass = "scrolly weddingscrolly";
       }
 

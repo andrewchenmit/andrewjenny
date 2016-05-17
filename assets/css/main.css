@@ -549,7 +549,7 @@ span.img-bg:hover + .story-image > img {
   background-color: #fff;
   margin: 0;
   padding-top: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 5em;
 }
 
 #registry:before, #registry:after {
@@ -568,8 +568,9 @@ span.img-bg:hover + .story-image > img {
   width: 100%;
 }
 
-#registry a:active, #registry a:hover, #registry a:active, #registry a:visited {
+#registry a:active, #registry a:hover, #registry a:active, #registry a:visited, #registry a:link {
   text-decoration: none;
+  border-bottom: none;
 }
 
 /*
@@ -591,7 +592,20 @@ span.img-bg:hover + .story-image > img {
 */
 
 /* RSVP */
+#rsvp {
+  margin: 0;
+  background-image: url("../../images/wedding_bg_2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right;
+  padding-top: 6em;
+  padding-bottom: 9em;
+}
 
+#rsvp .features article {
+  margin: 0;
+  width: 100%;
+}
 
 /* Box */
 .box {
@@ -3554,7 +3568,14 @@ span.img-bg:hover + .story-image > img {
 				}
 
 			.icon.circle.fa-facebook {
+        /*
 				background: #7490c3;
+        */
+        background: #3b5998;
+				color: #fff;
+			}
+			.icon.circle.fa-linkedin {
+				background: #1b86bc;
 				color: #fff;
 			}
 
@@ -4123,11 +4144,19 @@ span.img-bg:hover + .story-image > img {
 /* Footer */
 
 	#footer {
+    /*
 		background: #E8EEF4;
 		color: #7c8081;
 		padding: 5em 5em 10em 5em;
+    */
+    background: #222;
+    padding: 3em 0em 3em 0em;
 		text-align: center;
 	}
+
+  #footer .glyphicon-heart {
+    color: #F05F75;
+  }
 
 		#footer .copyright {
 			font-size: 0.8em;
