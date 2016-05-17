@@ -23,6 +23,12 @@
       if (href == "#wedding" || href == "#photos") {
         scrollyclass = "scrolly weddingscrolly";
       }
+
+      /*
+      if (href == "#travel" || href == "#registry") {
+        scrollyclass = "scrolly travelscrolly";
+      }
+      */
       
 
 			b.push(

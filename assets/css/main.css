@@ -4223,16 +4223,17 @@ span.img-bg:hover + .story-image > img {
 
 		/* REGISTRY */
 
+      /*
 			#registry {
 				padding: 4em;
 				background-attachment: scroll;
 			}
 
-		/* Footer */
 
 			#footer {
 				padding: 4em;
 			}
+      */
 
 	}
 
@@ -4302,12 +4303,14 @@ span.img-bg:hover + .story-image > img {
 				background-size: 15em;
 			}
 
-		/* CTA */
+		/* REGISTRY */
 
+      /*
 			#registry {
 				background-size: 15em, 15em, auto, cover;
 				padding: 3em;
 			}
+        */
 
 	}
 
@@ -4429,9 +4432,11 @@ span.img-bg:hover + .story-image > img {
 
 		/* CTA */
 
+      /*
 			#registry {
 				margin: 0;
 			}
+        */
 
 		/* Footer */
 
@@ -4777,10 +4782,12 @@ span.img-bg:hover + .story-image > img {
      
 		/* CTA */
 
+      /*
 			#registry {
 				background-size: 10em, 10em, auto, cover;
 				padding: 3em 1.5em;
 			}
+        */
 
 		/* Footer */
 
