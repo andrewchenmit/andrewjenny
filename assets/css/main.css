@@ -552,7 +552,7 @@ span.img-bg:hover + .story-image > img {
   padding-bottom: 4em;
 }
 
-#registry:before, #registry:after {
+#registry:after {
   z-index: 99;
 }
 
@@ -1750,7 +1750,7 @@ span.img-bg:hover + .story-image > img {
 			}
 
 				.wrapper:before, .wrapper:after {
-					height: 2.5em;
+					height: 2.6em;
 				}
 
 				.wrapper:before {
@@ -1872,7 +1872,9 @@ span.img-bg:hover + .story-image > img {
 		border: 0;
 		font-size: 100%;
 		font: inherit;
+    /*
 		vertical-align: baseline;
+    */
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
