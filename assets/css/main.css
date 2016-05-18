@@ -549,7 +549,7 @@ span.img-bg:hover + .story-image > img {
   background-color: #fff;
   margin: 0;
   padding-top: 0px;
-  padding-bottom: 5em;
+  padding-bottom: 4em;
 }
 
 #registry:before, #registry:after {
