@@ -4484,7 +4484,9 @@ span.img-bg:hover + .story-image > img {
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
+        /*
 				padding-bottom: 1px;
+        */
 			}
 
 			#navButton {
