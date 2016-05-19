@@ -481,7 +481,7 @@ span.img-bg:hover + .story-image > img {
 
 /* Our Story */
 #our-story {
-  margin: 0;
+  margin: 0 0 2px 0;
   background-color: #fff;
   color: #7c8081;
 }
@@ -496,12 +496,12 @@ span.img-bg:hover + .story-image > img {
 }
 
 #our-story.wrapper:after {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,100 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 110,105 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
 }
 
 /* Wedding */
 #wedding {
-  margin: 0;
+  margin: 0 0 2px 0;
   padding-top: 6em;
   padding-bottom: 6em;
   background-image: url("../../images/wedding_bg_2.jpg");
@@ -515,7 +515,7 @@ span.img-bg:hover + .story-image > img {
 #travel {
   color: #7c8081;
   background-color: #fff;
-  margin: 0;
+  margin: 0 0 2px 0;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -525,16 +525,16 @@ span.img-bg:hover + .story-image > img {
 }
 
 #travel.wrapper:before {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,100 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 110,105 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
 }
 
 #travel.wrapper:after {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,100 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 110,105 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
 }
 
 /* Photos */
 #photos {
-  margin: 0;
+  margin: 0 0 2px 0;
   background-image: url("../../images/wedding_bg_2.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -547,7 +547,7 @@ span.img-bg:hover + .story-image > img {
 #registry {
   color: #7c8081;
   background-color: #fff;
-  margin: 0;
+  margin: 0 0 2px 0;
   padding-top: 0px;
   padding-bottom: 4em;
 }
@@ -557,11 +557,11 @@ span.img-bg:hover + .story-image > img {
 }
 
 #registry.wrapper:before {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,100 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 110,105 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
 }
 
 #registry.wrapper:after {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,100 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 110,105 0,0' style='fill:%23ffffff;' /%3E%3C/svg%3E");
 }
 
 #registry a img {
@@ -593,7 +593,7 @@ span.img-bg:hover + .story-image > img {
 
 /* RSVP */
 #rsvp {
-  margin: 0;
+  margin: 0 0 -1px 0;
   background-image: url("../../images/wedding_bg_2.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -1750,7 +1750,7 @@ span.img-bg:hover + .story-image > img {
 			}
 
 				.wrapper:before, .wrapper:after {
-					height: 2.6em;
+					height: 2.5em;
 				}
 
 				.wrapper:before {
