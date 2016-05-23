@@ -591,6 +591,13 @@ span.img-bg:hover + .story-image > img {
 }
 */
 
+#amazon {
+  margin: auto;
+  float: none;
+  max-width: 16em;
+}
+
+
 /* RSVP */
 #rsvp {
   margin: 0 0 -1px 0;
