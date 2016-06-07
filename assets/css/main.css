@@ -625,8 +625,12 @@ span.img-bg:hover + .story-image > img {
   padding-bottom: 1em;
 }
 
-#rsvp .button:hover {
+#rsvp .button:hover, #rsvp .button:active, #rsvp .button:focus {
   text-decoration: none;
+}
+
+#rsvp {
+  padding-bottom: 0em;
 }
 
 /* Box */
