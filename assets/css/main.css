@@ -99,6 +99,10 @@ span.img-bg:hover + .story-image > img {
   padding-bottom: 1.5em;
 }
 
+#wedding .mini-container {
+  text-align: center;
+}
+
 /* Top Nav Bar */
 #sidebar a.active {
   font-weight: 600;
@@ -509,6 +513,10 @@ span.img-bg:hover + .story-image > img {
   background-position: right;
 }
 
+#wedding .features article {
+  margin: 0;
+  width: 100%;
+}
 
 /* Travel */
 #travel {
