@@ -1,5 +1,6 @@
 (function($) {
 
+  // Skel
 	skel.breakpoints({
 		wide: '(max-width: 1680px)',
 		normal: '(max-width: 1280px)',
@@ -11,109 +12,96 @@
 	$(function() {
     //var preloader = $('.preloader');
 
-		var	$window = $(window),
-			$body = $('body'),
-			$header = $('#header'),
-			$banner = $('#banner'),
-			$sidebar = $('#sidebar');
+    // Basic Variables
+    var	$window = $(window),
+      $body = $('body'),
+      $header = $('#header'),
+      $banner = $('#banner'),
+      $sidebar = $('#sidebar');
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
-      $('.caption').addClass('invisible');
-      $('#header').addClass('invisible');
+    // Disable animations/transitions until the page has loaded.
+    $body.addClass('is-loading');
+    $('.caption').addClass('invisible');
+    $('#header').addClass('invisible');
 
     // Background placement for mobile.
-      jQuery(window).resize('resizeBackground');
-      function resizeBackground() {
-          var wheight = jQuery(window).height();
-          $banner.height(wheight);
-          $('.caption').css({top: wheight * 0.45});
-          $('.fa-angle-down').css({top: wheight - 50});
-          /*
-          console.log('resized to ' + wheight);
-          console.log('topped to ' + wheight * 0.45);
-          */
+    jQuery(window).resize('resizeBackground');
+    function resizeBackground() {
+      var wheight = jQuery(window).height();
+      $banner.height(wheight);
+      $('.caption').css({top: wheight * 0.45});
+      $('.fa-angle-down').css({top: wheight - 50});
+    }
 
+    // GetMobileOperatingSystem
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+      {
+        return 'iOS';
       }
-
-      function getMobileOperatingSystem() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-        if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
-        {
-          return 'iOS';
-
-        }
-        else if( userAgent.match( /Android/i ) )
-        {
-
-          return 'Android';
-        }
-        else
-        {
-          return 'unknown';
-        }
+      else if( userAgent.match( /Android/i ) )
+      {
+        return 'Android';
       }
+      else
+      {
+        return 'unknown';
+      }
+    }
 
-			$window.on('load', function() {
-				$body.removeClass('is-loading');
-        $('.caption').removeClass('invisible');
-        $('#header').removeClass('invisible');
-// If desktop: background-attachment: fixed.
-// If Android: background-attachment: fixed. (Will auto become scroll).
-// If iOS: background-attachment: scroll.
-        var os = getMobileOperatingSystem();
-        if (os == 'iOS') {
-          $('#banner').css('background-attachment', 'scroll'); 
-          $('#wedding').css('background-attachment', 'scroll'); 
-          resizeBackground();
-        }
-        if (os == 'Android') {
-          resizeBackground();
-        }
-        //preloader.remove();
-			});
+    // On Load Execution
+    $window.on('load', function() {
+      $body.removeClass('is-loading');
+      $('.caption').removeClass('invisible');
+      $('#header').removeClass('invisible');
+      // If desktop: background-attachment: fixed.
+      // If Android: background-attachment: fixed. (Will auto become scroll).
+      // If iOS: background-attachment: scroll.
+      var os = getMobileOperatingSystem();
+      if (os == 'iOS') {
+        $('#banner').css('background-attachment', 'scroll'); 
+        $('#wedding').css('background-attachment', 'scroll'); 
+        resizeBackground();
+      }
+      if (os == 'Android') {
+        resizeBackground();
+      }
+      //preloader.remove();
+    });
 
 		// CSS polyfills (IE<9).
-			if (skel.vars.IEVersion < 9)
-				$(':last-child').addClass('last-child');
+    if (skel.vars.IEVersion < 9)
+      $(':last-child').addClass('last-child');
 
 		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+    $('form').placeholder();
 
 		// Prioritize "important" elements on narrower.
-			skel.on('+narrower -narrower', function() {
-				$.prioritize(
-					'.important\\28 narrower\\29',
-					skel.breakpoint('narrower').active
-				);
-			});
-
+    skel.on('+narrower -narrower', function() {
+      $.prioritize(
+        '.important\\28 narrower\\29',
+        skel.breakpoint('narrower').active
+      );
+    });
 
 		// Sidebar.
-			if ($sidebar.length > 0) {
-
-				var $sidebar_a = $sidebar.find('a');
-
-				$sidebar_a
-					.addClass('scrolly')
-					.on('click', function() {
-
-						var $this = $(this);
-
-						// External link? Bail.
-							if ($this.attr('href').charAt(0) != '#')
-								return;
-
-						// Deactivate all links.
-							$sidebar_a.removeClass('active');
-
-						// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-							$this
-								.addClass('active')
-								.addClass('active-locked');
-
-					})
+    if ($sidebar.length > 0) {
+      var $sidebar_a = $sidebar.find('a');
+      $sidebar_a
+        .addClass('scrolly')
+        .on('click', function() {
+          var $this = $(this);
+          // External link? Bail.
+          if ($this.attr('href').charAt(0) != '#')
+            return;
+				  // Deactivate all links.
+          $sidebar_a.removeClass('active');
+          // Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+          $this
+            .addClass('active')
+            .addClass('active-locked');
+          })
 					.each(function() {
 
 						var	$this = $(this),

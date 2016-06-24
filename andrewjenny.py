@@ -19,10 +19,14 @@ class MainPage(webapp2.RequestHandler):
         template_values = {
             'user': 'ANDREW CHENNNN',
         }
-
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.write(template.render(template_values))
 
+class RSVP(webapp2.RequestHandler):
+  def post(self):
+    self.response.write(self.request)
+
 app = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/rsvphandler', RSVP),
 ], debug=True)
