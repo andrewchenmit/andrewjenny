@@ -12,6 +12,13 @@
 	$(function() {
     //var preloader = $('.preloader');
 
+    $('#rsvp_button').click(function() {
+      console.log("Rsvp click");
+      $.post('/rsvphandler', $('#rsvp_form').serialize(), function(data) {
+        console.log(data);
+      });
+    });
+
     // Basic Variables
     var	$window = $(window),
       $body = $('body'),
