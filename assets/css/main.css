@@ -518,6 +518,19 @@ span.img-bg:hover + .story-image > img {
   width: 100%;
 }
 
+#wedding .attire {
+  font-style: italic;
+  margin-top: 1em;
+  color: #fff;
+  /*
+  font-weight: bolder;
+  */
+}
+
+#wedding:before {
+  top: 0;
+}
+
 /* Travel */
 #travel {
   color: #7c8081;
@@ -548,6 +561,17 @@ span.img-bg:hover + .story-image > img {
   background-position: right;
   padding-top: 6em;
   padding-bottom: 9em;
+}
+
+#photos:before {
+  margin-left: inherit;
+  margin-top: inherit;
+  top: 0;
+}
+
+#photos:after {
+  top: inherit;
+  border-left: inherit;
 }
 
 /* Registry */
