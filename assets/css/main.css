@@ -664,6 +664,10 @@ span.img-bg:hover + .story-image > img {
   padding-bottom: 0em;
 }
 
+#rsvp:before {
+  top: 0;
+}
+
 /* Box */
 .box {
 	background: #ffffff;
