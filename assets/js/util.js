@@ -33,6 +33,7 @@
 
 			b.push(
 				'<a ' +
+          'onClick="ga(\'send\', \'event\', \'sidebar nav ' + href + '\', \'click\', \'Side Navbar ' + href + '\');"' +
 					'class="' + scrollyclass + ' link depth-' + indent + '"' +
 					( (typeof target !== 'undefined' && target != '') ? ' target="' + target + '"' : '') +
 					( (typeof href !== 'undefined' && href != '') ? ' href="' + href + '"' : '') +

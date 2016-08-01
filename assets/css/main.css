@@ -588,6 +588,14 @@ span.img-bg:hover + .story-image > img {
   height: calc(100% - 40px);
   top: 20px;
 }
+@media screen and (max-width: 736px) {
+  #photos .img-bg {
+    width: 100%;
+    right: inherit;
+    height: 100%;
+    top: inherit;
+  }
+}
 
 /* Registry */
 #registry {

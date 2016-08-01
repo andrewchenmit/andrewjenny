@@ -99,6 +99,7 @@
       $sidebar_a
         .addClass('scrolly')
         .on('click', function() {
+
           var $this = $(this);
           // External link? Bail.
           if ($this.attr('href').charAt(0) != '#')
@@ -169,7 +170,7 @@
 			// Navigation Button.
 				$(
 					'<div id="navButton">' +
-						'<a href="#navPanel" class="toggle"></a>' +
+						'<a href="#navPanel" class="toggle" onClick="ga(\'send\', \'event\', \'mobile nav panel\', \'click\', \'Mobile Hamburger Menu\');" ></a>' +
 					'</div>'
 				)
 					.appendTo($body);
