@@ -531,6 +531,14 @@ span.img-bg:hover + .story-image > img {
   top: 0;
 }
 
+#wedding a:hover, #wedding a:visited, #wedding a:active, #wedding a:focus {
+  text-decoration: none;
+  color: #fff;
+/*
+  color: #F05F75;
+*/
+}
+
 /* Travel */
 #travel {
   color: #7c8081;
