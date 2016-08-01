@@ -574,6 +574,13 @@ span.img-bg:hover + .story-image > img {
   border-left: inherit;
 }
 
+#photos .img-bg {
+  width: calc(100% - 40px);
+  right: 20px;
+  height: calc(100% - 40px);
+  top: 20px;
+}
+
 /* Registry */
 #registry {
   color: #7c8081;
