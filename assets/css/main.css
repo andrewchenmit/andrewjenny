@@ -276,6 +276,11 @@ span.img-bg:hover + .story-image > img {
   text-align: inherit;
 }
 
+#pretitle {
+  margin-bottom: 0;
+  text-align: inherit;
+}
+
 #start-btn {
   min-width: 21em;
 	-moz-animation-delay: 1.5s;
