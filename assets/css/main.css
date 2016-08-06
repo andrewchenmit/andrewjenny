@@ -539,6 +539,10 @@ span.img-bg:hover + .story-image > img {
   */
 }
 
+#wedding .datetop {
+  margin-bottom: 0;
+}
+
 #wedding:before {
   top: 0;
 }
