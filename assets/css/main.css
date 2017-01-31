@@ -569,6 +569,10 @@ span.img-bg:hover + .story-image > img {
   padding-bottom: 0px;
 }
 
+#travel .emphasis {
+  font-weight: bold;
+}
+
 #travel:before, #travel:after {
   z-index: 99;
 }
