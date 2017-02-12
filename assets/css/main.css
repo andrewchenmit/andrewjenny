@@ -690,9 +690,13 @@ span.img-bg:hover + .story-image > img {
 }
 */
 
-#amazon {
+.registry-item {
   margin: auto;
-  float: none;
+  text-align: center;
+  min-height: 7em;
+}
+
+.registry-item img {
   max-width: 16em;
 }
 
