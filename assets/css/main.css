@@ -693,7 +693,7 @@ span.img-bg:hover + .story-image > img {
 .registry-item {
   margin: auto;
   text-align: center;
-  min-height: 7em;
+  margin-bottom: 2em;
 }
 
 .registry-item img {
