@@ -17,7 +17,7 @@ Oxygen Blue:
 .mini-container iframe {
   min-width: 100%;
   width: auto;
-  height: calc(100vh - 7em - 60px);
+  height: calc(100vh - 7em - 140px);
 }
 
 a[href^=tel] {
