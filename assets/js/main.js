@@ -37,7 +37,7 @@
     jQuery(window).resize('resizeBackground');
     function resizeBackground() {
       var wheight = jQuery(window).height();
-      $rsvp.height(wheight - 252);
+      $rsvp.height(wheight - 232);
       $banner.height(wheight);
       $('.caption').css({top: wheight * 0.45});
       $('.fa-angle-down').css({top: wheight - 50});
