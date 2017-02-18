@@ -26,6 +26,7 @@
       $header = $('#header'),
       $banner = $('#banner'),
       $sidebar = $('#sidebar');
+      $rsvp = $('.mini-container iframe');
 
     // Disable animations/transitions until the page has loaded.
     $body.addClass('is-loading');
@@ -36,6 +37,7 @@
     jQuery(window).resize('resizeBackground');
     function resizeBackground() {
       var wheight = jQuery(window).height();
+      $rsvp.height(wheight - 252);
       $banner.height(wheight);
       $('.caption').css({top: wheight * 0.45});
       $('.fa-angle-down').css({top: wheight - 50});
