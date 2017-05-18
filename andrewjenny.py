@@ -23,11 +23,15 @@ class MainPage(webapp2.RequestHandler):
 
 class Photobooth(webapp2.RequestHandler):
   def get(self):
-    self.redirect('https://goo.gl/photos/x7AEwUApJwzZDVQD6')
+    template_values = {}
+    template = JINJA_ENVIRONMENT.get_template('photobooth.html')
+    self.response.write(template.render(template_values))
 
 class Share(webapp2.RequestHandler):
   def get(self):
-    self.redirect('https://goo.gl/photos/TZsPMiXo2vuWvRKk6')
+    template_values = {}
+    template = JINJA_ENVIRONMENT.get_template('share.html')
+    self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
