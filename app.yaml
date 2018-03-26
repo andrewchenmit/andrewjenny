@@ -17,6 +17,19 @@ handlers:
   static_files: static/favicon.ico
   upload: static/favicon.ico
 
+- url: /life/assets
+  static_dir: life/assets
+
+- url: /life/images
+  static_dir: life/images
+
+- url: /life/fonts
+  static_dir: life/fonts 
+
+- url: /life/favicon.ico
+  static_files: life/static/favicon.ico
+  upload: life/static/favicon.ico
+
 - url: /.*
   script: andrewjenny.app
 

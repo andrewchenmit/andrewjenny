@@ -33,8 +33,15 @@ class Share(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('share.html')
     self.response.write(template.render(template_values))
 
+class Life(webapp2.RequestHandler):
+  def get(self):
+    template_values = {}
+    template = JINJA_ENVIRONMENT.get_template('life/life.html')
+    self.response.write(template.render(template_values))
+
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/photobooth', Photobooth),
-    ('/share', Share)
+    ('/share', Share),
+    ('/life', Life)
 ], debug=True)
