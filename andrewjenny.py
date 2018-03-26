@@ -35,7 +35,34 @@ class Share(webapp2.RequestHandler):
 
 class Life(webapp2.RequestHandler):
   def get(self):
-    template_values = {}
+    template_values = {
+      'events': [
+        {
+          'year': 2018,
+          'events': [
+            'hi',
+            'bye',
+            'three'
+          ]
+        },
+        {
+          'year': 2017,
+          'events': [
+            '1',
+            '2',
+            '3'
+          ]
+        },
+        {
+          'year': 2016,
+          'events': [
+            'Woos got engaged!',
+            'Woos went to South Africa!',
+            'Turkey!'
+          ]
+        }
+      ]
+    }
     template = JINJA_ENVIRONMENT.get_template('life/life.html')
     self.response.write(template.render(template_values))
 
