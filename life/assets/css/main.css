@@ -2059,11 +2059,12 @@
 
 		.features section {
 			padding: 3.5em 3em 1em 7em ;
-			width: 50%;
+			/* width: 50%; */
+			width: 100%;
 			border-top: solid 1px rgba(255, 255, 255, 0.15);
 			position: relative;
 		}
-
+      /*
 			.features section:nth-child(-n + 2) {
 				border-top-width: 0;
 			}
@@ -2071,6 +2072,7 @@
 			.features section:nth-child(2n) {
 				border-left: solid 1px rgba(255, 255, 255, 0.15);
 			}
+      */
 
 			.features section .icon {
 				-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease;
@@ -3063,7 +3065,7 @@
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			width: 50em;
+			/* width: 50em; */
 			-ms-flex: 1;
 		}
 

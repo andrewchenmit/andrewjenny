@@ -42,72 +42,36 @@
 						</div>
 					</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-            {% for events_by_year in events %}
-						<section>
-							<a href="#" class="image"><img src="life/images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-                  <h2>{{ events_by_year.year }}</h2>
-                  {% for event in events_by_year.events %}
-                  <p>{{ event }}</p>
-                  {% endfor %}
-								</div>
-							</div>
-						</section>
-            {% endfor %}
-				</section>
-
-				<!-- Two 
-					<section id="two" class="wrapper style3 fade-up">
+        <!-- Two -->
+        <section id="one" class="wrapper style2 spotlights">
+          {% for events_by_year in events %}
+					<section class="wrapper fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+              <h2>{{ events_by_year.year }}</h2>
+							<p></p>
 							<div class="features">
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                {% for event in events_by_year.events %}
+                <section class="{{ event.category }}">
+                  <span class="icon major 
+                    {% if event.category == 'relationship' %}fa-heart{% endif %}
+                    {% if event.category == 'travel' %}fa-globe{% endif %}
+                  "></span>
+									<h3>{{ event.title }}</h3>
+							    <p></p>
 								</section>
-								<section>
-									<span class="icon major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-chain"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-diamond"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
+                {% endfor %}
 							</div>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn more</a></li>
-							</ul>
 						</div>
-          </section> -->
+          </section>
+          {% endfor %}
+        </section>
 			</div>
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>Made with woo love</li>
+            <li>Made with woo <span class="icon fa-heart"></span> by Andywoo</li>
 					</ul>
 				</div>
 			</footer>

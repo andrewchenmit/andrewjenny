@@ -38,27 +38,48 @@ class Life(webapp2.RequestHandler):
     template_values = {
       'events': [
         {
-          'year': 2018,
-          'events': [
-            'hi',
-            'bye',
-            'three'
-          ]
-        },
-        {
           'year': 2017,
           'events': [
-            '1',
-            '2',
-            '3'
+            {
+              'title': 'Vacation to Mexico & Aruba',
+              'date': '2017/12/26',
+              'score': 5,
+              'category': 'travel'
+            },
           ]
         },
         {
           'year': 2016,
           'events': [
-            'Woos got engaged!',
-            'Woos went to South Africa!',
-            'Turkey!'
+            {
+              'title': 'Engagement at Table Mountain',
+              'date': '2016/04/15',
+              'score': 9,
+              'category': 'relationship'
+            },
+          ]
+        },
+        {
+          'year': 2015,
+          'events': [
+            {
+              'title': 'Vacation to Turkey',
+              'date': '2015/12/28',
+              'score': 7,
+              'category': 'travel'
+            },
+            {
+              'title': 'Vacation to Victoria & Vancouver',
+              'date': '2015/05/09',
+              'score': 5,
+              'category': 'travel'
+            },
+            {
+              'title': 'test',
+              'date': '2015/99/99',
+              'score': 1,
+              'category': 'test'
+            },
           ]
         }
       ]
