@@ -1,3 +1,4 @@
+import json
 import os
 import urllib
 
@@ -35,55 +36,9 @@ class Share(webapp2.RequestHandler):
 
 class Life(webapp2.RequestHandler):
   def get(self):
-    template_values = {
-      'events': [
-        {
-          'year': 2017,
-          'events': [
-            {
-              'title': 'Vacation to Mexico & Aruba',
-              'date': '2017/12/26',
-              'score': 5,
-              'category': 'travel'
-            },
-          ]
-        },
-        {
-          'year': 2016,
-          'events': [
-            {
-              'title': 'Engagement at Table Mountain',
-              'date': '2016/04/15',
-              'score': 9,
-              'category': 'relationship'
-            },
-          ]
-        },
-        {
-          'year': 2015,
-          'events': [
-            {
-              'title': 'Vacation to Turkey',
-              'date': '2015/12/28',
-              'score': 7,
-              'category': 'travel'
-            },
-            {
-              'title': 'Vacation to Victoria & Vancouver',
-              'date': '2015/05/09',
-              'score': 5,
-              'category': 'travel'
-            },
-            {
-              'title': 'test',
-              'date': '2015/99/99',
-              'score': 1,
-              'category': 'test'
-            },
-          ]
-        }
-      ]
-    }
+    with open('life/events.json') as json_data:
+      events = json.load(json_data)
+    template_values = events
     template = JINJA_ENVIRONMENT.get_template('life/life.html')
     self.response.write(template.render(template_values))
 
