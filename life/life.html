@@ -22,7 +22,9 @@
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Highlights</a></li>
+              {% for year in years %}
+              <li><a href="#{{ year.year }}">{{ year.year }}</a></li>
+              {% endfor %}
 						</ul>
 					</nav>
 				</div>
@@ -45,7 +47,7 @@
         <!-- Two -->
         <section id="one" class="wrapper style2 spotlights">
           {% for year in years %}
-					<section class="wrapper fade-up">
+          <section id="{{ year.year }}" class="wrapper fade-up">
 						<div class="inner">
               <h2>{{ year.year }}</h2>
 							<p></p>
@@ -55,6 +57,8 @@
                   <span class="icon major 
                     {% if event.category == 'relationship' %}fa-heart{% endif %}
                     {% if event.category == 'travel' %}fa-globe{% endif %}
+                    {% if event.category == 'career' %}fa-suitcase{% endif %}
+                    {% if event.category == 'personal' %}fa-user{% endif %}
                   "></span>
 									<h3>{{ event.title }}</h3>
 							    <p></p>
