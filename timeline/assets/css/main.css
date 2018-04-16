@@ -770,6 +770,8 @@ a:hover {
 
 		ul li {
 			padding-left: 0.5em;
+      line-height: 1.2em;
+      margin-bottom: 0.6em;
 		}
 
 		ul.alt {
