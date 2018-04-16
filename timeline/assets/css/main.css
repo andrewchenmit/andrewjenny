@@ -1,11 +1,23 @@
 @import url(font-awesome.min.css);
 /* Andrew */
 .year {
+  /*
   background-color: #17a2b8;
+  */
 }
 
 .highlight {
+  /*
   background-color: #493382;
+  */
+}
+
+.years > div:nth-child(2) {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.years > div:nth-child(3) {
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .highlight .content {
@@ -68,7 +80,9 @@
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
+    /*
     background-color: #5e42a6;
+    */
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -283,6 +297,7 @@
 
 	.wrapper {
 		position: relative;
+    background-color: rgba(255,255,255,0.1);
 	}
 
 		.wrapper > .inner {
