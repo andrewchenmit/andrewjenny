@@ -1,8 +1,8 @@
 {
   "years": [
     {
-      "year": 2017,
-      "highlight": "Married in San Jose",
+      "year": 2018,
+      "highlight": "Vacation to Mexico / Aruba",
       "categories": [
         {
           "category": "Travel",
@@ -15,6 +15,24 @@
           "elements": [
             "Andrew exceeded expectations and receives a 10% raise"
           ]
+        },
+        {
+          "category": "Other"
+        }
+      ]
+    },
+    {
+      "year": 2017,
+      "highlight": "Married in San Jose",
+      "categories": [
+        {
+          "category": "Travel",
+          "elements": [
+            "Zurich / Lucerne / Venice / Florence / Rome / Amalfi Coast / Milan"
+          ]
+        },
+        {
+          "category": "Work"
         },
         {
           "category": "Other",
@@ -41,7 +59,10 @@
           ]
         },
         {
-          "category": "Work"
+          "category": "Work",
+          "elements": [
+            "Andrew started new job at Airbnb"
+          ]
         },
         {
           "category": "Other",
@@ -53,15 +74,27 @@
     },
     {
       "year": 2015,
+      "highlight": "Vacation to Turkey",
       "categories": [
         {
           "category": "Travel",
           "elements": [
-            "Crater Lake / Portland"
+            "Ephesus / Cappadocia / Istanbul",
+            "Crater Lake / Portland",
+            "Austin",
+            "Vancouver / Victoria",
+            "Pittsburgh"
           ]
         },
         {
-          "category": "Work"
+          "category": "Work",
+          "elements": [
+            "Andrew received peer bonus for leading the Google brand refresh for all Google Travel products",
+            "Andrew reduced time to bid on new hotels from 4w to 1w.",
+            "Andrew removed ~6.8M monthly impressions worth of high-profile non-hotels.",
+            "Andrew scaled price accuracy checkers for 20 top partners to be maintainable by operators.",
+            "Andrew launched new partner optimization tools like new bid multipliers and coverage opportunities reports."
+          ]
         },
         {
           "category": "Other",
@@ -87,7 +120,10 @@
           ]
         },
         {
-          "category": "Work"
+          "category": "Work",
+          "elements": [
+            "Andrew started new job at Google"
+          ]
         },
         {
           "category": "Other",
@@ -95,7 +131,7 @@
             "First date in San Francisco",
             "First \"I love you\" in Monterey",
             "First monthaversary in Los Gatos",
-            "Andrew's ran the Big Sur Half Marathon in Monterey"
+            "Andrew ran the Big Sur Half Marathon in Monterey"
           ]
         }
       ]
