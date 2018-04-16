@@ -1,0 +1,204 @@
+{
+  "years": [
+    {
+      "year": 2017,
+      "events": [
+        {
+          "title": "Vacation to Mexico City, Playa del Carmen, & Aruba",
+          "date": "12/26/2017",
+          "score": 8,
+          "category": "travel"
+        },
+        {
+          "title": "Move in together in San Francisco",
+          "date": "12/17/2016",
+          "score": 5,
+          "category": "relationship"
+        }
+      ]
+    },
+    {
+      "year": 2016,
+      "events": [
+        {
+          "title": "Engagement in Cape Town",
+          "date": "04/15/2016",
+          "score": 10,
+          "category": "relationship"
+        },
+        {
+          "title": "Vacation to Kruger Park & Cape Town",
+          "date": "03/31/2016",
+          "score": 9,
+          "category": "travel"
+        },
+        {
+          "title": "Vacation to Hong Kong, Chiang Mai, Bangkok, & Siem Reap",
+          "date": "12/27/2016",
+          "score": 8,
+          "category": "travel"
+        },
+        {
+          "title": "Andrew starts work at Airbnb",
+          "date": "02/22/2016",
+          "score": 7,
+          "category": "career"
+        },
+        {
+          "title": "Vacation to Fergus Falls & Moorhead",
+          "date": "06/25/2016",
+          "score": 6,
+          "category": "travel"
+        },
+        {
+          "title": "Jenny's Disney 10k & half marathon in Anaheim",
+          "date": "09/02/2016",
+          "score": 5,
+          "category": "personal"
+        },
+        {
+          "title": "Vacation to San Diego",
+          "date": "07/02/2016",
+          "score": 4,
+          "category": "travel"
+        },
+        {
+          "title": "Vacation to Universal City, Burbank, & Glendale",
+          "date": "02/20/2016",
+          "score": 3,
+          "category": "travel"
+        },
+        {
+          "title": "Vacation to Leesburg & Washington, D.C.",
+          "date": "08/13/2016",
+          "score": 2,
+          "category": "travel"
+        },
+        {
+          "title": "Vacation to Seattle",
+          "date": "10/01/2016",
+          "score": 1,
+          "category": "travel"
+        }
+      ]
+    },
+    {
+      "year": 2015,
+      "events": [
+        {
+          "title": "Vacation to Ephesus, Cappadocia, & Istanbul",
+          "date": "12/28/2015",
+          "score": 11,
+          "category": "travel"
+        },
+        {
+          "title": "Wedding ring chosen in Cupertino",
+          "date": "05/26/2015",
+          "score": 10,
+          "category": "relationship"
+        },
+        {
+          "title": "Vacation to Austin",
+          "date": "11/27/2015",
+          "score": 9,
+          "category": "travel"
+        },
+        {
+          "title": "Vacation to Vancouver & Victoria",
+          "date": "05/09/2015",
+          "score": 8,
+          "category": "travel"
+        },
+        {
+          "title": "Vacation to Pittsburgh",
+          "date": "02/01/2015",
+          "score": 7,
+          "category": "travel"
+        },
+        {
+          "title": "Vacation to Crater Lake & Portland",
+          "date": "07/02/2015",
+          "score": 6,
+          "category": "travel"
+        },
+        {
+          "title": "Purchased Mustang convertible",
+          "date": "07/25/2015",
+          "score": 5,
+          "category": "personal"
+        },
+        {
+          "title": "First dating anniversary in Paso Robles",
+          "date": "08/15/2015",
+          "score": 4,
+          "category": "relationship"
+        },
+        {
+          "title": "Andrew won Spiders jersey in Los Altos Hills",
+          "date": "04/18/2015",
+          "score": 3,
+          "category": "personal"
+        },
+        {
+          "title": "Parents meet for first time",
+          "date": "06/07/2015",
+          "score": 2,
+          "category": "relationship"
+        },
+        {
+          "title": "First ring shopping in San Francisco",
+          "date": "03/08/2015",
+          "score": 1,
+          "category": "relationship"
+        }
+      ]
+    },
+    {
+      "year": 2014,
+      "events": [
+        {
+          "title": "First meeting in Las Vegas",
+          "date": "07/18/2014",
+          "score": 7,
+          "category": "relationship"
+        },
+        {
+          "title": "Vacation to Budapest, Austria, Bratislava, & Prague",
+          "date": "12/27/2014",
+          "score": 6,
+          "category": "travel"
+        },
+        {
+          "title": "First date in San Francisco",
+          "date": "08/15/2014",
+          "score": 5,
+          "category": "relationship"
+        },
+        {
+          "title": "First \"I love you\" in Monterey",
+          "date": "09/01/2014",
+          "score": 4,
+          "category": "relationship"
+        },
+        {
+          "title": "First monthaversary in Los Gatos",
+          "date": "09/15/2014",
+          "score": 3,
+          "category": "relationship"
+        },
+        {
+          "title": "Andrew's first half marathon in Monterey",
+          "date": "11/16/2014",
+          "score": 2,
+          "category": "personal"
+        },
+        {
+          "title": "First visit to Highlands Ranch",
+          "date": "11/28/2014",
+          "score": 1,
+          "category": "relationship"
+        }
+      ]
+    }
+  ]
+}

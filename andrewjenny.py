@@ -42,9 +42,18 @@ class Life(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('life/life.html')
     self.response.write(template.render(template_values))
 
+class Timeline(webapp2.RequestHandler):
+  def get(self):
+    with open('timeline/events.json') as json_data:
+      events = json.load(json_data)
+    template_values = events
+    template = JINJA_ENVIRONMENT.get_template('timeline/timeline.html')
+    self.response.write(template.render(template_values))
+
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/photobooth', Photobooth),
     ('/share', Share),
-    ('/life', Life)
+    ('/life', Life),
+    ('/timeline', Timeline)
 ], debug=True)

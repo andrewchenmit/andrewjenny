@@ -30,6 +30,19 @@ handlers:
   static_files: life/static/favicon.ico
   upload: life/static/favicon.ico
 
+- url: /timeline/assets
+  static_dir: timeline/assets
+
+- url: /timeline/images
+  static_dir: timeline/images
+
+- url: /timeline/fonts
+  static_dir: timeline/fonts 
+
+- url: /timeline/favicon.ico
+  static_files: timeline/static/favicon.ico
+  upload: timeline/static/favicon.ico
+
 - url: /.*
   script: andrewjenny.app
 
