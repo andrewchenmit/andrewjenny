@@ -1,0 +1,38 @@
+{
+  "years": [
+    {
+      "year": 2017,
+      "highlight": "Married in San Jose",
+      "travel": [
+        {
+          "title": "Vacation to Mexico City, Playa del Carmen, & Aruba",
+          "date": "12/26/2017"
+        },
+        {
+          "title": "Move in together in San Francisco",
+          "date": "12/17/2016"
+        }
+      ],
+      "work": [
+        {
+          "title": "Work",
+          "date": "12/26/2017"
+        },
+        {
+          "title": "Move in together in San Francisco",
+          "date": "12/17/2016"
+        }
+      ],
+      "personal": [
+        {
+          "title": "personal , Playa del Carmen, & Aruba",
+          "date": "12/26/2017"
+        },
+        {
+          "title": "Move in together in San Francisco",
+          "date": "12/17/2016"
+        }
+      ]
+    }
+  ]
+}

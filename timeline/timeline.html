@@ -17,52 +17,47 @@
         <h1>Woo Love Way of Life</h1>
         <p>The highlights of woo life in an easy-to-browse web interface.</p>
         <ul class="actions">
-          <li><a href="#one" class="button scrolly">Let's Go</a></li>
+          <li><a href="#years" class="button scrolly">Let's Go</a></li>
         </ul>
       </div>
     </section>
 
-    <div class="wrapper style-dark years">
+    <div id="years" class="wrapper style-dark years">
+{% for year in years %}
       <div class="py-5">
-        <div class="container year-card">
+        <div class="container year-card rounded">
           <div class="row title">
             <div class="year col-md-auto ">
-              <h1 class="my-0 py-0">2017</h1>
+              <h1 class="my-0 py-0">{{ year.year }}</h1>
             </div>
-            <div class="highlight col ">
-              <h2 class="content my-0 py-0">Married in San Jose</h2>
+            <div class="highlight col">
+              <h2 class="content my-0 py-0">{{ year.highlight }}</h2>
             </div>
           </div>
           <div class="row">
+            {% for category in year.categories %}
             <div class="col p-4">
-              <span class="icon major fa-plane"></span>
-              <h3 class="category-header">Travel</h3>
+              <span class="icon major 
+                {% if category.category == 'Travel' %}fa-plane{% endif %}
+                {% if category.category == 'Work' %}fa-suitcase{% endif %}
+                {% if category.category == 'Other' %}fa-star{% endif %}
+              "></span>
+              <h3 class="category-header">{{ category.category }}</h3>
               <ul>
-                <li>Mexico City</li>
-                <li>Playa del Carmen</li>
-                <li>Aruba</li>
+                {% for element in category.elements %}
+                <li>{{ element }}</li>
+                {% endfor %}
               </ul>
             </div>
-            <div class="col p-4">
-              <span class="icon major fa-suitcase"></span>
-              <h3 class="category-header">Work</h3>
-              <ul>
-                <li>Andrew gets a raise</li>
-              </ul>
-            </div>
-            <div class="col p-4">
-              <span class="icon major fa-star"></span>
-              <h3 class="category-header">Other</h3>
-              <ul>
-                <li>Moved in together in Bernal Heights</li>
-              </ul>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
+{% endfor %}
+    </div>
 
 		<!-- Footer -->
-    <footer id="footer" class="wrapper bg-dark">
+    <footer id="footer" class="wrapper style2-alt">
       <div class="inner">
 		    <ul class="menu">
           <li>Made with woo <span class="icon fa-heart"></span> by Andywoo</li>
