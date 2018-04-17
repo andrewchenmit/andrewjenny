@@ -2,18 +2,20 @@
   "years": [
     {
       "year": 2018,
-      "highlight": "Vacation to Mexico / Aruba",
+      "highlight": "Traveled to Hawaii",
       "categories": [
         {
           "category": "Travel",
           "elements": [
-            "Mexico City / Playa del Carmen / Aruba"
+            "Garfield / New York City",
+            "Kauai / Maui"
           ]
         },
         {
           "category": "Work",
           "elements": [
-            "Andrew exceeded expectations and receives a 10% raise"
+            "Andrew helped drive +1.78% in FTBLs",
+            "Andrew launched ML-based Auto-IB Filter, Unbooked Listing Ranking Promotion"
           ]
         },
         {
@@ -28,11 +30,18 @@
         {
           "category": "Travel",
           "elements": [
-            "Zurich / Lucerne / Venice / Florence / Rome / Amalfi Coast / Milan"
+            "Zurich / Lucerne / Venice / Florence / Rome / Amalfi Coast / Milan",
+            "Chicago",
+            "Nashville",
+            "Mexico City / Playa del Carmen / Aruba"
           ]
         },
         {
-          "category": "Work"
+          "category": "Work",
+          "elements": [
+            "Andrew helped drive IB % from 55% to 75%",
+            "Andrew launched Year Calendar, Contextual Calendar Reminders, Persistent Block, Nested Listings, Edit Prices for Unavailable Dates, Guest Trip Information, Min Nights / No Check-In Recurring Rules, Salmon Lite, IB Max Nights 14 -> 30"
+          ]
         },
         {
           "category": "Other",
@@ -44,24 +53,27 @@
     },
     {
       "year": 2016,
-      "highlight": "Engagement in Cape Town",
+      "highlight": "Engaged in Cape Town",
       "categories": [
         {
           "category": "Travel",
           "elements": [
+            "Universal City / Burbank / Glendale",
             "Kruger Park / Cape Town",
-            "Hong Kong / Chiang Mai / Bangkok / Siem Reap",
             "Fergus Falls / Moorhead",
             "San Diego",
-            "Universal City / Burbank / Glendale",
             "Leesburg / Washington, D.C.",
-            "Seattle"
+            "Anaheim",
+            "Seattle",
+            "Hong Kong / Chiang Mai / Bangkok / Siem Reap"
           ]
         },
         {
           "category": "Work",
           "elements": [
-            "Andrew started new job at Airbnb"
+            "Andrew started new job at Airbnb",
+            "Andrew helped drive IB % from 35% to 55%, reduced IB cxn rate by 4%, and IB deactivation rate by 14%",
+            "Andrew launched LYS Packages, IB Deactivation Flow, Redirect IB Toggle to ML, LYS Availability Settings Clarifications, Rejection Flow."
           ]
         },
         {
@@ -74,26 +86,27 @@
     },
     {
       "year": 2015,
-      "highlight": "Vacation to Turkey",
+      "highlight": "Traveled to Turkey",
       "categories": [
         {
           "category": "Travel",
           "elements": [
-            "Ephesus / Cappadocia / Istanbul",
-            "Crater Lake / Portland",
-            "Austin",
+            "Pittsburgh",
             "Vancouver / Victoria",
-            "Pittsburgh"
+            "Crater Lake / Portland",
+            "Paso Robles",
+            "Austin",
+            "Ephesus / Cappadocia / Istanbul"
           ]
         },
         {
           "category": "Work",
           "elements": [
-            "Andrew received peer bonus for leading the Google brand refresh for all Google Travel products",
-            "Andrew reduced time to bid on new hotels from 4w to 1w.",
-            "Andrew removed ~6.8M monthly impressions worth of high-profile non-hotels.",
-            "Andrew scaled price accuracy checkers for 20 top partners to be maintainable by operators.",
-            "Andrew launched new partner optimization tools like new bid multipliers and coverage opportunities reports."
+            "Jenny promoted to Senior Software Engineer",
+            "Andrew received peer bonus for leading the Google Travel brand refresh",
+            "Andrew reduced time to bid on new hotels from 4w to 1w",
+            "Andrew removed ~6.8M monthly impressions worth of non-hotels",
+            "Andrew launched new bid multipliers and coverage opportunities reports for hotel partners"
           ]
         },
         {
@@ -115,21 +128,22 @@
         {
           "category": "Travel",
           "elements": [
-            "Budapest / Vienna / Bratislava / Prague",
-            "Highlands Ranch"
+            "Monterey",
+            "Highlands Ranch",
+            "Budapest / Vienna / Bratislava / Prague"
           ]
         },
         {
           "category": "Work",
           "elements": [
-            "Andrew started new job at Google"
+            "Andrew started new job at Google",
+            "Andrew added 10k new hotels for advertisers to bid on"
           ]
         },
         {
           "category": "Other",
           "elements": [
             "First date in San Francisco",
-            "First \"I love you\" in Monterey",
             "First monthaversary in Los Gatos",
             "Andrew ran the Big Sur Half Marathon in Monterey"
           ]
