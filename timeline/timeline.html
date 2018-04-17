@@ -14,8 +14,8 @@
     <!-- Intro -->
     <section id="intro" class="wrapper style1 fullscreen fade-up">
       <div class="inner">
-        <h1>Woo Love Way of Life</h1>
-        <p>The highlights of woo life in an easy-to-browse web interface.</p>
+        <h1>Andrew & Jenny</h1>
+        <p>Yearly highlights in an easy-to-browse web interface.</p>
         <ul class="actions">
           <li><a href="#years" class="button scrolly">Let's Go</a></li>
         </ul>
@@ -43,9 +43,9 @@
                 {% if category.category == 'Other' %}fa-star{% endif %}
               "></span>
               <h3 class="category-header">{{ category.category }}</h3>
-              <ul>
+              <ul class="list-group list-group-flush">
                 {% for element in category.elements %}
-                <li>{{ element }}</li>
+                <li class="list-group-item pl-2">{{ element }}</li>
                 {% endfor %}
               </ul>
             </div>
