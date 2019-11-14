@@ -25,29 +25,29 @@ class MainPage(webapp2.RequestHandler):
 class Photobooth(webapp2.RequestHandler):
   def get(self):
     template_values = {}
-    template = JINJA_ENVIRONMENT.get_template('photobooth/photobooth.html')
+    template = JINJA_ENVIRONMENT.get_template('pages/photobooth/photobooth.html')
     self.response.write(template.render(template_values))
 
 class Share(webapp2.RequestHandler):
   def get(self):
     template_values = {}
-    template = JINJA_ENVIRONMENT.get_template('share/share.html')
+    template = JINJA_ENVIRONMENT.get_template('pages/share/share.html')
     self.response.write(template.render(template_values))
 
 class Life(webapp2.RequestHandler):
   def get(self):
-    with open('life/events.json') as json_data:
+    with open('pages/life/events.json') as json_data:
       events = json.load(json_data)
     template_values = events
-    template = JINJA_ENVIRONMENT.get_template('life/life.html')
+    template = JINJA_ENVIRONMENT.get_template('pages/life/life.html')
     self.response.write(template.render(template_values))
 
 class Timeline(webapp2.RequestHandler):
   def get(self):
-    with open('timeline/events.json') as json_data:
+    with open('pages/timeline/events.json') as json_data:
       events = json.load(json_data)
     template_values = events
-    template = JINJA_ENVIRONMENT.get_template('timeline/timeline.html')
+    template = JINJA_ENVIRONMENT.get_template('pages/timeline/timeline.html')
     self.response.write(template.render(template_values))
 
 class MerryChristmas(webapp2.RequestHandler):

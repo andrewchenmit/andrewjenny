@@ -4,6 +4,7 @@ api_version: 1
 threadsafe: true
 
 handlers:
+#AndrewJenny Resources
 - url: /assets
   static_dir: assets
 
@@ -17,32 +18,49 @@ handlers:
   static_files: static/favicon.ico
   upload: static/favicon.ico
 
-- url: /life/assets
-  static_dir: life/assets
+#Life Resources
+- url: /pages/life/assets
+  static_dir: pages/life/assets
 
-- url: /life/images
-  static_dir: life/images
+- url: /pages/life/images
+  static_dir: pages/life/images
 
-- url: /life/fonts
-  static_dir: life/fonts 
+- url: /pages/life/fonts
+  static_dir: pages/life/fonts 
 
-- url: /life/favicon.ico
-  static_files: life/static/favicon.ico
-  upload: life/static/favicon.ico
+- url: /pages/life/favicon.ico
+  static_files: pages/life/static/favicon.ico
+  upload: pages/life/static/favicon.ico
 
-- url: /timeline/assets
-  static_dir: timeline/assets
+#Timeline Resources
+- url: /pages/timeline/assets
+  static_dir: pages/timeline/assets
 
-- url: /timeline/images
-  static_dir: timeline/images
+- url: /pages/timeline/images
+  static_dir: pages/timeline/images
 
-- url: /timeline/fonts
-  static_dir: timeline/fonts 
+- url: /pages/timeline/fonts
+  static_dir: pages/timeline/fonts 
 
-- url: /timeline/favicon.ico
-  static_files: timeline/static/favicon.ico
-  upload: timeline/static/favicon.ico
+- url: /pages/timeline/favicon.ico
+  static_files: pages/timeline/static/favicon.ico
+  upload: pages/timeline/static/favicon.ico
 
+#Xmas2019 Resources
+- url: /pages/xmas2019/assets
+  static_dir: pages/xmas2019/assets
+
+- url: /pages/xmas2019/images
+  static_dir: pages/xmas2019/images
+
+- url: /pages/xmas2019/fonts
+  static_dir: pages/xmas2019/fonts 
+
+- url: /pages/xmas2019/favicon.ico
+  static_files: pages/xmas2019/static/favicon.ico
+  upload: pages/xmas2019/static/favicon.ico
+
+#Everything else
 - url: /.*
   script: andrewjenny.app
 
