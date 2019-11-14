@@ -25,13 +25,13 @@ class MainPage(webapp2.RequestHandler):
 class Photobooth(webapp2.RequestHandler):
   def get(self):
     template_values = {}
-    template = JINJA_ENVIRONMENT.get_template('photobooth.html')
+    template = JINJA_ENVIRONMENT.get_template('photobooth/photobooth.html')
     self.response.write(template.render(template_values))
 
 class Share(webapp2.RequestHandler):
   def get(self):
     template_values = {}
-    template = JINJA_ENVIRONMENT.get_template('share.html')
+    template = JINJA_ENVIRONMENT.get_template('share/share.html')
     self.response.write(template.render(template_values))
 
 class Life(webapp2.RequestHandler):
@@ -50,10 +50,17 @@ class Timeline(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('timeline/timeline.html')
     self.response.write(template.render(template_values))
 
+class MerryChristmas(webapp2.RequestHandler):
+  def get(self):
+    template_values = {}
+    template = JINJA_ENVIRONMENT.get_template('xmas2019/index.html')
+    self.response.write(template.render(template_values))
+
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/photobooth', Photobooth),
     ('/share', Share),
     ('/life', Life),
-    ('/timeline', Timeline)
+    ('/timeline', Timeline),
+    ('/MerryChristmas', MerryChristmas)
 ], debug=True)
