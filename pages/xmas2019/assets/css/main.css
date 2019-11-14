@@ -1,7 +1,9 @@
 @import url(font-awesome.min.css);
 /* Andrew */
 body {
-  background: url(/pages/xmas2019/images/xmas-bg.jpg);
+  background: url(/pages/xmas2019/images/xmas-bg2.jpg);
+  background-size: cover;
+  background-position: top;
   /*
   background-color: lightblue;
   */
