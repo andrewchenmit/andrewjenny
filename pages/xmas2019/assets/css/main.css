@@ -1,6 +1,14 @@
 @import url(font-awesome.min.css);
 /* Andrew */
-video {
+body {
+  background: url(/pages/xmas2019/images/xmas-bg.jpg);
+  /*
+  background-color: lightblue;
+  */
+}
+
+.embed-responsive-3by4 {
+  padding-bottom:133.333333%;
 }
 
 /* Reset */
