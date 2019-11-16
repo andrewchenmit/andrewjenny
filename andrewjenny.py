@@ -50,7 +50,7 @@ class Timeline(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('pages/timeline/timeline.html')
     self.response.write(template.render(template_values))
 
-class MerryChristmas(webapp2.RequestHandler):
+class Christmas(webapp2.RequestHandler):
   def get(self):
     template_values = {}
     template = JINJA_ENVIRONMENT.get_template('pages/xmas2019/index.html')
@@ -62,5 +62,5 @@ app = webapp2.WSGIApplication([
     ('/share', Share),
     ('/life', Life),
     ('/timeline', Timeline),
-    ('/merrychristmas', MerryChristmas)
+    ('/christmas', Christmas)
 ], debug=True)
