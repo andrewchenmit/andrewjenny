@@ -18,6 +18,20 @@ handlers:
   static_files: static/favicon.ico
   upload: static/favicon.ico
 
+#Story Resources
+- url: /pages/story/assets
+  static_dir: pages/story/assets
+
+- url: /pages/story/images
+  static_dir: pages/story/images
+
+- url: /pages/story/fonts
+  static_dir: pages/story/fonts 
+
+- url: /pages/story/favicon.ico
+  static_files: pages/story/static/favicon.ico
+  upload: pages/story/static/favicon.ico
+
 #Life Resources
 - url: /pages/life/assets
   static_dir: pages/life/assets
