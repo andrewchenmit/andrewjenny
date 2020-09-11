@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Story by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../pages/story/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../pages/story/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+                <!--
+					<section class="banner style5 color1 invert orient-left content-align-center image-position-center fullscreen onload-content-fade-in">
+						<div class="content">
+							<h1>Woos</h1>
+							<p class="major">An interactive story of woos and their #wlwl.</p>
+							<ul class="actions stacked">
+								<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="../pages/story/images/banner.jpg" alt="" />
+						</div>
+					</section>
+                -->
+
+              {% for c in root.categories %}
+				<!-- Section -->
+                <section class="wrapper style1 align-center" id="#{{ root[c].title }}">
+						<div class="inner">
+                            <h2>{{ root[c].title }}</h2>
+                            <p>{{ root[c].summary }}</p>
+						</div>
+
+						<!-- Gallery -->
+							<div class="gallery style1 big onload-fade-in lightbox">
+                                {% for e in root[c].events %}
+								<article>
+                                    <a href="../{{ e.photo }}" class="image">
+                                        <img src="../{{ e.photo }}" alt="" />
+									</a>
+									<div class="caption">
+                                        <h3>{{ e.title }}</h3>
+                                        <p>{{ e.summary }}</p>
+										<ul class="actions fixed">
+											<li><span class="button small">More</span></li>
+										</ul>
+									</div>
+								</article>
+                                {% endfor %}
+						    </div>
+
+					</section>
+              {% endfor %}
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+                            <p>Made with <span class="fa fa-heart"></span> by Andywoo</p>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../pages/story/assets/js/jquery.min.js"></script>
+			<script src="../pages/story/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../pages/story/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../pages/story/assets/js/browser.min.js"></script>
+			<script src="../pages/story/assets/js/breakpoints.min.js"></script>
+			<script src="../pages/story/assets/js/util.js"></script>
+			<script src="../pages/story/assets/js/main.js"></script>
+
+	</body>
+</html>

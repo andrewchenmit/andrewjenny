@@ -56,9 +56,26 @@ class Christmas(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('pages/xmas2019/index.html')
     self.response.write(template.render(template_values))
 
+class StoryCategories(webapp2.RequestHandler):
+  def get(self):
+    with open('pages/story/categories.json') as json_data:
+      events = json.load(json_data)
+    template_values = events
+    template = JINJA_ENVIRONMENT.get_template('pages/story/categories.html')
+    self.response.write(template.render(template_values))
+
+class StoryYears(webapp2.RequestHandler):
+  def get(self):
+    with open('pages/story/years.json') as json_data:
+      events = json.load(json_data)
+    template_values = events
+    template = JINJA_ENVIRONMENT.get_template('pages/story/years.html')
+    self.response.write(template.render(template_values))
+
 class Story(webapp2.RequestHandler):
   def get(self):
-    template_values = {}
+    events = {}
+    template_values = events
     template = JINJA_ENVIRONMENT.get_template('pages/story/index.html')
     self.response.write(template.render(template_values))
 
@@ -69,5 +86,7 @@ app = webapp2.WSGIApplication([
     ('/life', Life),
     ('/timeline', Timeline),
     ('/christmas', Christmas),
-    ('/story', Story)
+    ('/story', Story),
+    ('/story/categories', StoryCategories),
+    ('/story/years', StoryYears)
 ], debug=True)

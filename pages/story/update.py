@@ -13,7 +13,8 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of a sample spreadsheet.
 SPREADSHEET_ID = '1FBHVusfenvRbUVBIZGpBo4btaG1ROfEEuO5PJ8jYrRI'
-RANGE_NAME = 'Story!A2:F'
+EVENT_RANGE = 'Story!A2:F'
+CATEGORIES_RANGE = 'Categories!A2:C'
 
 def main():
     """Shows basic usage of the Sheets API.
@@ -42,16 +43,17 @@ def main():
 
     # Call the Sheets API
     sheet = service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID,
-                                range=RANGE_NAME).execute()
-    values = result.get('values', [])
+    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=EVENT_RANGE).execute()
+    event_data = result.get('values', [])
+    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=CATEGORIES_RANGE).execute()
+    categories_data = result.get('values', [])
 
     # Vars
     HIGHLIGHTS = ['highlights']
     NORMAL = ['andrew', 'jenny', 'travel', 'work', 'life']
     CATEGORIES = HIGHLIGHTS + NORMAL
 
-    categories = {}
+    categories = {'categories': CATEGORIES}
     temp = {}
 
     gallery_path = 'images/gallery/fulls/'
@@ -68,18 +70,25 @@ def main():
         p = gallery_path+title+'.jpg'
         if not os.path.exists(p):
             urllib.request.urlretrieve(url, p)
-        return p
+        return 'pages/story/'+p
 
     for c in CATEGORIES:
-       categories[c]=[]
-       temp[c]=[]
+        categories[c] = {}
+        temp[c]=[]
 
-    if not values:
+    # Load Categories into JSON
+    if not categories_data:
         print('No data found.')
     else:
+        for row in categories_data:
+            categories[row[0]]['title'] = row[1]
+            categories[row[0]]['summary'] = row[2]
 
-        # Load info into each category.
-        for row in values:
+    # Load Events into JSON
+    if not event_data:
+        print('No data found.')
+    else:
+        for row in event_data:
 
             # Store Image
             p = store_image(row[1], extract_url(row[5]))
@@ -93,10 +102,12 @@ def main():
 
         # Store info sorted by date.
         for c in CATEGORIES:
-            categories[c] = sorted(temp[c], key=lambda x: x['date'])
+            categories[c]['events'] = sorted(temp[c], key=lambda x: x['date'])
 
     print(categories)
 
+    with open('categories.json', 'w') as json_file:
+        json.dump({'root':categories}, json_file)
 
 if __name__ == '__main__':
     main()
