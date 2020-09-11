@@ -7,6 +7,7 @@ import urllib.request
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from PIL import Image
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
@@ -70,6 +71,12 @@ def main():
         p = gallery_path+title+'.jpg'
         if not os.path.exists(p):
             urllib.request.urlretrieve(url, p)
+        im = Image.open(p)
+        w, h = im.size
+        if w/h > 4/3:
+            hadjust = h % 3
+            im1 = im.crop((w-4/3*(h-hadjust), hadjust, w, h))
+            im1.save(p)
         return 'pages/story/'+p
 
     for c in CATEGORIES:
