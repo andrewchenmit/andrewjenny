@@ -1,0 +1,102 @@
+from __future__ import print_function
+import json
+import pickle
+import os.path
+import re
+import urllib.request
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+
+# If modifying these scopes, delete the file token.pickle.
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+
+# The ID and range of a sample spreadsheet.
+SPREADSHEET_ID = '1FBHVusfenvRbUVBIZGpBo4btaG1ROfEEuO5PJ8jYrRI'
+RANGE_NAME = 'Story!A2:F'
+
+def main():
+    """Shows basic usage of the Sheets API.
+    Prints values from a sample spreadsheet.
+    """
+    creds = None
+    # The file token.pickle stores the user's access and refresh tokens, and is
+    # created automatically when the authorization flow completes for the first
+    # time.
+    if os.path.exists('token.pickle'):
+        with open('token.pickle', 'rb') as token:
+            creds = pickle.load(token)
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                'credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        # Save the credentials for the next run
+        with open('token.pickle', 'wb') as token:
+            pickle.dump(creds, token)
+
+    service = build('sheets', 'v4', credentials=creds)
+
+    # Call the Sheets API
+    sheet = service.spreadsheets()
+    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID,
+                                range=RANGE_NAME).execute()
+    values = result.get('values', [])
+
+    # Vars
+    HIGHLIGHTS = ['highlights']
+    NORMAL = ['andrew', 'jenny', 'travel', 'work', 'life']
+    CATEGORIES = HIGHLIGHTS + NORMAL
+
+    categories = {}
+    temp = {}
+
+    gallery_path = 'images/gallery/fulls/'
+
+    # Utilities
+    def extract_url(url):
+        temp = urllib.request.urlopen(url)
+        data = temp.read()
+        datastring = data.decode("utf-8")
+        m = re.search('https://lh3.google[^=]*', datastring)
+        return m.group(0) + '=w3123-h2342'
+
+    def store_image(title, url):
+        p = gallery_path+title+'.jpg'
+        if not os.path.exists(p):
+            urllib.request.urlretrieve(url, p)
+        return p
+
+    for c in CATEGORIES:
+       categories[c]=[]
+       temp[c]=[]
+
+    if not values:
+        print('No data found.')
+    else:
+
+        # Load info into each category.
+        for row in values:
+
+            # Store Image
+            p = store_image(row[1], extract_url(row[5]))
+
+            # Highlights
+            if row[4]:
+                temp[HIGHLIGHTS[0]].append({'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'photo': p})
+
+            # Normal Categories
+            temp[row[3]].append({'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'photo': p})
+
+        # Store info sorted by date.
+        for c in CATEGORIES:
+            categories[c] = sorted(temp[c], key=lambda x: x['date'])
+
+    print(categories)
+
+
+if __name__ == '__main__':
+    main()
