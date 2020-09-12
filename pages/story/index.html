@@ -5,7 +5,7 @@
 -->
 <html>
 	<head>
-		<title>Story by HTML5 UP</title>
+		<title>Story</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="pages/story/assets/css/main.css" />
@@ -16,13 +16,13 @@
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 
-				<!-- One -->
+				<!-- Banner -->
 					<section class="banner style5 color1 invert orient-left content-align-center image-position-center fullscreen onload-content-fade-in">
 						<div class="content">
 							<h1>Woos</h1>
 							<p class="major">An interactive story of woos and their #wlwl.</p>
 							<ul class="actions stacked">
-								<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+								<li><a href="#first" class="button big wide smooth-scroll">Get Started</a></li>
 							</ul>
 						</div>
 						<div class="image">
@@ -32,7 +32,7 @@
 
 				<!-- Categories -->
 					<section class="wrapper style1 align-center">
-						<div class="inner">
+						<div class="inner" id="first">
 							<h2>Choose your adventure</h2>
 							<p>Explore memories by category or year.</p>
 						</div>
@@ -40,8 +40,8 @@
 						<!-- Gallery -->
 							<div class="gallery style1 big onload-fade-in">
                                 {% for c in root.categories %}
-								<article id="first">
-                                    <a href="story/categories#{{ root[c].title }}" class="image">
+								<article>
+                                    <a href="#{{ root[c].title | replace(" ", "") }}" class="image smooth-scroll">
                                         <img src="pages/story/images/gallery/fulls/{{ c }}.jpg" alt="" />
 									</a>
 									<div class="caption">
@@ -59,7 +59,7 @@
 
                 {% for c in root.categories %}
 				<!-- Section -->
-                    <section class="wrapper style1 align-center" id="{{ root[c].title }}">
+                    <section class="wrapper style1 align-center" id="{{ root[c].title | replace(" ", "") }}">
 						<div class="inner">
                             <h2>{{ root[c].title }}</h2>
                             <p>{{ root[c].summary }}</p>
