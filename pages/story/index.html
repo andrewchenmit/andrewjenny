@@ -67,14 +67,14 @@
 
 						<!-- Gallery -->
 							<div class="gallery style1 big onload-fade-in lightbox">
-                                {% for e in root[c].events %}
+                                {% for title in root[c].event_titles %}
 								<article>
-                                    <a href="../{{ e.photo }}" class="image">
-                                        <img src="../{{ e.photo }}" alt="" />
+                                    <a href="../{{ root.events[title].photo }}" class="image">
+                                        <img src="../{{ root.events[title].photo }}" alt="" />
 									</a>
 									<div class="caption">
-                                        <h3>{{ e.title }}</h3>
-                                        <p>{{ e.summary }}</p>
+                                        <h3>{{ root.events[title].title }}</h3>
+                                        <p>{{ root.events[title].summary }}</p>
 										<ul class="actions fixed">
 											<li><span class="button small">More</span></li>
 										</ul>

@@ -55,7 +55,6 @@ def main():
     CATEGORIES = HIGHLIGHTS + NORMAL
 
     data = {'categories': CATEGORIES, 'years': [], 'events': {}}
-    temp = {}
 
     gallery_path = 'images/gallery/fulls/'
 
@@ -82,7 +81,6 @@ def main():
     # Parent keys in data
     for c in CATEGORIES:
         data[c] = {}
-        temp[c] = []
 
     # Load Categories into JSON
     if not categories_data:
@@ -127,11 +125,10 @@ def main():
 
             # Highlights
             if event['highlight']:
-                temp[HIGHLIGHTS[0]].append(event['title'])
+                data[HIGHLIGHTS[0]]['event_titles'].append(event['title'])
 
             # Normal Categories
-            print(temp[row[3]])
-            temp[row[3]].append(event['title'])
+            data[event['category']]['event_titles'].append(event['title'])
 
             # Event Repository keyed by Title
             data['events'][event['title']] = event
@@ -139,16 +136,6 @@ def main():
             # Years
             year = event['date'][0:4]
             data[year]['event_titles'].append(event['title'])
-
-        # Store date-sorted event keys by category
-        for c in CATEGORIES:
-            print(temp[c])
-            data[c]['event_titles'] = temp[c]
-
-        # Sort years from future to past
-        data['years'] = sorted(temp_years, reverse=True)
-
-        print(data['years'])
 
     print(data)
 
