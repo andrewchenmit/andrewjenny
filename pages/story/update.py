@@ -54,7 +54,7 @@ def main():
     NORMAL = ['andrew', 'jenny', 'travel', 'work', 'life']
     CATEGORIES = HIGHLIGHTS + NORMAL
 
-    categories = {'categories': CATEGORIES}
+    data = {'categories': CATEGORIES, 'years': [], 'events': {}}
     temp = {}
 
     gallery_path = 'images/gallery/fulls/'
@@ -62,8 +62,8 @@ def main():
     # Utilities
     def extract_url(url):
         temp = urllib.request.urlopen(url)
-        data = temp.read()
-        datastring = data.decode("utf-8")
+        url_data = temp.read()
+        datastring = url_data.decode("utf-8")
         m = re.search('https://lh3.google[^=]*', datastring)
         return m.group(0) + '=w3123-h2342'
 
@@ -79,42 +79,81 @@ def main():
             im1.save(p)
         return 'pages/story/'+p
 
+    # Parent keys in data
     for c in CATEGORIES:
-        categories[c] = {}
-        temp[c]=[]
+        data[c] = {}
+        temp[c] = []
 
     # Load Categories into JSON
     if not categories_data:
         print('No data found.')
     else:
         for row in categories_data:
-            categories[row[0]]['title'] = row[1]
-            categories[row[0]]['summary'] = row[2]
+            data[row[0]]['title'] = row[1]
+            data[row[0]]['summary'] = row[2]
+            data[row[0]]['event_titles'] = []
 
     # Load Events into JSON
     if not event_data:
         print('No data found.')
     else:
+        event_list = []
+        temp_years = []
+
+        # Load event data
         for row in event_data:
 
             # Store Image
             p = store_image(row[1], extract_url(row[5]))
+            event = {'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'highlight': row[4], 'photo': p}
+            event_list.append(event)
+
+            year = row[0][0:4]
+            if not year in temp_years:
+                temp_years.append(year)
+
+        # Sort years from future to past
+        data['years'] = sorted(temp_years, reverse=True)
+
+        for year in data['years']:
+            data[year] = {'event_titles': []}
+
+
+        # Sort earliest to latest
+        sorted_events = sorted(event_list, key=lambda x: x['date'])
+
+        # Store titles per category
+        for event in sorted_events:
 
             # Highlights
-            if row[4]:
-                temp[HIGHLIGHTS[0]].append({'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'photo': p})
+            if event['highlight']:
+                temp[HIGHLIGHTS[0]].append(event['title'])
 
             # Normal Categories
-            temp[row[3]].append({'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'photo': p})
+            print(temp[row[3]])
+            temp[row[3]].append(event['title'])
 
-        # Store info sorted by date.
+            # Event Repository keyed by Title
+            data['events'][event['title']] = event
+
+            # Years
+            year = event['date'][0:4]
+            data[year]['event_titles'].append(event['title'])
+
+        # Store date-sorted event keys by category
         for c in CATEGORIES:
-            categories[c]['events'] = sorted(temp[c], key=lambda x: x['date'])
+            print(temp[c])
+            data[c]['event_titles'] = temp[c]
 
-    print(categories)
+        # Sort years from future to past
+        data['years'] = sorted(temp_years, reverse=True)
 
-    with open('categories.json', 'w') as json_file:
-        json.dump({'root':categories}, json_file)
+        print(data['years'])
+
+    print(data)
+
+    with open('data.json', 'w') as json_file:
+        json.dump({'root':data}, json_file)
 
 if __name__ == '__main__':
     main()

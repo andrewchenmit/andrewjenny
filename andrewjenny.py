@@ -74,7 +74,7 @@ class StoryYears(webapp2.RequestHandler):
 
 class Story(webapp2.RequestHandler):
   def get(self):
-    with open('pages/story/categories.json') as json_data:
+    with open('pages/story/data.json') as json_data:
       events = json.load(json_data)
     template_values = events
     template = JINJA_ENVIRONMENT.get_template('pages/story/index.html')
