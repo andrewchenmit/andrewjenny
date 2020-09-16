@@ -72,6 +72,12 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Custom */
+    
+.gallery article {
+    background-image: url("/pages/story/images/gallery/thumbs/09.jpg")
+}
+
 /* Basic */
 
 	@-ms-viewport {
