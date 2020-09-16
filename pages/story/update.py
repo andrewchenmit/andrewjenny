@@ -18,16 +18,15 @@ EVENT_RANGE = 'Story!A2:F'
 CATEGORIES_RANGE = 'Categories!A2:C'
 
 def main():
-    """Shows basic usage of the Sheets API.
-    Prints values from a sample spreadsheet.
-    """
     creds = None
+
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
     if os.path.exists('token.pickle'):
         with open('token.pickle', 'rb') as token:
             creds = pickle.load(token)
+
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
@@ -36,6 +35,7 @@ def main():
             flow = InstalledAppFlow.from_client_secrets_file(
                 'credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
+
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
@@ -67,15 +67,28 @@ def main():
         return m.group(0) + '=w3123-h2342'
 
     def store_image(title, url):
-        p = gallery_path+title+'.jpg'
+        p = gallery_path+title+'.png'
         if not os.path.exists(p):
             urllib.request.urlretrieve(url, p)
-        im = Image.open(p)
-        w, h = im.size
-        if w/h > 4/3:
-            hadjust = h % 3
-            im1 = im.crop((w-4/3*(h-hadjust), hadjust, w, h))
-            im1.save(p)
+            im = Image.open(p)
+            w, h = im.size
+            if w/h > 4/3:
+                hadjust = h % 3
+                new_im = im.crop((w-4/3*(h-hadjust), hadjust, w, h))
+                new_im.save(p)
+            if w/h < 4/3:
+                hadjust = h % 3
+                newh = h - hadjust
+                neww = int(newh * 4 / 3)
+                wadjust = neww % 2
+                leftw = int((neww - wadjust - w) / 2)
+
+                new_im = Image.new("RGBA", (neww, newh), (0, 0, 0, 0))
+                converted_im = im.convert("RGBA")
+                new_im.paste(converted_im, (leftw, 0))
+
+                new_im.save(p)
+
         return 'pages/story/'+p
 
     # Parent keys in data
