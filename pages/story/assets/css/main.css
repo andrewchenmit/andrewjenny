@@ -75,7 +75,7 @@ input, select, textarea {
 /* Custom */
     
 .gallery article {
-    background-image: url("/pages/story/images/gallery/thumbs/09.jpg")
+    background-image: url("/pages/story/images/gallery/thumbs/09.jpg");
 }
 
 /* Basic */
@@ -6509,6 +6509,10 @@ input, select, textarea {
 					border-radius: 0;
 				}
 
+			.gallery.style1 article .subtitle {
+                opacity: 0;
+            }
+
 			.gallery.style1 article .caption {
 				-moz-align-items: center;
 				-webkit-align-items: center;
@@ -6567,6 +6571,10 @@ input, select, textarea {
 
 			.gallery.style1 article:hover .caption {
 				background-color: rgba(0, 0, 0, 0.7);
+				opacity: 1;
+			}
+
+			.gallery.style1 article:hover .subtitle {
 				opacity: 1;
 			}
 
