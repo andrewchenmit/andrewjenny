@@ -88,7 +88,7 @@
 						</div>
 
 						<!-- Gallery -->
-							<div class="gallery style1 big onload-fade-in lightbox">
+							<div class="gallery style1 small onload-fade-in lightbox">
                                 {% for title in root[c].event_titles %}
 								<article>
                                     <a href="../{{ root.events[title].photo }}" class="image">
@@ -97,9 +97,6 @@
 									<div class="caption">
                                         <h3>{{ root.events[title].title }}</h3>
                                         <p>{{ root.events[title].summary }}</p>
-										<ul class="actions fixed">
-											<li><span class="button small">More</span></li>
-										</ul>
 									</div>
 								</article>
                                 {% endfor %}
@@ -126,9 +123,6 @@
 									<div class="caption">
                                         <h3>{{ root.events[title].title }}</h3>
                                         <p>{{ root.events[title].summary }}</p>
-										<ul class="actions fixed">
-											<li><span class="button small">More</span></li>
-										</ul>
 									</div>
 								</article>
                                 {% endfor %}
