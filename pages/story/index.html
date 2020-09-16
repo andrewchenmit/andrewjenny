@@ -46,7 +46,7 @@
 									</a>
 									<div class="caption">
                                         <h3>{{ root[c].title }}</h3>
-                                        <p class="subtitle">{{ root[c].summary }}</p>
+                                        <p class="">{{ root[c].summary }}</p>
                                         <!--
 										<ul class="actions fixed">
 											<li><span class="button small">More</span></li>
@@ -100,7 +100,7 @@
 									</a>
 									<div class="caption">
                                         <h3>{{ root.events[title].title }}</h3>
-                                        <p>{{ root.events[title].summary }}</p>
+                                        <p class="subtitle">{{ root.events[title].date }}</p>
 									</div>
 								</article>
                                 {% endfor %}
@@ -126,7 +126,7 @@
 									</a>
 									<div class="caption">
                                         <h3>{{ root.events[title].title }}</h3>
-                                        <p>{{ root.events[title].summary }}</p>
+                                        <p class="subtitle">{{ root.events[title].date }}</p>
 									</div>
 								</article>
                                 {% endfor %}
