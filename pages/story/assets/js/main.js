@@ -239,6 +239,7 @@
 				});
 
 		// Lightbox.
+
 			$('.gallery.lightbox')
 				.on('click', 'a', function(event) {
 
@@ -283,6 +284,8 @@
 				})
 				.on('click', '.modal', function(event) {
 
+                    if (!$(event.target).is(".button")) {
+
 					var $modal = $(this),
 						$modalImg = $modal.find('img');
 
@@ -321,6 +324,7 @@
 							}, 475);
 
 						}, 125);
+                    }
 
 				})
 				.on('keypress', '.modal', function(event) {
@@ -351,5 +355,4 @@
 							}, 275);
 
 						});
-
 })(jQuery);

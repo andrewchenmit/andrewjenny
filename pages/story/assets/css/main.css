@@ -76,13 +76,14 @@ input, select, textarea {
     
     .gallery article {
         background-image: url("/pages/story/images/gallery/thumbs/09.jpg");
+        background-size: cover;
     }
 
     .gallery article .subtitle {
-        -moz-transition: opacity 0.5s ease-in-out;
-        -webkit-transition: opacity 0.5s ease-in-out;
-        -ms-transition: opacity 0.5s ease-in-out;
-        transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -ms-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
     }
 
 /* Basic */
@@ -7190,7 +7191,7 @@ input, select, textarea {
 				display: block;
 				max-width: 90vw;
 				max-height: 85vh;
-				box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.35);
+				/* box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.35); */
 			}
 
 		.gallery.lightbox .modal.visible {

@@ -101,8 +101,11 @@ def main():
     else:
         for row in categories_data:
             data[row[0]]['title'] = row[1]
-            data[row[0]]['summary'] = row[2]
             data[row[0]]['event_titles'] = []
+            try:
+                data[row[0]]['summary'] = row[2]
+            except:
+                continue
 
     # Load Events into JSON
     if not event_data:
