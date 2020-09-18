@@ -94,8 +94,8 @@ def main():
 
         if not os.path.exists(thumb):
             im = Image.open(full)
-            new_im = im.resize((400, 300), Image.ANTIALIAS)
-            new_im.save(thumb)
+            new_im = im.resize((288, 216), Image.ANTIALIAS)
+            new_im.save(thumb, optimize=True)
 
         return ['pages/story/'+full, 'pages/story/'+thumb]
 
