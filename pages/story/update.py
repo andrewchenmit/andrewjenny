@@ -56,7 +56,8 @@ def main():
 
     data = {'categories': CATEGORIES, 'years': [], 'events': {}}
 
-    gallery_path = 'images/gallery/fulls/'
+    fulls_path = 'images/gallery/fulls/'
+    thumbs_path = 'images/gallery/thumbs/'
 
     # Utilities
     def extract_url(url):
@@ -67,15 +68,17 @@ def main():
         return m.group(0) + '=w3123-h2342'
 
     def store_image(title, url):
-        p = gallery_path+title+'.png'
-        if not os.path.exists(p):
-            urllib.request.urlretrieve(url, p)
-            im = Image.open(p)
+        full = fulls_path+title+'.png'
+        thumb = thumbs_path+title+'.png'
+
+        if not os.path.exists(full):
+            urllib.request.urlretrieve(url, full)
+            im = Image.open(full)
             w, h = im.size
             if w/h > 4/3:
                 hadjust = h % 3
                 new_im = im.crop((w-4/3*(h-hadjust), hadjust, w, h))
-                new_im.save(p)
+                new_im.save(full)
             if w/h < 4/3:
                 hadjust = h % 3
                 newh = h - hadjust
@@ -87,9 +90,14 @@ def main():
                 converted_im = im.convert("RGBA")
                 new_im.paste(converted_im, (leftw, 0))
 
-                new_im.save(p)
+                new_im.save(full)
 
-        return 'pages/story/'+p
+        if not os.path.exists(thumb):
+            im = Image.open(full)
+            new_im = im.resize((400, 300), Image.ANTIALIAS)
+            new_im.save(thumb)
+
+        return ['pages/story/'+full, 'pages/story/'+thumb]
 
     # Parent keys in data
     for c in CATEGORIES:
@@ -118,8 +126,8 @@ def main():
         for row in event_data:
 
             # Store Image
-            p = store_image(row[1], extract_url(row[5]))
-            event = {'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'highlight': row[4], 'photo': p}
+            full_url, thumb_url = store_image(row[1], extract_url(row[5]))
+            event = {'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'highlight': row[4], 'full_url': full_url, 'thumb_url': thumb_url}
             event_list.append(event)
 
             year = row[0][0:4]

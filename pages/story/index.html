@@ -66,7 +66,7 @@
                                 {% for y in root.years %}
 								<article>
                                     <a href="#{{ y }}" class="image smooth-scroll">
-                                        <img src="{{ root.events[root[y].event_titles[0]].photo }}" alt="" />
+                                        <img src="{{ root.events[root[y].event_titles[0]].thumb_url }}" alt="" />
 									</a>
 									<div class="caption">
                                         <h3>{{ y }}</h3>
@@ -95,8 +95,8 @@
 							<div class="gallery style1 small onload-fade-in lightbox">
                                 {% for title in root[c].event_titles %}
 								<article>
-                                    <a href="../{{ root.events[title].photo }}" class="image">
-                                        <img src="../{{ root.events[title].photo }}" alt="" />
+                                    <a href="../{{ root.events[title].full_url }}" class="image">
+                                        <img src="../{{ root.events[title].thumb_url }}" alt="" />
 									</a>
 									<div class="caption">
                                         <h3>{{ root.events[title].title }}</h3>
@@ -121,8 +121,8 @@
 							<div class="gallery style1 small onload-fade-in lightbox">
                                 {% for title in root[y].event_titles %}
 								<article>
-                                    <a href="../{{ root.events[title].photo }}" class="image">
-                                        <img src="../{{ root.events[title].photo }}" alt="" />
+                                    <a href="../{{ root.events[title].full_url }}" class="image">
+                                        <img src="../{{ root.events[title].thumb_url }}" alt="" />
 									</a>
 									<div class="caption">
                                         <h3>{{ root.events[title].title }}</h3>
