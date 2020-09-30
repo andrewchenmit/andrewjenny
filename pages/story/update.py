@@ -77,7 +77,9 @@ def main():
             w, h = im.size
             if w/h > 4/3:
                 hadjust = h % 3
-                new_im = im.crop((w-4/3*(h-hadjust), hadjust, w, h))
+                neww = 4/3*(h-hadjust)
+                wadjust = (w-neww) % 2
+                new_im = im.crop(((w-(neww-wadjust))/2, hadjust, w-(w-(neww-wadjust))/2, h))
                 new_im.save(full)
             if w/h < 4/3:
                 hadjust = h % 3
