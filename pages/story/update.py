@@ -94,7 +94,7 @@ def main():
 
                 new_im.save(full)
 
-        if not os.path.exists(thumb):
+        #if not os.path.exists(thumb):
             im = Image.open(full)
             new_im = im.resize((288, 216), Image.ANTIALIAS)
             new_im.save(thumb, optimize=True)
