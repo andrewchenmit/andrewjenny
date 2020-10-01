@@ -71,7 +71,6 @@ input, select, textarea {
         opacity: 1
     }
     
-    /*
     .banner:before {
         background-image: url("/pages/story/images/loader.svg");
 		-moz-transition: opacity 0.25s ease;
@@ -91,7 +90,6 @@ input, select, textarea {
         line-height: 10rem;
 		opacity: 0;
     }
-    */
 
     .gallery article {
         background-image: url("/pages/story/images/gallery/thumbs/09.jpg");
