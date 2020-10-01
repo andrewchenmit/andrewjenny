@@ -103,6 +103,22 @@ input, select, textarea {
         transition: opacity 0.3s ease-in-out;
     }
 
+    .album-url {
+        display: none;
+    }
+
+    .album-button {
+        opacity: 0;
+    }
+
+    #album-url {
+        margin: 1em;
+    }
+
+    #album-url.visible {
+        opacity: 1;
+    }
+
 /* Basic */
 
 	@-ms-viewport {

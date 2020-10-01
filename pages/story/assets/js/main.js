@@ -241,7 +241,16 @@
 						$gallery = $a.parents('.gallery'),
 						$modal = $gallery.children('.modal'),
 						$modalImg = $modal.find('img'),
-						href = $a.attr('href');
+						href = $a.attr('href'),
+                        albumUrl = $a.children('.album-url').text(),
+                        $anchor = $modal.find('#album-url');
+
+                    if(albumUrl) {
+                        console.log(albumUrl);
+                        $anchor.attr('href', albumUrl);
+                        $anchor.addClass('visible');
+                    }
+
 
 					// Not an image? Bail.
 						if (!href.match(/\.(jpg|gif|png|mp4)$/))
@@ -281,6 +290,7 @@
                     if (!$(event.target).is(".button")) {
 
 					var $modal = $(this),
+                        $anchor = $modal.find('#album-url'),
 						$modalImg = $modal.find('img');
 
 					// Locked? Bail.
@@ -302,7 +312,9 @@
 						setTimeout(function() {
 
 							$modal
-								.removeClass('visible')
+								.removeClass('visible');
+                            $anchor
+                                .removeClass('visible');
 
 							setTimeout(function() {
 
@@ -330,10 +342,11 @@
 							$modal.trigger('click');
 
 				})
-				.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /><div><a href="http://google.com" target="_blank" class="button primary">Go to album</a></div></div></div>')
+				.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /><div><a id="album-url" href="" target="_blank" class="album-button button primary wide large">Go to album</a></div></div></div>')
 
 					.find('img')
 						.on('load', function(event) {
+
 
 							var $modalImg = $(this),
 								$modal = $modalImg.parents('.modal');
