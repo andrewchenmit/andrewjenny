@@ -14,7 +14,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of a sample spreadsheet.
 SPREADSHEET_ID = '1FBHVusfenvRbUVBIZGpBo4btaG1ROfEEuO5PJ8jYrRI'
-EVENT_RANGE = 'Story!A2:F'
+EVENT_RANGE = 'Story!A2:G'
 CATEGORIES_RANGE = 'Categories!A2:C'
 
 def main():
@@ -126,10 +126,14 @@ def main():
 
         # Load event data
         for row in event_data:
+            if len(row) == 7:
+                album_url = row[6]
+            else:
+                album_url = ''
 
             # Store Image
             full_url, thumb_url = store_image(row[1], extract_url(row[5]))
-            event = {'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'highlight': row[4], 'full_url': full_url, 'thumb_url': thumb_url}
+            event = {'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'highlight': row[4], 'full_url': full_url, 'thumb_url': thumb_url, 'album_url': album_url}
             event_list.append(event)
 
             year = row[0][0:4]

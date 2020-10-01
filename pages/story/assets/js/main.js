@@ -330,8 +330,8 @@
 							$modal.trigger('click');
 
 				})
-				.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /></div></div>')
-                    // '<div><a href="http://google.com" target="_blank" class="button primary">Go to album</a></div>'
+				.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /><div><a href="http://google.com" target="_blank" class="button primary">Go to album</a></div></div></div>')
+
 					.find('img')
 						.on('load', function(event) {
 
