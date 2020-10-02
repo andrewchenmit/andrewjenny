@@ -40,7 +40,7 @@
 							 'pages/story/images/banner2.png': 'bottom',
 							 'pages/story/images/banner16.png': 'center',
 							 'pages/story/images/banner17.png': 'center',
-							 'pages/story/images/banner15.png': 'center',
+							 //'pages/story/images/banner15.png': 'center',
 							 'pages/story/images/banner14.png': 'center',
 							 'pages/story/images/banner19.png': 'center',
 							 'pages/story/images/banner21.png': 'center',
