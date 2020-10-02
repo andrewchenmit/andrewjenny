@@ -119,6 +119,43 @@ body {
     body {
       padding: 5em 1.25em 1.25em 1.25em; } }
 
+
+/* Custom */
+	body.is-preload .banner:before {
+        opacity: 1
+    }
+    
+    .banner:before {
+        background-image: url("/pages/story/images/loader.svg");
+		-moz-transition: opacity 0.25s ease;
+		-webkit-transition: opacity 0.25s ease;
+		-ms-transition: opacity 0.25s ease;
+		transition: opacity 0.25s ease;
+		content: 'Loading...';
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 12rem;
+		height: 12rem;
+		margin: -6rem 0 0 -6rem;
+		background-position: center;
+		background-repeat: no-repeat;
+        line-height: 12rem;
+        text-align: center;
+		opacity: 0;
+    }
+	.banner.onload-content-fade-in {
+		-moz-transition: opacity 0.75s ease-in-out;
+		-webkit-transition: opacity 0.75s ease-in-out;
+		-ms-transition: opacity 0.75s ease-in-out;
+		transition: opacity 0.75s ease-in-out;
+	}
+
+	body.is-preload .banner.onload-content-fade-in {
+		opacity: 0;
+	}
+
 /* BG */
 #bg {
   -moz-transition: opacity 2s ease-in-out;
