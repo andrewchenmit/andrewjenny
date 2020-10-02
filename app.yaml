@@ -2,7 +2,6 @@
 runtime: python27
 api_version: 1
 threadsafe: true
-secure: always
 
 handlers:
 #AndrewJenny Resources
@@ -82,6 +81,7 @@ handlers:
 #Everything else
 - url: /.*
   script: andrewjenny.app
+  secure: always
 
 libraries:
 - name: webapp2
