@@ -73,11 +73,20 @@ class StoryYears(webapp2.RequestHandler):
     self.response.write(template.render(template_values))
 
 class Story(webapp2.RequestHandler):
+  def post(self):
+    print(self.request.get('password'))
+    if self.request.get('password') == 'woos':
+      with open('pages/story/data.json') as json_data:
+        events = json.load(json_data)
+      template_values = events
+      template = JINJA_ENVIRONMENT.get_template('pages/story/index.html')
+      self.response.write(template.render(template_values))
+    else:
+      self.get()
+
   def get(self):
-    with open('pages/story/data.json') as json_data:
-      events = json.load(json_data)
-    template_values = events
-    template = JINJA_ENVIRONMENT.get_template('pages/story/index.html')
+    template_values = {}
+    template = JINJA_ENVIRONMENT.get_template('pages/story/login.html')
     self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
