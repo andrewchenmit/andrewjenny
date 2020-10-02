@@ -96,6 +96,10 @@ body {
   -ms-justify-content: center;
   justify-content: center;
   background-color: #000;
+		-moz-transition: background-color 1.0s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 1.0s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 1.0s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 1.0s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
   padding: 6em 4em 4em 4em; }
   body.is-preload *, body.is-preload *:before, body.is-preload *:after {
     -moz-animation: none !important;
@@ -124,7 +128,11 @@ body {
 	body.is-preload .banner:before {
         opacity: 1
     }
-    
+
+    body.is-preload {
+        background-color: darkslategray;
+    }
+
     .banner:before {
         background-image: url("/pages/story/images/loader.svg");
 		-moz-transition: opacity 0.25s ease;
@@ -145,23 +153,25 @@ body {
         text-align: center;
 		opacity: 0;
     }
-	.banner.onload-content-fade-in {
-		-moz-transition: opacity 0.75s ease-in-out;
-		-webkit-transition: opacity 0.75s ease-in-out;
-		-ms-transition: opacity 0.75s ease-in-out;
-		transition: opacity 0.75s ease-in-out;
-	}
 
-	body.is-preload .banner.onload-content-fade-in {
+	body.is-preload .banner.onload-content-fade-in .content {
 		opacity: 0;
 	}
 
+	.banner.onload-content-fade-in .content {
+		-moz-transition: opacity 1s ease-in-out;
+		-webkit-transition: opacity 1s ease-in-out;
+		-ms-transition: opacity 1s ease-in-out;
+		transition: opacity 1s ease-in-out;
+	}
+
+
 /* BG */
 #bg {
-  -moz-transition: opacity 2s ease-in-out;
-  -webkit-transition: opacity 2s ease-in-out;
-  -ms-transition: opacity 2s ease-in-out;
-  transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
   height: 100%;
   left: 0;
   opacity: 0.375;
