@@ -1,3 +1,4 @@
+import bcrypt
 import json
 import os
 import urllib
@@ -74,18 +75,18 @@ class StoryYears(webapp2.RequestHandler):
 
 class Story(webapp2.RequestHandler):
   def post(self):
-    print(self.request.get('password'))
-    if self.request.get('password') == 'woos':
+    hashed_pass = '$2a$02$CuYXjCoFCfe/wLsHB67AzuLSxOUOldxQ1/j.IOIiH1uaaW0SLx8v6'
+    if bcrypt.hashpw(self.request.get('password'), hashed_pass) == hashed_pass:
       with open('pages/story/data.json') as json_data:
         events = json.load(json_data)
       template_values = events
       template = JINJA_ENVIRONMENT.get_template('pages/story/index.html')
       self.response.write(template.render(template_values))
     else:
-      self.get()
+      self.get('visible')
 
-  def get(self):
-    template_values = {}
+  def get(self, error_visibility=None):
+    template_values = {'error_visibility': error_visibility}
     template = JINJA_ENVIRONMENT.get_template('pages/story/login.html')
     self.response.write(template.render(template_values))
 

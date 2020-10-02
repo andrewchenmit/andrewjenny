@@ -526,9 +526,9 @@ form {
       form .message.success:before {
         content: '\f00c'; }
     form .message.failure {
-      color: #ff2361; }
+      color: red; }
       form .message.failure:before {
-        content: '\f119'; }
+        content: '\f00d'; }
 
 label {
   color: #fff;
