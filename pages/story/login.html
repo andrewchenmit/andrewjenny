@@ -4,42 +4,44 @@
 		<title>Jenny & Andrew Photo Journal</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="pages/story/assets/css/login.css" />
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="divided">
+		<!-- Header -->
+			<header id="header">
+				<h1>Jenny & Andrew</h1>
+				<p>Our story in photos</p>
+			</header>
 
-				<!-- Seven -->
-					<section class="wrapper style1 align-center">
-						<div class="inner medium">
-							<h2>Jenny & Andrew Photo Journal</h2>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field half">
-										<label for="password">Password</label>
-										<input type="password" name="password" id="password" value="" />
-									</div>
-								</div>
-								<ul class="actions special">
-									<li><input type="submit" name="submit" id="submit" value="Go" /></li>
-								</ul>
-							</form>
+		<!-- Signup Form -->
+			<form id="signup-form" method="post" action="#">
+				<input type="password" name="password" id="password" placeholder="Password" />
+				<input type="submit" value="Go" />
+			</form>
 
-						</div>
-					</section>
-			</div>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+                    <li>Made with <span class="fa fa-heart"></span> by Andrew</li>
+				</ul>
+			</footer>
 
 		<!-- Scripts -->
+			<script src="pages/story/assets/js/login.js"></script>
 			<script src="pages/story/assets/js/jquery.min.js"></script>
-			<script src="pages/story/assets/js/jquery.scrollex.min.js"></script>
-			<script src="pages/story/assets/js/jquery.scrolly.min.js"></script>
-			<script src="pages/story/assets/js/browser.min.js"></script>
-			<script src="pages/story/assets/js/breakpoints.min.js"></script>
-			<script src="pages/story/assets/js/util.js"></script>
-			<script src="pages/story/assets/js/main.js"></script>
+
+            <!-- Begin Inspectlet Asynchronous Code -->
+            <script type="text/javascript">
+            (function() {
+            window.__insp = window.__insp || [];
+            __insp.push(['wid', 700800345]);
+            var ldinsp = function(){
+            if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=700800345&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+            setTimeout(ldinsp, 0);
+            })();
+            </script>
+            <!-- End Inspectlet Asynchronous Code -->
 
 	</body>
 </html>
