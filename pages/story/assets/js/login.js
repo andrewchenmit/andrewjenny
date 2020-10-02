@@ -37,15 +37,13 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							 'pages/story/images/banner2.png': 'bottom',
+							 'pages/story/images/banner2.jpg': 'bottom',
 							 'pages/story/images/banner16.png': 'center',
-							 'pages/story/images/banner17.png': 'center',
-							 //'pages/story/images/banner15.png': 'center',
-							 'pages/story/images/banner14.png': 'center',
-							 'pages/story/images/banner19.png': 'center',
-							 'pages/story/images/banner21.png': 'center',
+							 'pages/story/images/banner17.jpg': 'center',
+							 'pages/story/images/banner19.jpg': 'center',
+							 'pages/story/images/banner21.jpg': 'center',
 							 'pages/story/images/banner20.png': 'center',
-							 'pages/story/images/banner18.png': 'center',
+							 'pages/story/images/banner18.jpg': 'center',
 							 'pages/story/images/banner24.png': 'bottom'
 						},
 
