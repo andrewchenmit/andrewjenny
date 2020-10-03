@@ -75,8 +75,9 @@ class StoryYears(webapp2.RequestHandler):
 
 class Story(webapp2.RequestHandler):
   def post(self):
-    hashed_pass = '$2a$02$CuYXjCoFCfe/wLsHB67AzuLSxOUOldxQ1/j.IOIiH1uaaW0SLx8v6'
-    if bcrypt.hashpw(self.request.get('password'), hashed_pass) == hashed_pass:
+    hashed_pass1 = '$2a$02$CuYXjCoFCfe/wLsHB67AzuLSxOUOldxQ1/j.IOIiH1uaaW0SLx8v6'
+    hashed_pass2 = '$2a$02$ajup6q7vDIT7.6Z.AYtNnOBDRW0XQgEaGGfLEFd1nx7DdVMNN4jCO'
+    if bcrypt.hashpw(self.request.get('password'), hashed_pass1) == hashed_pass1 or bcrypt.hashpw(self.request.get('password'), hashed_pass2) == hashed_pass2:
       with open('pages/story/data.json') as json_data:
         events = json.load(json_data)
       template_values = events
