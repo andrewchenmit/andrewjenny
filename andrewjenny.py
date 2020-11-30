@@ -1,3 +1,4 @@
+import bcrypt
 import json
 import os
 import urllib
@@ -73,11 +74,21 @@ class StoryYears(webapp2.RequestHandler):
     self.response.write(template.render(template_values))
 
 class Story(webapp2.RequestHandler):
-  def get(self):
-    with open('pages/story/data.json') as json_data:
-      events = json.load(json_data)
-    template_values = events
-    template = JINJA_ENVIRONMENT.get_template('pages/story/index.html')
+  def post(self):
+    hashed_pass1 = '$2a$02$CuYXjCoFCfe/wLsHB67AzuLSxOUOldxQ1/j.IOIiH1uaaW0SLx8v6'
+    hashed_pass2 = '$2a$02$ajup6q7vDIT7.6Z.AYtNnOBDRW0XQgEaGGfLEFd1nx7DdVMNN4jCO'
+    if bcrypt.hashpw(self.request.get('password'), hashed_pass1) == hashed_pass1 or bcrypt.hashpw(self.request.get('password'), hashed_pass2) == hashed_pass2:
+      with open('pages/story/data.json') as json_data:
+        events = json.load(json_data)
+      template_values = events
+      template = JINJA_ENVIRONMENT.get_template('pages/story/index.html')
+      self.response.write(template.render(template_values))
+    else:
+      self.get('visible')
+
+  def get(self, error_visibility=None):
+    template_values = {'error_visibility': error_visibility}
+    template = JINJA_ENVIRONMENT.get_template('pages/story/login.html')
     self.response.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([

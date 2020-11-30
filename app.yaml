@@ -81,6 +81,7 @@ handlers:
 #Everything else
 - url: /.*
   script: andrewjenny.app
+  secure: always
 
 libraries:
 - name: webapp2
