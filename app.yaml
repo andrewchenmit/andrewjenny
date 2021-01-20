@@ -78,6 +78,20 @@ handlers:
   static_files: pages/xmas2019/static/favicon.ico
   upload: pages/xmas2019/static/favicon.ico
 
+#VDay2021 Resources
+- url: /pages/vday/assets
+  static_dir: pages/vday/assets
+
+- url: /pages/vday/images
+  static_dir: pages/vday/images
+
+- url: /pages/vday/fonts
+  static_dir: pages/vday/fonts 
+
+- url: /pages/vday/favicon.ico
+  static_files: pages/vday/static/favicon.ico
+  upload: pages/vday/static/favicon.ico
+
 #Everything else
 - url: /.*
   script: andrewjenny.app

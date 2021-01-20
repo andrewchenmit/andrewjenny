@@ -57,22 +57,6 @@ class Christmas(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('pages/xmas2019/index.html')
     self.response.write(template.render(template_values))
 
-class StoryCategories(webapp2.RequestHandler):
-  def get(self):
-    with open('pages/story/categories.json') as json_data:
-      events = json.load(json_data)
-    template_values = events
-    template = JINJA_ENVIRONMENT.get_template('pages/story/categories.html')
-    self.response.write(template.render(template_values))
-
-class StoryYears(webapp2.RequestHandler):
-  def get(self):
-    with open('pages/story/years.json') as json_data:
-      events = json.load(json_data)
-    template_values = events
-    template = JINJA_ENVIRONMENT.get_template('pages/story/years.html')
-    self.response.write(template.render(template_values))
-
 class Story(webapp2.RequestHandler):
   def post(self):
     hashed_pass1 = '$2a$02$CuYXjCoFCfe/wLsHB67AzuLSxOUOldxQ1/j.IOIiH1uaaW0SLx8v6'
@@ -91,6 +75,12 @@ class Story(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('pages/story/login.html')
     self.response.write(template.render(template_values))
 
+class Vday(webapp2.RequestHandler):
+  def get(self):
+    template_values = {}
+    template = JINJA_ENVIRONMENT.get_template('pages/vday/index.html')
+    self.response.write(template.render(template_values))
+
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/photobooth', Photobooth),
@@ -99,6 +89,5 @@ app = webapp2.WSGIApplication([
     ('/timeline', Timeline),
     ('/christmas', Christmas),
     ('/story', Story),
-    ('/story/categories', StoryCategories),
-    ('/story/years', StoryYears)
+    ('/vday', Vday)
 ], debug=True)
