@@ -76,8 +76,26 @@ class Story(webapp2.RequestHandler):
     self.response.write(template.render(template_values))
 
 class Vday(webapp2.RequestHandler):
-  def get(self):
-    template_values = {}
+  def post(self):
+    answers = {
+      '464': 'q1',
+      'hydrate': 'q2',
+      'test3': 'q3',
+      'test4': 'q4',
+      'test5': 'q5'
+    }
+    key = self.request.get('key').lower()
+    last = self.request.get('last')
+    if key in answers:
+      self.get(answers[key], None)
+    else:
+      self.get(last, 'visible')
+
+  def get(self, step='q0', wrong=None):
+    template_values = {'wrong': wrong, 'step': step}
+    for x in range(10):
+      template_values['q'+str(x)] = None
+    template_values[step] = 'visible'
     template = JINJA_ENVIRONMENT.get_template('pages/vday/index.html')
     self.response.write(template.render(template_values))
 

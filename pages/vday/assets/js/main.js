@@ -26,6 +26,7 @@
 			window.setTimeout(function() {
 				$body.classList.remove('is-preload');
 			}, 100);
+            $('#key').focus();
 		});
 
 	// Slideshow Background.
@@ -36,9 +37,9 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'pages/vday/images/bg01.jpg': 'center',
-							'pages/vday/images/bg02.jpg': 'center',
-							'pages/vday/images/bg03.jpg': 'center'
+							'pages/vday/images/sydney.jpg': 'center',
+							'pages/vday/images/banff.jpg': 'center',
+							'pages/vday/images/yosemite.jpg': 'center'
 						},
 
 					// Delay.
@@ -136,6 +137,7 @@
 
 			// Events.
 			// Note: If you're *not* using AJAX, get rid of this event listener.
+            /*
 				$form.addEventListener('submit', function(event) {
 
 					event.stopPropagation();
@@ -165,7 +167,7 @@
 						}, 750);
 
 				});
-
+*/
 		})();
 
 })();
