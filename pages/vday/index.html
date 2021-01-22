@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>V-Day 2021</title>
+		<title>Valentine's Day 2021</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="pages/vday/assets/css/main.css" />
@@ -11,23 +11,13 @@
 		<!-- Header -->
 			<header id="header">
                 <h1 class="pink">Welcome to Woo Love Island, <span class="woo">Jwoo</span>! <span class="fa fa-heart"></span></h1>
-                <p class="hidden {{ q0 }}">Happy Valentine's Day! We can't have our friends ask the questions, but I hope you can still have fun with this website version :).</p>
-                <p class="hidden {{ q0 }}">To find your gifts, please answer these questions about our woo life correctly.</p>
-                <p class="hidden {{ q0 }}">What is the house number of the pouch?</p>
-                <p class="hidden {{ q1 }}">Oh my days! You've got the hang of it, already. :)</p>
-                <p class="hidden {{ q1 }}">Roses are red, violets are blue. I'm so lucky to be married to woo.</p>
-                <p class="hidden {{ q1 }}">My breath is always taken when I see your good looks. Your first gift and next password lies with the wooversary books.</p>
-                <p class="hidden {{ q2 }}">I'm proper chuffed! Terrific job.</p>
-                <p class="hidden {{ q2 }}"></p>
-                <p class="hidden {{ q3 }}"></p>
-                <p class="hidden {{ q4 }}"></p>
-                <p class="hidden {{ q5 }}"></p>
+                {{ message|safe }}
 			</header>
 
 		<!-- Signup Form -->
 			<form id="signup-form" method="post" action="#">
 				<input type="text" name="key" id="key" placeholder="" />
-                <input type="hidden" name="last" id="last" value="{{ step }}" />
+        <input type="hidden" name="last" id="last" value="{{ message }}" />
 				<input type="submit" value="Check" />
                 <span class="message failure {{ wrong }}">Try again</span>
 			</form>

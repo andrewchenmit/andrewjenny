@@ -77,25 +77,22 @@ class Story(webapp2.RequestHandler):
 
 class Vday(webapp2.RequestHandler):
   def post(self):
-    answers = {
-      '464': 'q1',
-      'hydrate': 'q2',
-      'test3': 'q3',
-      'test4': 'q4',
-      'test5': 'q5'
-    }
+    with open('pages/vday/data.json') as json_data:
+      messages = json.load(json_data)
+    template_values = messages
     key = self.request.get('key').lower()
     last = self.request.get('last')
-    if key in answers:
-      self.get(answers[key], None)
+    if key in messages.keys():
+      self.get(messages[key], None)
     else:
       self.get(last, 'visible')
 
-  def get(self, step='q0', wrong=None):
-    template_values = {'wrong': wrong, 'step': step}
-    for x in range(10):
-      template_values['q'+str(x)] = None
-    template_values[step] = 'visible'
+  def get(self, message=None, wrong=None):
+    with open('pages/vday/data.json') as json_data:
+      messages = json.load(json_data)
+    if message == None:
+      message = messages['default']
+    template_values = {'wrong': wrong, 'message': message}
     template = JINJA_ENVIRONMENT.get_template('pages/vday/index.html')
     self.response.write(template.render(template_values))
 
