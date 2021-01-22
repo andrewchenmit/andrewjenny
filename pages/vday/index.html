@@ -9,29 +9,29 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-                <h1 class="pink">Welcome to Woo Love Island, <span class="woo">Jwoo</span>! <span class="fa fa-heart"></span></h1>
-                {{ message|safe }}
-			</header>
+    <header id="header">
+      <h1 class="pink">Welcome to Woo Love Island, <span class="woo">Jwoo</span>! <span class="fa fa-heart"></span></h1>
+     {{ message|safe }}
+    </header>
 
-		<!-- Signup Form -->
-			<form id="signup-form" method="post" action="#">
-				<input type="text" name="key" id="key" placeholder="" />
-        <input type="hidden" name="last" id="last" value="{{ message }}" />
-				<input type="submit" value="Check" />
-                <span class="message failure {{ wrong }}">Try again</span>
-			</form>
+      <!-- Signup Form -->
+    <form class="{{ form }}" id="signup-form" method="post" action="#">
+      <input type="text" name="key" id="key" placeholder="" />
+      <input type="hidden" name="last" id="last" value="{{ message }}" />
+      <input type="submit" value="Check" />
+      <span class="message failure {{ wrong }}">Try again</span>
+    </form>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="copyright">
-                    <li>Made with <span class="fa fa-heart"></span> by Andywoo</li>
-                </ul>
-			</footer>
+      <!-- Footer -->
+    <footer id="footer">
+      <ul class="copyright">
+        <li>Made with <span class="fa fa-heart"></span> by Andywoo</li>
+      </ul>
+    </footer>
 
-		<!-- Scripts -->
-			<script src="pages/vday/assets/js/main.js"></script>
-			<script src="pages/story/assets/js/jquery.min.js"></script>
+      <!-- Scripts -->
+    <script src="pages/vday/assets/js/main.js"></script>
+    <script src="pages/story/assets/js/jquery.min.js"></script>
 
 	</body>
 </html>

@@ -1,4 +1,5 @@
 import bcrypt
+import datetime
 import json
 import os
 import urllib
@@ -88,11 +89,16 @@ class Vday(webapp2.RequestHandler):
       self.get(last, 'visible')
 
   def get(self, message=None, wrong=None):
+    form = 'visible'
     with open('pages/vday/data.json') as json_data:
       messages = json.load(json_data)
-    if message == None:
-      message = messages['default']
-    template_values = {'wrong': wrong, 'message': message}
+    if datetime.date.today() < datetime.date(2021,02,14):
+      message = messages['early']
+      form = 'hidden'
+    else:
+      if message == None:
+        message = messages['default']
+    template_values = {'wrong': wrong, 'message': message, 'form': form}
     template = JINJA_ENVIRONMENT.get_template('pages/vday/index.html')
     self.response.write(template.render(template_values))
 

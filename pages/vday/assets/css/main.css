@@ -57,7 +57,7 @@ input, select, textarea {
 
 /* Custom */
 .hidden {
-  display: none;
+  opacity: 0;
 }
 
 p.visible{

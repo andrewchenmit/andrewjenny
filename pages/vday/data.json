@@ -1,5 +1,10 @@
 {
-  "default": "<p>Happy Valentine's Day! We can't have our friends ask the questions, but our friendly woo website can :)</p><p>To find your gifts, please answer these questions about our woo life correctly.</p><p>What is the house number of our permanent pouch?</p>",
+  "early": "<p>I'm buzzin'! Get ready for a silly love island themed scavenger hunt for your gifts. We can't have our friends ask the questions, but our friendly woo website can :)</p><p>Alas, it's too early to play, so I'm going to have to mug you until then. Come back on Valentine's Day! - Love, your lad Awoo</p>",
+  "default": "<p>Happy Valentine's Day! </p><p>To find your gifts, please answer these questions about our woo life correctly.</p><p>What is the house number of our permanent pouch?</p>",
   "464": "<p>Oh my days! You've got the hang of it, already. :)</p><p>Roses are red, violets are blue. I'm so lucky to be married to woo.</p><p>My breath is always taken when I see your good looks. Your first gift and next password lies with the wooversary books.</p>",
-  "hydrate": "<p>I'm proper chuffed! Terrific job.</p>"
+  "hydrate": "<p>I'm proper chuffed! Terrific job.</p>",
+  "": "",
+  "": "",
+  "": "",
+  "": ""
 }
