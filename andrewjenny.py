@@ -78,18 +78,21 @@ class Story(webapp2.RequestHandler):
 
 class Vday(webapp2.RequestHandler):
   def post(self):
+    form = None
     with open('pages/vday/data.json') as json_data:
       messages = json.load(json_data)
     template_values = messages
-    key = self.request.get('key').lower()
+    key = self.request.get('key').lower().replace('il', '').replace('#', '').replace('\'','').replace('chicken', '').replace('zoo', '').replace(' ', '')
     last = self.request.get('last')
+    print(key)
     if key in messages.keys():
-      self.get(messages[key], None)
+      if key == 'duomo':
+        form = 'hidden'
+      self.get(messages[key], None, form)
     else:
       self.get(last, 'visible')
 
-  def get(self, message=None, wrong=None):
-    form = 'visible'
+  def get(self, message=None, wrong=None, form=None):
     with open('pages/vday/data.json') as json_data:
       messages = json.load(json_data)
     if datetime.date.today() < datetime.date(2021,02,14):
