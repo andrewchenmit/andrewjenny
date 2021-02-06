@@ -76,6 +76,12 @@ class Story(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('pages/story/login.html')
     self.response.write(template.render(template_values))
 
+class Bday(webapp2.RequestHandler):
+  def get(self):
+    template_values = {}
+    template = JINJA_ENVIRONMENT.get_template('pages/bday/index.html')
+    self.response.write(template.render(template_values))
+
 class Vday(webapp2.RequestHandler):
   def post(self):
     form = None
@@ -113,5 +119,6 @@ app = webapp2.WSGIApplication([
     ('/timeline', Timeline),
     ('/christmas', Christmas),
     ('/story', Story),
+    ('/bday', Bday),
     ('/vday', Vday)
 ], debug=True)
