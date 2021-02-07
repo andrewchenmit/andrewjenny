@@ -78,6 +78,20 @@ handlers:
   static_files: pages/xmas2019/static/favicon.ico
   upload: pages/xmas2019/static/favicon.ico
 
+#BDay2021 Resources
+- url: /pages/bday/assets
+  static_dir: pages/bday/assets
+
+- url: /pages/bday/images
+  static_dir: pages/bday/images
+
+- url: /pages/bday/fonts
+  static_dir: pages/bday/fonts 
+
+- url: /pages/bday/favicon.ico
+  static_files: pages/bday/static/favicon.ico
+  upload: pages/bday/static/favicon.ico
+
 #VDay2021 Resources
 - url: /pages/vday/assets
   static_dir: pages/vday/assets

@@ -78,7 +78,16 @@ class Story(webapp2.RequestHandler):
 
 class Bday(webapp2.RequestHandler):
   def get(self):
-    template_values = {}
+    template_values = {'disabled': 'disabled', 'url': ''}
+    timenow = datetime.datetime.now()-datetime.timedelta(hours=8)
+    timethreshold = datetime.datetime(year=2021, month=02, day=15, hour=13, minute=0, second=0, microsecond=0)
+    correcttime = timenow >= timethreshold
+    print correcttime
+    print "now", timenow
+    print "threshold", timethreshold
+    if correcttime:
+      template_values['disabled'] = 'enabled'
+      template_values['url'] = 'https://fb.zoom.us/j/8191834030?pwd=c2RIT2NVNnNEenpxTFhHZVFJdUF1Zz09'
     template = JINJA_ENVIRONMENT.get_template('pages/bday/index.html')
     self.response.write(template.render(template_values))
 
