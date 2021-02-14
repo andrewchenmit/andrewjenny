@@ -97,11 +97,11 @@ class Vday(webapp2.RequestHandler):
     with open('pages/vday/data.json') as json_data:
       messages = json.load(json_data)
     template_values = messages
-    key = self.request.get('key').lower().replace('il', '').replace('#', '').replace('\'','').replace('chicken', '').replace('zoo', '').replace(' ', '')
+    key = self.request.get('key').lower().replace('il ', '').replace(',', '').replace('.', '').replace('#', '').replace('\'','').replace('chicken', '').replace('zoo', '').replace(' ', '')
     last = self.request.get('last')
     print(key)
     if key in messages.keys():
-      if key == 'duomo':
+      if key == 'jenny':
         form = 'hidden'
       self.get(messages[key], None, form)
     else:
@@ -111,7 +111,7 @@ class Vday(webapp2.RequestHandler):
     with open('pages/vday/data.json') as json_data:
       messages = json.load(json_data)
     timenow = datetime.datetime.now()-datetime.timedelta(hours=8)
-    timethreshold = datetime.datetime(year=2021, month=02, day=14, hour=12, minute=0, second=0, microsecond=0)
+    timethreshold = datetime.datetime(year=2021, month=02, day=13, hour=12, minute=0, second=0, microsecond=0)
     correcttime = timenow >= timethreshold
     print correcttime
     print "now", timenow
