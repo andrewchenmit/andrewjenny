@@ -110,7 +110,13 @@ class Vday(webapp2.RequestHandler):
   def get(self, message=None, wrong=None, form=None):
     with open('pages/vday/data.json') as json_data:
       messages = json.load(json_data)
-    if datetime.date.today() < datetime.date(2021,02,14):
+    timenow = datetime.datetime.now()-datetime.timedelta(hours=8)
+    timethreshold = datetime.datetime(year=2021, month=02, day=14, hour=12, minute=0, second=0, microsecond=0)
+    correcttime = timenow >= timethreshold
+    print correcttime
+    print "now", timenow
+    print "threshold", timethreshold
+    if not correcttime:
       message = messages['early']
       form = 'hidden'
     else:
