@@ -106,6 +106,20 @@ handlers:
   static_files: pages/vday/static/favicon.ico
   upload: pages/vday/static/favicon.ico
 
+#VDay2022 Resources
+- url: /pages/vday22/assets
+  static_dir: pages/vday22/assets
+
+- url: /pages/vday22/images
+  static_dir: pages/vday22/images
+
+- url: /pages/vday22/fonts
+  static_dir: pages/vday22/fonts 
+
+- url: /pages/vday22/favicon.ico
+  static_files: pages/vday22/static/favicon.ico
+  upload: pages/vday22/static/favicon.ico
+
 #Everything else
 - url: /.*
   script: andrewjenny.app

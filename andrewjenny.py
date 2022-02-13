@@ -91,6 +91,40 @@ class Bday(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('pages/bday/index.html')
     self.response.write(template.render(template_values))
 
+class Vday22(webapp2.RequestHandler):
+  def post(self):
+    form = None
+    with open('pages/vday22/data.json') as json_data:
+      messages = json.load(json_data)
+    template_values = messages
+    key = self.request.get('key').lower().replace('50', '5').replace(',', '').replace('#', '').replace('\'','').replace('chicken', '').replace('zoo', '').replace(' ', '')
+    last = self.request.get('last')
+    print(key)
+    if key in messages.keys():
+      if key == 'jenny':
+        form = 'hidden'
+      self.get(messages[key], None, form)
+    else:
+      self.get(last, 'visible')
+  def get(self, message=None, wrong=None, form=None):
+    with open('pages/vday22/data.json') as json_data:
+      messages = json.load(json_data)
+    timenow = datetime.datetime.now()-datetime.timedelta(hours=8)
+    timethreshold = datetime.datetime(year=2022, month=02, day=13, hour=11, minute=0, second=0, microsecond=0)
+    correcttime = timenow >= timethreshold
+    print correcttime
+    print "now", timenow
+    print "threshold", timethreshold
+    if not correcttime:
+      message = messages['early']
+      form = 'hidden'
+    else:
+      if message == None:
+        message = messages['default']
+    template_values = {'wrong': wrong, 'message': message, 'form': form}
+    template = JINJA_ENVIRONMENT.get_template('pages/vday22/index.html')
+    self.response.write(template.render(template_values))
+
 class Vday(webapp2.RequestHandler):
   def post(self):
     form = None
@@ -135,5 +169,6 @@ app = webapp2.WSGIApplication([
     ('/christmas', Christmas),
     ('/story', Story),
     ('/bday', Bday),
+    ('/vday22', Vday22),
     ('/vday', Vday)
 ], debug=True)
