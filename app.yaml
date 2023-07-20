@@ -1,7 +1,9 @@
 #application: andrewjenny-1285
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: python38
+#runtime_config:
+#  runtime_version: "3.8.5"
+app_engine_apis: true
+entrypoint: gunicorn -b :$PORT main:app
 
 handlers:
 #AndrewJenny Resources
@@ -120,13 +122,3 @@ handlers:
   static_files: pages/vday22/static/favicon.ico
   upload: pages/vday22/static/favicon.ico
 
-#Everything else
-- url: /.*
-  script: andrewjenny.app
-  secure: always
-
-libraries:
-- name: webapp2
-  version: latest
-- name: jinja2
-  version: latest

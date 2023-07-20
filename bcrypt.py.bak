@@ -21,7 +21,7 @@ gensalt() function:
 The parameter "log_rounds" defines the complexity of the hashing. The
 cost increases as 2**log_rounds.
 """
-
+ 
 # This password hashing algorithm was designed by David Mazieres
 # <dm@lcs.mit.edu> and works as follows:
 #
@@ -35,19 +35,17 @@ cost increases as 2**log_rounds.
 #     ctext := Encrypt_ECB (state, ctext);
 # 6. RETURN Concatenate (salt, ctext);
 
-
+ 
 
 # This implementation is adaptable to current computing power.
 # You can have up to 2^31 rounds which should be enough for some
 # time to come.
 
-from __future__ import absolute_import
 import blowfish
 import os
-from six.moves import range
 
 BCRYPT_VERSION = '2'
-BCRYPT_MAXSALT = 16
+BCRYPT_MAXSALT = 16    
 BCRYPT_BLOCKS = 6        # Ciphertext blocks
 BCRYPT_MINROUNDS = 1    # we have log2(rounds) in salt
 
@@ -61,31 +59,31 @@ def _encode_salt(salt, log_rounds):
 
     if log_rounds < 1 or log_rounds > 31:
         raise ValueError("Invalid number of rounds")
-
+        
     result = "$%sa$%2.2u$" % (BCRYPT_VERSION, log_rounds)
     result += encode_base64(salt)
     return result
 
 
 # We handle $Vers$log2(NumRounds)$salt+passwd$
-#  i.e. $2$04$iwouldntknowwhattosayetKdJ6iFtacBqJdKe6aW7ou
+#  i.e. $2$04$iwouldntknowwhattosayetKdJ6iFtacBqJdKe6aW7ou 
 
 def hashpw(key, salt):
     """hashpw(password, salt) -> hashed_password
     Hash the specified password and the salt using the OpenBSD
     Blowfish password hashing algorithm. Returns the hashed password."""
 
-    # Discard "$" identifier
+    # Discard "$" identifier 
     index = 0
     index += 1
 
     if salt[index] > BCRYPT_VERSION:
         raise ValueError('Invalid Version')
 
-    # Check for minor versions
+    # Check for minor versions 
     if salt[index+1] != '$':
         if salt[index+1]  == 'a':
-            # 'ab' should not yield the same as 'abab'
+            # 'ab' should not yield the same as 'abab' 
             minor = salt[index+1]
             index += 1
         else:
@@ -93,58 +91,58 @@ def hashpw(key, salt):
     else:
         minor = 0
 
-    # Discard version + "$" identifier
+    # Discard version + "$" identifier 
     index += 2
 
     if salt[index+2] != '$':
-        # Out of sync with passwd entry
+        # Out of sync with passwd entry 
         raise ValueError('Invalid Sig')
 
-    # Computer power doesn't increase linear, 2^x should be fine
+    # Computer power doesn't increase linear, 2^x should be fine 
     n = int(salt[index:index+2])
     if n > 31 or n < 0:
         raise ValueError('Invalid rounds')
-
+        
     logr = n
     rounds = 1 << logr
     if rounds < BCRYPT_MINROUNDS:
         raise ValueError('Invalid rounds')
 
-    # Discard num rounds + "$" identifier
+    # Discard num rounds + "$" identifier 
     index += 3
 
-    csalt = salt[index:]
+    csalt = salt[index:] 
     if len(csalt) * 3 / 4 < BCRYPT_MAXSALT:
         raise ValueError('Invalid salt')
 
-    # We dont want the base64 salt but the raw data
+    # We dont want the base64 salt but the raw data 
     csalt = decode_base64(csalt)
-
+    
     if minor >= 'a':
         key += '\0'
-
+        
     key = [ord(ch) for ch in key]
     state = blowfish.initstate()
-    # Setting up S-Boxes and Subkeys
+    # Setting up S-Boxes and Subkeys 
     blowfish.expandstate(state, csalt, key)
-
+    
     for _ in range(rounds):
         blowfish.expand0state(state, key)
         blowfish.expand0state(state, csalt)
 
     ciphertext = [ord(ch) for ch in "OrpheanBeholderScryDoubt"]
-
-    # This can be precomputed later
+        
+    # This can be precomputed later 
     j = 0;
     cdata = [None] * BCRYPT_BLOCKS
-    for i in range(BCRYPT_BLOCKS):
+    for i in xrange(BCRYPT_BLOCKS):
         cdata[i], j = blowfish.stream2word(ciphertext, j)
 
-    # Now do the encryption
-    for _ in range(64):
+    # Now do the encryption 
+    for _ in xrange(64):
         blowfish.pybc_blf_enc(state, cdata, BCRYPT_BLOCKS / 2)
 
-    for i in range(BCRYPT_BLOCKS):
+    for i in xrange(BCRYPT_BLOCKS):
         ciphertext[4 * i + 3] = cdata[i] & 0xff
         cdata[i] = cdata[i] >> 8
         ciphertext[4 * i + 2] = cdata[i] & 0xff
@@ -156,22 +154,18 @@ def hashpw(key, salt):
     encrypted = ''
     encrypted += '$'
     encrypted += str(BCRYPT_VERSION)
-    print(minor)
-    print(type(minor))
-    if isinstance(minor,str):
+    if minor > 0:
         encrypted += minor
-    elif minor > 0:
-        encrypted += minor
-
+        
     encrypted += '$'
 
     encrypted += "%2.2u$" % (logr)
 
     encrypted += encode_base64(csalt)
     encrypted += encode_base64(ciphertext[:4 * BCRYPT_BLOCKS - 1])
-
+    
     return encrypted
-
+    
 def gensalt(log_rounds = 1):
     """Generate a random text salt for use with hashpw(). "log_rounds"
     defines the complexity of the hashing, increasing the cost as
@@ -196,7 +190,7 @@ index_64 = [
     41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
     51, 52, 53, 255, 255, 255, 255, 255]
 
-def CHAR64(c):
+def CHAR64(c): 
     return 255 if ord(c) > 127 else index_64[ord(c)]
 
 def decode_base64(data):
@@ -204,7 +198,7 @@ def decode_base64(data):
     result = []
     for src_index in range(0, len(data), 4):
         c1 = CHAR64(data[src_index])
-
+        
         if src_index + 1 >= len(data):
             break
 
@@ -219,7 +213,7 @@ def decode_base64(data):
 
         if src_index + 2 >= len(data) or dest_index == BCRYPT_MAXSALT:
             break
-
+        
         c3 = CHAR64(data[src_index + 2])
         if c3 == 255:
             break
@@ -233,7 +227,7 @@ def decode_base64(data):
         c4 = CHAR64(data[src_index + 3])
         if c4 == 255:
             break
-
+        
         result.append(((c3 & 0x03) << 6) | c4)
         dest_index += 1
 
@@ -253,7 +247,7 @@ def encode_base64(data):
         if src_index >= len(data):
             result += Base64Code[c1]
             break
-
+        
         c2 = data[src_index]
         src_index += 1
         c1 |= (c2 >> 4) & 0x0f
@@ -262,7 +256,7 @@ def encode_base64(data):
         if src_index >= len(data):
             result += Base64Code[c1]
             break
-
+        
         c2 = data[src_index]
         src_index += 1
         c1 |= (c2 >> 6) & 0x03
