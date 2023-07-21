@@ -61,18 +61,46 @@ def main():
 
     # Utilities
     def extract_url(url):
-        temp = urllib.request.urlopen(url)
-        url_data = temp.read()
-        datastring = url_data.decode("utf-8")
-        m = re.search('https://lh3.google[^=]*', datastring)
-        return m.group(0) + '=w3123-h2342'
+        if 'photos.app.goo.gl' in url:
+            temp = urllib.request.urlopen(url)
+            url_data = temp.read()
+            datastring = url_data.decode("utf-8")
+            m = re.search('https://lh3.google[^=]*', datastring)
+            return m.group(0) + '=w3123-h2342'
+        if 'pouch-nas' in url:
+            return url
 
     def store_image(title, url):
-        full = fulls_path+title+'.png'
-        thumb = thumbs_path+title+'.png'
+        ext = '.png'
+        #if 'pouch-nas' in url:
+        #    ext = '.jpg'
+
+        full = fulls_path+title+ext
+        thumb = thumbs_path+title+ext
 
         if not os.path.exists(full):
-            urllib.request.urlretrieve(url, full)
+            if 'pouch-nas' in url:
+                m = re.search('item_[^\?]*', url)
+                photo_id = m.group(0)[5:]
+                m = re.search('sharing[^#]*', url)
+                share_id = m.group(0)[8:]
+                print(photo_id)
+                print(share_id)
+                url = 'https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/mo/sharing/webapi/entry.cgi?api=SYNO.FotoTeam.Thumbnail&method=get&version=1&id='+photo_id+'&cache_key='+photo_id+'_1633659236&type=unit&size=xl'
+                temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account=awoo&passwd=CeZsAy9Qv%26nGi5%23%23eJD%23W2W6')
+                url_data = temp.read()
+                json_data = json.loads(url_data)
+                sid = json_data['data']['sid']
+                did = json_data['data']['did']
+                print(sid)
+            pouch_request = urllib.request.Request(url)
+            pouch_request.add_header("Cookie", "id="+sid)
+            pouch_request.add_header("Cookie", "did="+did)
+            pouch_request.add_header("x-syno-sharing", share_id)
+            response = urllib.request.urlopen(pouch_request)
+            image = response.read()
+            with open(full, "wb") as file:
+                file.write(image)
             im = Image.open(full)
             w, h = im.size
             if w/h > 4/3:
