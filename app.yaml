@@ -1,8 +1,8 @@
 #application: andrewjenny-1285
 runtime: python38
 #runtime_config:
-#  runtime_version: "3.8.5"
-app_engine_apis: true
+#runtime_version: "3.8.5"
+#app_engine_apis: true
 entrypoint: gunicorn -b :$PORT main:app
 
 handlers:
