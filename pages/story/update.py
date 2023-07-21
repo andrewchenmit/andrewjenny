@@ -105,6 +105,12 @@ def main():
     for c in CATEGORIES:
         data[c] = {}
 
+
+    # Load last event list
+    data_last = {}
+    with open('data_last.json') as json_file:
+        data_last = json.load(json_file)['root']
+
     # Load Categories into JSON
     if not categories_data:
         print('No data found.')
@@ -117,6 +123,8 @@ def main():
             except:
                 continue
 
+    repeat_data_count = 0
+    new_data_count = 0
     # Load Events into JSON
     if not event_data:
         print('No data found.')
@@ -132,7 +140,17 @@ def main():
                 album_url = ''
 
             # Store Image
-            full_url, thumb_url = store_image(row[1], extract_url(row[5]))
+            if row[1] in data_last['events']:
+                repeat_data_count += 1
+                full_url = data_last['events'][row[1]]['full_url']
+                thumb_url = data_last['events'][row[1]]['thumb_url']
+
+            if row[1] not in data_last['events']:
+                print('NEW DATA DETECTED')
+                print(row)
+                new_data_count += 1
+                full_url, thumb_url = store_image(row[1], extract_url(row[5]))
+
             event = {'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'highlight': row[4], 'full_url': full_url, 'thumb_url': thumb_url, 'album_url': album_url}
             event_list.append(event)
 
@@ -167,10 +185,12 @@ def main():
             year = event['date'][0:4]
             data[year]['event_titles'].append(event['title'])
 
-    print(data)
-
     with open('data.json', 'w') as json_file:
         json.dump({'root':data}, json_file)
+    with open('data_last.json', 'w') as json_file:
+        json.dump({'root':data}, json_file)
+
+    print('Done! Repeat rows: ', repeat_data_count, ' New rows: ', new_data_count)
 
 if __name__ == '__main__':
     main()
