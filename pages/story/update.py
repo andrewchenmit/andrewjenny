@@ -86,8 +86,11 @@ def main():
                 share_id = m.group(0)[8:]
                 print(photo_id)
                 print(share_id)
+                with open('pouchpass.json') as json_file:
+                    pouch_user = json.load(json_file)['username']
+                    pouch_pass = json.load(json_file)['password']
                 url = 'https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/mo/sharing/webapi/entry.cgi?api=SYNO.FotoTeam.Thumbnail&method=get&version=1&id='+photo_id+'&cache_key='+photo_id+'_1633659236&type=unit&size=xl'
-                temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account=awoo&passwd=CeZsAy9Qv%26nGi5%23%23eJD%23W2W6')
+                temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account='+pouch_user+'&passwd='+pouch_pass)
                 url_data = temp.read()
                 json_data = json.loads(url_data)
                 sid = json_data['data']['sid']
