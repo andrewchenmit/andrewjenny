@@ -71,10 +71,7 @@ def main():
             return url
 
     def store_image(title, url):
-        ext = '.png'
-        #if 'pouch-nas' in url:
-        #    ext = '.jpg'
-
+        ext = '.webp'
         full = fulls_path+title+ext
         thumb = thumbs_path+title+ext
 
@@ -87,8 +84,10 @@ def main():
                 print(photo_id)
                 print(share_id)
                 with open('pouchpass.json') as json_file:
-                    pouch_user = json.load(json_file)['username']
-                    pouch_pass = json.load(json_file)['password']
+                    json_data = json.load(json_file)
+                    print(json_data)
+                    pouch_user = json_data['username']
+                    pouch_pass = json_data['password']
                 url = 'https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/mo/sharing/webapi/entry.cgi?api=SYNO.FotoTeam.Thumbnail&method=get&version=1&id='+photo_id+'&cache_key='+photo_id+'_1633659236&type=unit&size=xl'
                 temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account='+pouch_user+'&passwd='+pouch_pass)
                 url_data = temp.read()
@@ -96,11 +95,14 @@ def main():
                 sid = json_data['data']['sid']
                 did = json_data['data']['did']
                 print(sid)
-            pouch_request = urllib.request.Request(url)
-            pouch_request.add_header("Cookie", "id="+sid)
-            pouch_request.add_header("Cookie", "did="+did)
-            pouch_request.add_header("x-syno-sharing", share_id)
-            response = urllib.request.urlopen(pouch_request)
+                pouch_request = urllib.request.Request(url)
+                pouch_request.add_header("Cookie", "id="+sid)
+                pouch_request.add_header("Cookie", "did="+did)
+                pouch_request.add_header("x-syno-sharing", share_id)
+                response = urllib.request.urlopen(pouch_request)
+            else:
+                response = urllib.request.urlopen(url)
+
             image = response.read()
             with open(full, "wb") as file:
                 file.write(image)
@@ -111,7 +113,7 @@ def main():
                 neww = 4/3*(h-hadjust)
                 wadjust = (w-neww) % 2
                 new_im = im.crop(((w-(neww-wadjust))/2, hadjust, w-(w-(neww-wadjust))/2, h))
-                new_im.save(full)
+                new_im.save(full, format="webp")
             if w/h < 4/3:
                 hadjust = h % 3
                 newh = h - hadjust
@@ -123,12 +125,12 @@ def main():
                 converted_im = im.convert("RGBA")
                 new_im.paste(converted_im, (leftw, 0))
 
-                new_im.save(full)
+                new_im.save(full, format="webp")
 
         #if not os.path.exists(thumb):
             im = Image.open(full)
             new_im = im.resize((288, 216), Image.ANTIALIAS)
-            new_im.save(thumb, optimize=True)
+            new_im.save(thumb, optimize=True, format="webp", quality=90)
 
         return ['pages/story/'+full, 'pages/story/'+thumb]
 
@@ -171,16 +173,15 @@ def main():
                 album_url = ''
 
             # Store Image
-            if row[1] in data_last['events']:
-                repeat_data_count += 1
-                full_url = data_last['events'][row[1]]['full_url']
-                thumb_url = data_last['events'][row[1]]['thumb_url']
-
-            if row[1] not in data_last['events']:
+            if len(data_last) == 0 or row[1] not in data_last['events']:
                 print('NEW DATA DETECTED')
                 print(row)
                 new_data_count += 1
                 full_url, thumb_url = store_image(row[1], extract_url(row[5]))
+            else:
+                repeat_data_count += 1
+                full_url = data_last['events'][row[1]]['full_url']
+                thumb_url = data_last['events'][row[1]]['thumb_url']
 
             event = {'date': row[0], 'title': row[1], 'summary': row[2], 'category': row[3], 'highlight': row[4], 'full_url': full_url, 'thumb_url': thumb_url, 'album_url': album_url}
             event_list.append(event)
