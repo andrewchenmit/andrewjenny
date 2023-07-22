@@ -253,7 +253,7 @@
 
 
 					// Not an image? Bail.
-						if (!href.match(/\.(jpg|gif|png|mp4)$/))
+						if (!href.match(/\.(jpg|gif|png|mp4|webp)$/))
 							return;
 
 					// Prevent default.
