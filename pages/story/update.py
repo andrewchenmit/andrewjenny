@@ -77,8 +77,12 @@ def main():
 
         if not os.path.exists(full):
             if 'pouch-nas' in url:
-                m = re.search('item_[^\?]*', url)
-                photo_id = m.group(0)[5:]
+                try:
+                  m = re.search('item_[^\?]*', url)
+                  photo_id = m.group(0)[5:]
+                except:
+                  m = re.search('item/[^\?]*', url)
+                  photo_id = m.group(0)[5:]
                 m = re.search('sharing[^#]*', url)
                 share_id = m.group(0)[8:]
                 with open('pouchpass.json') as json_file:
