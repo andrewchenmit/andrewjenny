@@ -3,6 +3,7 @@ import json
 import pickle
 import os.path
 import re
+import sys
 import urllib.request
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -89,8 +90,9 @@ def main():
                     json_data = json.load(json_file)
                     pouch_user = json_data['username']
                     pouch_pass = json_data['password']
+                otp = sys.argv[1]
                 url = 'https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/mo/sharing/webapi/entry.cgi?api=SYNO.FotoTeam.Thumbnail&method=get&version=1&id='+photo_id+'&cache_key='+photo_id+'_1633659236&type=unit&size=xl'
-                temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account='+pouch_user+'&passwd='+pouch_pass)
+                temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account='+pouch_user+'&passwd='+pouch_pass+'&otp_code='+otp)
                 url_data = temp.read()
                 json_data = json.loads(url_data)
                 sid = json_data['data']['sid']
