@@ -19,6 +19,7 @@ EVENT_RANGE = 'Story!A2:G'
 CATEGORIES_RANGE = 'Categories!A2:C'
 
 def main():
+    otp = input("pouch-nas OTP? ")
     creds = None
 
     # The file token.pickle stores the user's access and refresh tokens, and is
@@ -79,10 +80,10 @@ def main():
         if not os.path.exists(full):
             if 'pouch-nas' in url:
                 try:
-                  m = re.search('item_[^\?]*', url)
+                  m = re.search('item_[^?]*', url)
                   photo_id = m.group(0)[5:]
                 except:
-                  m = re.search('item/[^\?]*', url)
+                  m = re.search('item/[^?]*', url)
                   photo_id = m.group(0)[5:]
                 m = re.search('sharing[^#]*', url)
                 share_id = m.group(0)[8:]
@@ -90,7 +91,6 @@ def main():
                     json_data = json.load(json_file)
                     pouch_user = json_data['username']
                     pouch_pass = json_data['password']
-                otp = sys.argv[1]
                 url = 'https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/mo/sharing/webapi/entry.cgi?api=SYNO.FotoTeam.Thumbnail&method=get&version=1&id='+photo_id+'&cache_key='+photo_id+'_1633659236&type=unit&size=xl'
                 temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account='+pouch_user+'&passwd='+pouch_pass+'&otp_code='+otp)
                 url_data = temp.read()
