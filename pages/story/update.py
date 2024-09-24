@@ -19,7 +19,7 @@ EVENT_RANGE = 'Story!A2:G'
 CATEGORIES_RANGE = 'Categories!A2:C'
 
 def main():
-    otp = input("pouch-nas OTP? ")
+    otp = None
     creds = None
 
     # The file token.pickle stores the user's access and refresh tokens, and is
@@ -72,6 +72,19 @@ def main():
         if 'pouch-nas' in url:
             return url
 
+    def get_pouchnas_credentials(otp):
+        with open('pouchpass.json') as json_file:
+            json_data = json.load(json_file)
+            pouch_user = json_data['username']
+            pouch_pass = json_data['password']
+        temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account='+pouch_user+'&passwd='+pouch_pass+'&otp_code='+otp)
+        url_data = temp.read()
+        json_data = json.loads(url_data)
+        try:
+            return {'sid': json_data['data']['sid'], 'did': json_data['data']['did']}
+        except:
+            raise Exception('no pouchnas data returned')
+
     def store_image(title, url):
         ext = '.webp'
         full = fulls_path+title+ext
@@ -87,16 +100,17 @@ def main():
                   photo_id = m.group(0)[5:]
                 m = re.search('sharing[^#]*', url)
                 share_id = m.group(0)[8:]
-                with open('pouchpass.json') as json_file:
-                    json_data = json.load(json_file)
-                    pouch_user = json_data['username']
-                    pouch_pass = json_data['password']
                 url = 'https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/mo/sharing/webapi/entry.cgi?api=SYNO.FotoTeam.Thumbnail&method=get&version=1&id='+photo_id+'&cache_key='+photo_id+'_1633659236&type=unit&size=xl'
-                temp = urllib.request.urlopen('https://192-168-86-62.pouch-nas.direct.quickconnect.to:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account='+pouch_user+'&passwd='+pouch_pass+'&otp_code='+otp)
-                url_data = temp.read()
-                json_data = json.loads(url_data)
-                sid = json_data['data']['sid']
-                did = json_data['data']['did']
+                if not otp:
+                    otp = input("pouch-nas OTP? ")
+                pouch_data = None
+                while pouch_data is None:
+                    try:
+                        pouch_data = get_pouchnas_credentials(otp)
+                    except:
+                        otp = input("pouch-nas OTP? ")
+                sid = pouch_data['sid']
+                did = pouch_data['did']
                 pouch_request = urllib.request.Request(url)
                 pouch_request.add_header("Cookie", "id="+sid)
                 pouch_request.add_header("Cookie", "did="+did)
