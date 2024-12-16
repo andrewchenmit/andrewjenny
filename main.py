@@ -58,6 +58,12 @@ def Christmas():
   template = JINJA_ENVIRONMENT.get_template('pages/xmas2019/index.html')
   return template.render(template_values)
 
+@app.route("/xmas24")
+def xmas24():
+  template_values = {}
+  template = JINJA_ENVIRONMENT.get_template('pages/xmas24/index.html')
+  return template.render(template_values)
+
 @app.route("/story", methods = ['POST', 'GET'])
 def Story(error_visibility=None):
   if request.method == 'POST':

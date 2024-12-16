@@ -119,3 +119,16 @@ handlers:
   static_files: pages/vday22/static/favicon.ico
   upload: pages/vday22/static/favicon.ico
 
+#Xmas24 Resources
+- url: /pages/xmas24/assets
+  static_dir: pages/xmas24/assets
+
+- url: /pages/xmas24/images
+  static_dir: pages/xmas24/images
+
+- url: /pages/xmas24/fonts
+  static_dir: pages/xmas24/fonts 
+
+- url: /pages/xmas24/favicon.ico
+  static_files: pages/xmas24/static/favicon.ico
+  upload: pages/xmas24/static/favicon.ico
