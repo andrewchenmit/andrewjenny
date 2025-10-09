@@ -14,7 +14,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of a sample spreadsheet.
 SPREADSHEET_ID = '1UvSzPssXakkMip5nHDd2E4IwHPcLy1n_0aZicBl4BdE'
-RANGE = 'Week 6!A4:M'
+RANGE = 'Week 6!A4:O'
 
 def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_eff, max_tier, projection):
     # Format for data frame & prune players that will never be selected
@@ -30,7 +30,11 @@ def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_
     eff_num = 0
     tier_num = 0
     for row in data:
-        if len(row)<7:
+        print(row)
+        if len(row)<eff_index+1:
+            incomplete_num+=1
+            continue
+        if row[point_index]=='':
             incomplete_num+=1
             continue
         if float(row[point_index])<min_point:
@@ -180,6 +184,7 @@ def knapsack():
 
     print("RUNNING")
     solution = {'lineups': []}
+    solution['lineups'].append(solve_fantasy_knapsack('Unconstrained Vegas', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 99, 'WR': 99, 'TE': 99, 'DEF': 99}, 'vegas'))
     solution['lineups'].append(solve_fantasy_knapsack('Unconstrained FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 99, 'WR': 99, 'TE': 99, 'DEF': 99}, 'fp'))
     solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 8 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'fp'))
     solution['lineups'].append(solve_fantasy_knapsack('QB/RB/WR/TE Max 8 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 8, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'fp'))
