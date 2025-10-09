@@ -35,6 +35,20 @@ handlers:
   static_files: pages/story/static/favicon.ico
   upload: pages/story/static/favicon.ico
 
+#DFS Resources
+- url: /pages/dfs/assets
+  static_dir: pages/dfs/assets
+
+- url: /pages/dfs/images
+  static_dir: pages/dfs/images
+
+- url: /pages/dfs/fonts
+  static_dir: pages/dfs/fonts 
+
+- url: /pages/dfs/favicon.ico
+  static_files: pages/dfs/static/favicon.ico
+  upload: pages/dfs/static/favicon.ico
+
 #Life Resources
 - url: /pages/life/assets
   static_dir: pages/life/assets

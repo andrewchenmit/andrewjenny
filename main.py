@@ -2,6 +2,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 import bcrypt
 import datetime
+import dfs
 import json
 import os
 import six.moves.urllib.request, six.moves.urllib.parse, six.moves.urllib.error
@@ -22,6 +23,14 @@ def MainPage():
     'user': 'ANDREW CHENNNN',
   }
   template = JINJA_ENVIRONMENT.get_template('index.html')
+  return template.render(template_values)
+
+@app.route("/dfs")
+def Daily():
+  template_values = dfs.knapsack()
+  print("TEMPLATE")
+  print(template_values)
+  template = JINJA_ENVIRONMENT.get_template('pages/dfs/index.html')
   return template.render(template_values)
 
 @app.route("/photobooth")
