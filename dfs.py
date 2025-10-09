@@ -154,8 +154,11 @@ def knapsack():
             creds = flow.run_local_server(port=0)
 
         # Save the credentials for the next run
-        with open('token.pickle', 'wb') as token:
-            pickle.dump(creds, token)
+        try:
+            with open('token.pickle', 'wb') as token:
+                pickle.dump(creds, token)
+        except:
+            pass
 
     service = build('sheets', 'v4', credentials=creds)
 
