@@ -185,9 +185,10 @@ def knapsack():
     print("RUNNING")
     solution = {'lineups': []}
     solution['lineups'].append(solve_fantasy_knapsack('Unconstrained Vegas', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 99, 'WR': 99, 'TE': 99, 'DEF': 99}, 'vegas'))
+    solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 8 Vegas', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'vegas'))
+    solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 7 Vegas', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 7, 'WR': 7, 'TE': 7, 'DEF': 99}, 'vegas'))
     solution['lineups'].append(solve_fantasy_knapsack('Unconstrained FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 99, 'WR': 99, 'TE': 99, 'DEF': 99}, 'fp'))
     solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 8 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'fp'))
-    solution['lineups'].append(solve_fantasy_knapsack('QB/RB/WR/TE Max 8 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 8, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'fp'))
     solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 7 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 7, 'WR': 7, 'TE': 7, 'DEF': 99}, 'fp'))
     print(solution)
     print("RETURNING")
