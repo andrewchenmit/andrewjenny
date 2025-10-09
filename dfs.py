@@ -43,7 +43,11 @@ def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_
         if float(row[eff_index])<min_eff[row[2]]:
             eff_num+=1
             continue
-        if int(row[8])>max_tier[row[2]]:
+        try:
+            if int(row[8])>max_tier[row[2]]:
+                tier_num+=1
+                continue
+        except:
             tier_num+=1
             continue
         players_raw.append((row[2],row[1],int(row[3]),float(row[point_index])))
