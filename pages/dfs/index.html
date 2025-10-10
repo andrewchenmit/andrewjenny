@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>S.K.O.L.</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="pages/dfs/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="pages/dfs/assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
+            <!-- Wrapper -->
+            <div id="wrapper">
+                <section class="panel banner right">
+                    <div class="content color0 span-2">
+                        <h1 class="major">S.K.O.L.</h1>
+                        <p><b>Scientifically Killer Optimized Lineup</b></p>
+                        <ul class="actions">
+                            <li><a href="#target" class="button primary color1 circle icon solid fa-angle-right">Next</a></li>
+                        </ul>
+                    </div>
+                    <div class="image filtered span-2" data-position="70% 25%">
+                        <img src="pages/dfs/images/jettas05.jpg" alt="">
+                    </div>
+                </section>
+                {% for lineup in lineups %}
+                <!-- Panel (Banner) -->
+                <section class="panel" {% if loop.index == 2 %}id="target"{% endif %}>
+                    <div class="inner color{{loop.index0%3+1}} span-2-25">
+                        <h3 class="major">{{ lineup.description }}</h3>
+                    <div class="">
+                        <p><b>Points: {{ lineup.points }} | Salary: {{ lineup.salary }}</b></p>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Player</th>
+                                    <th>$</th>
+                                    <th>Pts</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for player in lineup.lineup %}
+                                <tr>
+                                    <td>{{ player[0] }}</td>
+                                    <td>{{ player[1] }}</td>
+                                    <td>{{ player[2] }}</td>
+                                    <td>{{ player[3] }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                {% endfor %}
+                <!-- Copyright -->
+                <div class="copyright">
+                    Made with <span class="fa fa-heart"></span> by Andrew
+                </div>
+            </div>
+        </div>
+		<!-- Scripts -->
+        <script src="pages/dfs/assets/js/jquery.min.js"></script>
+        <script src="pages/dfs/assets/js/browser.min.js"></script>
+        <script src="pages/dfs/assets/js/breakpoints.min.js"></script>
+        <script src="pages/dfs/assets/js/main.js"></script>
+    </body>
+</html>

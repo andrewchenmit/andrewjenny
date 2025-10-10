@@ -18,7 +18,6 @@ RANGE = 'Week 6!A4:O'
 
 def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_eff, max_tier, projection):
     # Format for data frame & prune players that will never be selected
-    #print("Start:",len(data))
     point_index = 9
     eff_index = 10
     if projection == 'vegas':
@@ -30,7 +29,6 @@ def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_
     eff_num = 0
     tier_num = 0
     for row in data:
-        print(row)
         if len(row)<eff_index+1:
             incomplete_num+=1
             continue
@@ -52,16 +50,7 @@ def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_
             continue
         players_raw.append((row[2],row[1],int(row[3]),float(row[point_index])))
 
-    #print("Incomplete:",incomplete_num)
-    #print("Too Low:",low_num)
-    #print("Inefficient:",eff_num)
-    #print("Bad Tier:",tier_num)
-    #print("Players:",len(players_raw))
-    #print(f"--------------------------------------------")
-
     df = pd.DataFrame(players_raw, columns=["position","name","salary","points"])
-
-    #print(df)
 
     players = df.to_dict("records")
 
@@ -87,11 +76,13 @@ def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_
             prob += pulp.lpSum([player_vars[p['name']] for p in players if p['position'] == pos]) == num_players, f"Roster_{pos}"
         if pos == 'RB':
             prob += pulp.lpSum([player_vars[p['name']] for p in players if p['position'] == pos]) <= num_players+1, f"Roster_{pos}"
+            prob += pulp.lpSum([player_vars[p['name']] for p in players if p['position'] == pos]) >= num_players, f"Roster_{pos}_2"
         if pos == 'WR':
             prob += pulp.lpSum([player_vars[p['name']] for p in players if p['position'] == pos]) <= num_players+1, f"Roster_{pos}"
             prob += pulp.lpSum([player_vars[p['name']] for p in players if p['position'] == pos]) >= num_players, f"Roster_{pos}_2"
         if pos == 'TE':
             prob += pulp.lpSum([player_vars[p['name']] for p in players if p['position'] == pos]) <= num_players+1, f"Roster_{pos}"
+            prob += pulp.lpSum([player_vars[p['name']] for p in players if p['position'] == pos]) >= num_players, f"Roster_{pos}_2"
         if pos == 'DEF':
             prob += pulp.lpSum([player_vars[p['name']] for p in players if p['position'] == pos]) == num_players, f"Roster_{pos}"
 
@@ -132,8 +123,6 @@ def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_
             answer.append(lineup['TE'][1])
         answer.append(lineup['DEF'][0])
 
-        print("ANSWER")
-        print(answer)
         reply['description'] = desc
         reply['lineup'] = answer
         reply['points'] = round(total_points,1)
@@ -174,6 +163,7 @@ def knapsack():
     sheet = service.spreadsheets()
     result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=RANGE).execute()
     data = result.get('values', [])
+    print(data)
 
     # Run the solver
     salary_cap = 200
@@ -186,7 +176,6 @@ def knapsack():
         'DEF': 1,
     }
 
-    print("RUNNING")
     solution = {'lineups': []}
     solution['lineups'].append(solve_fantasy_knapsack('Unconstrained Vegas', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 99, 'WR': 99, 'TE': 99, 'DEF': 99}, 'vegas'))
     solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 8 Vegas', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'vegas'))
@@ -194,11 +183,4 @@ def knapsack():
     solution['lineups'].append(solve_fantasy_knapsack('Unconstrained FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 99, 'WR': 99, 'TE': 99, 'DEF': 99}, 'fp'))
     solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 8 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'fp'))
     solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 7 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 7, 'WR': 7, 'TE': 7, 'DEF': 99}, 'fp'))
-    print(solution)
-    print("RETURNING")
     return solution
-
-    #solve_fantasy_knapsack(data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'fp')
-    #solve_fantasy_knapsack(data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 8, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'fp')
-    #solve_fantasy_knapsack(data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 7, 'RB': 7, 'WR': 7, 'TE': 7, 'DEF': 99}, 'fp')
-    #solve_fantasy_knapsack(data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 6, 'RB': 6, 'WR': 6, 'TE': 6, 'DEF': 99}, 'fp')

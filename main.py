@@ -25,6 +25,16 @@ def MainPage():
   template = JINJA_ENVIRONMENT.get_template('index.html')
   return template.render(template_values)
 
+@app.route("/skol")
+def Skol():
+  with open('pages/dfs/demo.json') as json_data:
+    lineups = json.load(json_data)
+  template_values = lineups
+  print("TEMPLATE")
+  print(template_values)
+  template = JINJA_ENVIRONMENT.get_template('pages/dfs/index.html')
+  return template.render(template_values)
+
 @app.route("/dfs")
 def Daily():
   template_values = dfs.knapsack()
