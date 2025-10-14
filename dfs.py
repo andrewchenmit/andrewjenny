@@ -14,7 +14,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of a sample spreadsheet.
 SPREADSHEET_ID = '1UvSzPssXakkMip5nHDd2E4IwHPcLy1n_0aZicBl4BdE'
-RANGE = 'Week 6!A4:O'
+RANGE = 'Latest!A4:O'
 
 def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_eff, max_tier, projection):
     # Format for data frame & prune players that will never be selected

@@ -15,7 +15,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of a sample spreadsheet.
 SPREADSHEET_ID = '1UvSzPssXakkMip5nHDd2E4IwHPcLy1n_0aZicBl4BdE'
-RANGE = 'Week 6!A4:M'
+RANGE = 'Latest!A4:M'
 
 def main():
 
