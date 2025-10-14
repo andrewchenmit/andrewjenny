@@ -26,6 +26,7 @@
                     </div>
                 </section>
                 {% for lineup in lineups %}
+                    {% if lineup is not none %}
                 <!-- Panel (Banner) -->
                 <section class="panel" {% if loop.index == 1 %}id="target"{% endif %}>
                     <div class="inner color{{loop.index0%3+1}} span-2-25">
@@ -56,6 +57,7 @@
                         </table>
                     </div>
                 </section>
+                    {% endif %}
                 {% endfor %}
                 <!-- Copyright -->
                 <div class="copyright">
