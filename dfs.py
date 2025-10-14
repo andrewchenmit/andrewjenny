@@ -18,9 +18,13 @@ RANGE = 'Latest!A4:O'
 
 def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_eff, max_tier, projection):
     # Format for data frame & prune players that will never be selected
-    point_index = 9
-    eff_index = 10
-    if projection == 'vegas':
+    if projection == 'tier':
+        point_index = 9
+        eff_index = 10
+    elif projection == 'fp':
+        point_index = 11
+        eff_index = 12
+    elif projection == 'vegas':
         point_index = 13
         eff_index = 14
     players_raw = []
@@ -35,8 +39,11 @@ def solve_fantasy_knapsack(desc, data, salary_cap, roster_spots, min_point, min_
         if row[point_index]=='':
             incomplete_num+=1
             continue
-        if float(row[point_index])<min_point:
-            low_num+=1
+        try:
+            if float(row[point_index])<min_point:
+                low_num+=1
+                continue
+        except:
             continue
         if float(row[eff_index])<min_eff[row[2]]:
             eff_num+=1
@@ -186,4 +193,13 @@ def knapsack():
     solution['lineups'].append(solve_fantasy_knapsack('Unconstrained FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 99, 'WR': 99, 'TE': 99, 'DEF': 99}, 'fp'))
     solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 8 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'fp'))
     solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 7 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 7, 'WR': 7, 'TE': 7, 'DEF': 99}, 'fp'))
+    solution['lineups'].append(solve_fantasy_knapsack('Max 9 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 9, 'RB': 9, 'WR': 9, 'TE': 9, 'DEF': 9}, 'fp'))
+    solution['lineups'].append(solve_fantasy_knapsack('Max 8 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 8, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 8}, 'fp'))
+    solution['lineups'].append(solve_fantasy_knapsack('Max 7 FP', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 7, 'RB': 7, 'WR': 7, 'TE': 7, 'DEF': 7}, 'fp'))
+    solution['lineups'].append(solve_fantasy_knapsack('Unconstrained Tier', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 99, 'WR': 99, 'TE': 99, 'DEF': 99}, 'tier'))
+    solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 8 Tier', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 99}, 'tier'))
+    solution['lineups'].append(solve_fantasy_knapsack('RB/WR/TE Max 7 Tier', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 99, 'RB': 7, 'WR': 7, 'TE': 7, 'DEF': 99}, 'tier'))
+    solution['lineups'].append(solve_fantasy_knapsack('Max 9 Tier', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 9, 'RB': 9, 'WR': 9, 'TE': 9, 'DEF': 9}, 'tier'))
+    solution['lineups'].append(solve_fantasy_knapsack('Max 8 Tier', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 8, 'RB': 8, 'WR': 8, 'TE': 8, 'DEF': 8}, 'tier'))
+    solution['lineups'].append(solve_fantasy_knapsack('Max 7 Tier', data, salary_cap, roster_spots, 3, {'QB': 0.3, 'RB': 0.3, 'WR': 0.3, 'TE': 0.3, 'DEF': 0.3}, {'QB': 7, 'RB': 7, 'WR': 7, 'TE': 7, 'DEF': 7}, 'tier'))
     return solution
