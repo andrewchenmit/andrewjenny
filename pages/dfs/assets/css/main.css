@@ -2234,14 +2234,14 @@ input, select, textarea {
 			}
 
 			.panel > *.color4 {
-				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(180, 46, 255, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(246, 178, 39, 0.25) 50%, rgba(255, 228, 180, 0.25));
 				background-size: 128px 128px, auto;
 				/* background-color: #353865; */
 				background-color: #F5D97A;
 			}
 
 			.panel > *.color5 {
-				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(180, 46, 255, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(246, 178, 39, 0.25) 50%, rgba(255, 228, 180, 0.25));
 				background-size: 128px 128px, auto;
 				/* background-color: #353865; */
 				background-color: #F2C94C;
@@ -3715,3 +3715,7 @@ input, select, textarea {
 			}
 
 	}
+    .viking {
+        background-image: url(../../images/overlay.png), linear-gradient(45deg, #252525, #726193 20%, #C49BE8 50%, #F5D97A 80%, #F2C94D 99%);
+        background-clip: text;
+    }
