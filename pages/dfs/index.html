@@ -29,7 +29,7 @@
                     {% if lineup is not none %}
                 <!-- Panel (Banner) -->
                 <section class="panel" {% if loop.index == 1 %}id="target"{% endif %}>
-                    <div class="inner color{{loop.index0%4+1}} span-2-25">
+                    <div class="inner color{{loop.index0%5+1}} span-2-25">
                         <h3 class="major">{{ lineup.description }}</h3>
                     <div class="">
                         <p><b>Points: {{ lineup.points }} | Salary: {{ lineup.salary }}</b></p>
